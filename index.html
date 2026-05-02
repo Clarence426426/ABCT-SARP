@@ -128,6 +128,7 @@
       transition: background .12s, color .12s;
     }
     .nav-item:hover { background: rgba(0,0,0,.04); color: var(--ink); }
+    .nav-item:disabled { opacity: .45; cursor: not-allowed; }
     .nav-item.active {
       background: rgba(0,122,255,.12);
       color: var(--brand);
@@ -347,6 +348,17 @@
       backdrop-filter: saturate(160%) blur(18px);
       -webkit-backdrop-filter: saturate(160%) blur(18px);
     }
+    .panel.workflow-locked {
+      opacity: .58;
+    }
+    .panel.workflow-locked .panel-body,
+    .panel.workflow-locked .panel-header > button,
+    .panel.workflow-locked .table-controls {
+      pointer-events: none;
+    }
+    .panel.workflow-complete {
+      border-color: rgba(30, 126, 62, .35);
+    }
     .panel-header {
       display: flex;
       align-items: center;
@@ -380,6 +392,16 @@
       padding: 12px 20px;
       border-top: 1px solid var(--line);
       background: var(--soft);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .workflow-note {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+      margin: 0;
     }
     .section-divider {
       border: 0;
@@ -914,6 +936,10 @@
         <div class="component-list" id="compList"></div>
         <div class="weight-badge" id="weightInfo"></div>
       </div>
+      <div class="panel-footer">
+        <p class="workflow-note">Confirm only after the subject details and assessment components are complete.</p>
+        <button class="btn-primary btn-sm" id="confirmSetupBtn" type="button">Confirm Subject Setup</button>
+      </div>
     </section>
 
     <!-- ── 2. Student Import ── -->
@@ -962,6 +988,9 @@
           </div>
         </div>
       </div>
+      <div class="panel-footer">
+        <p class="workflow-note">A valid class roster CSV moves the workflow directly to score entry and AI support.</p>
+      </div>
     </section>
 
     <!-- ── 3. Score Entry ── -->
@@ -995,6 +1024,10 @@
             <tbody></tbody>
           </table>
         </div>
+      </div>
+      <div class="panel-footer">
+        <p class="workflow-note">Confirm after scores and lecturer grades are ready for final submission.</p>
+        <button class="btn-primary btn-sm" id="confirmScoresBtn" type="button">Confirm Scores</button>
       </div>
     </section>
 
@@ -1175,7 +1208,10 @@
     sort: { key: "name", dir: "asc" },
     filter: "",
     subjectLocked: false,
-    savedAt: ""
+    savedAt: "",
+    workflowStep: 1,
+    studentsConfirmed: false,
+    scoresConfirmed: false
   };
 
   /* ─── Helpers ─── */
@@ -1217,6 +1253,39 @@
   }
 
   /* ─── Lock / unlock ─── */
+  function setSectionDisabled(sectionId, disabled) {
+    const section = $(sectionId);
+    if (!section) return;
+    section.classList.toggle("workflow-locked", !!disabled);
+    section.querySelectorAll("input, select, textarea, button").forEach(el => {
+      el.disabled = !!disabled;
+    });
+  }
+  function jumpToSection(id) {
+    const el = $(id);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+  function applyWorkflowState() {
+    const step = Math.max(1, Math.min(4, Number(state.workflowStep || 1)));
+    const submitted = !!state.subjectLocked;
+    setSectionDisabled("setup", submitted || step > 1);
+    setSectionDisabled("students", submitted || step < 2 || step > 2);
+    setSectionDisabled("scores", submitted || step < 3 || step > 3);
+    setSectionDisabled("ai", submitted || step < 3 || step > 3);
+    $("confirmSetupBtn").disabled = submitted || step !== 1;
+    $("confirmScoresBtn").disabled = submitted || step !== 3;
+    $("lecturerName").disabled = submitted || step < 4;
+    $("staffNumber").disabled = submitted || step < 4;
+    $("submitBtn").disabled = submitted || step < 4;
+    $("setup").classList.toggle("workflow-complete", step > 1 || submitted);
+    $("students").classList.toggle("workflow-complete", state.studentsConfirmed || step > 2 || submitted);
+    $("scores").classList.toggle("workflow-complete", state.scoresConfirmed || step > 3 || submitted);
+    document.querySelectorAll("[data-jump]").forEach(btn => {
+      const order = { setup: 1, students: 2, scores: 3, ai: 3 }[btn.dataset.jump] || 1;
+      btn.disabled = order > step && !submitted;
+    });
+  }
+
   function setLockedState(locked) {
     const controls = document.querySelectorAll("main input, main select, main textarea, main button");
     controls.forEach(el => {
@@ -1226,6 +1295,7 @@
     document.body.classList.toggle("subject-locked", !!locked);
     $("unlockBar").hidden = !locked;
     if (locked) $("submitModal").hidden = true;
+    applyWorkflowState();
   }
 
   /* ─── Modals ─── */
@@ -1327,6 +1397,46 @@
     });
     return errors;
   }
+  function validateSubjectSetup() {
+    const errors = [];
+    if (!String(state.subject?.code || "").trim()) errors.push("Subject code is required.");
+    if (!String(state.subject?.title || "").trim()) errors.push("Subject title is required.");
+    if (!state.components.length) errors.push("At least one assessment component is required.");
+    const names = new Set();
+    state.components.forEach((c, i) => {
+      const name = String(c.name || "").trim();
+      if (!name) errors.push(`Component ${i + 1} needs a name.`);
+      if (name && names.has(name.toLowerCase())) errors.push(`Duplicate component name: ${name}.`);
+      names.add(name.toLowerCase());
+      if (Number(c.weight || 0) <= 0) errors.push(`${name || `Component ${i + 1}`} needs a positive weighting.`);
+      if (Number(c.fullMark || 0) <= 0) errors.push(`${name || `Component ${i + 1}`} needs a positive full mark.`);
+    });
+    const total = round(state.components.reduce((s, c) => s + Number(c.weight || 0), 0));
+    if (Math.abs(total - 100) > 0.01) errors.push(`Assessment total is ${total}%. It must be 100%.`);
+    return errors;
+  }
+  function validateStudentRows(rows, header) {
+    const normalized = header.map(h => String(h || "").trim());
+    const hasStudentNo = normalized.some(h => ["Student No.", "Student ID", "Student Number"].includes(h));
+    const hasName = normalized.some(h => ["Name in English", "Name"].includes(h));
+    const dataRows = rows.filter(r => r.some(v => String(v || "").trim()));
+    const errors = [];
+    if (!hasStudentNo) errors.push("CSV must include Student No., Student ID, or Student Number.");
+    if (!hasName) errors.push("CSV must include Name in English or Name.");
+    if (!dataRows.length) errors.push("CSV does not contain any student rows.");
+    return errors;
+  }
+  function validateScoresForConfirm() {
+    const errors = [];
+    if (!state.students.length) errors.push("Import students before confirming scores.");
+    state.students.forEach(stu => {
+      const missing = state.components.filter(c => String(stu.scores?.[c.name] ?? "").trim() === "").map(c => c.name);
+      if (missing.length) errors.push(`${stu.studentNo || stu.name || "A student"} is missing scores for: ${missing.join(", ")}.`);
+      const ov = calcOverall(stu);
+      if (!Number.isFinite(ov)) errors.push(`${stu.studentNo || stu.name || "A student"} does not have a valid overall score.`);
+    });
+    return errors;
+  }
 
   /* ─── Subject workspace ─── */
   function defaultComponentsForSubject(subject) {
@@ -1353,7 +1463,10 @@
       subject: { ...state.subject },
       components: deepClone(state.components),
       students: deepClone(state.students),
-      locked: !!state.subjectLocked
+      locked: !!state.subjectLocked,
+      workflowStep: Number(state.workflowStep || 1),
+      studentsConfirmed: !!state.studentsConfirmed,
+      scoresConfirmed: !!state.scoresConfirmed
     };
   }
 
@@ -1366,10 +1479,16 @@
       state.components = Array.isArray(rec.components) ? deepClone(rec.components) : defaultComponentsForSubject(state.subject);
       state.students   = Array.isArray(rec.students)   ? deepClone(rec.students)   : [];
       state.subjectLocked = !!rec.locked;
+      state.workflowStep = Number(rec.workflowStep || 1);
+      state.studentsConfirmed = !!rec.studentsConfirmed;
+      state.scoresConfirmed = !!rec.scoresConfirmed;
     } else {
       state.components = defaultComponentsForSubject(state.subject);
       state.students   = [];
       state.subjectLocked = false;
+      state.workflowStep = 1;
+      state.studentsConfirmed = false;
+      state.scoresConfirmed = false;
       saveCurrentSubjectWorkspace();
     }
     state.students = normalizeStudentsForComponents(state.students, state.components);
@@ -1403,6 +1522,9 @@
       state.filter       = saved.filter || "";
       state.subjectLocked = !!saved.subjectLocked;
       state.savedAt      = saved.savedAt || "";
+      state.workflowStep = Number(saved.workflowStep || 1);
+      state.studentsConfirmed = !!saved.studentsConfirmed;
+      state.scoresConfirmed = !!saved.scoresConfirmed;
     } catch {}
   }
 
@@ -1474,6 +1596,8 @@
           });
         }
         state.students = normalizeStudentsForComponents(state.students, state.components);
+        state.studentsConfirmed = false;
+        state.scoresConfirmed = false;
         renderComponents();
         syncSummary();
         renderTable();
@@ -1486,6 +1610,8 @@
         const removedName = removed?.[0]?.name;
         if (removedName) state.students.forEach(stu => { if (stu.scores) delete stu.scores[removedName]; });
         state.students = normalizeStudentsForComponents(state.students, state.components);
+        state.studentsConfirmed = false;
+        state.scoresConfirmed = false;
         renderComponents(); syncSummary(); renderTable(); scheduleAutoSave();
       });
     });
@@ -1629,6 +1755,7 @@
         const i    = Number(e.target.dataset.si);
         const comp = e.target.dataset.comp;
         state.students[i].scores[comp] = e.target.value;
+        state.scoresConfirmed = false;
         const cfg  = state.components.find(c => c.name === comp);
         const raw  = Number(e.target.value);
         const full = Number(cfg?.fullMark || 0);
@@ -1638,6 +1765,7 @@
         }
         syncSummary();
         renderTable();
+        applyWorkflowState();
         scheduleAutoSave();
         /* restore focus after re-render */
         if (focusedDataset?.si === String(i) && focusedDataset?.comp === comp) {
@@ -1649,6 +1777,8 @@
     $("scoreTable").tBodies[0].querySelectorAll("[data-gi]").forEach(n => {
       n.addEventListener("change", e => {
         state.students[Number(e.target.dataset.gi)].lecturerGrade = e.target.value;
+        state.scoresConfirmed = false;
+        applyWorkflowState();
         scheduleAutoSave();
       });
     });
@@ -1658,7 +1788,8 @@
         const suggestion = higherGrade(suggestGrade(calcOverall(state.students[i])));
         if (!suggestion) { toast("Set assessment total to 100% first."); return; }
         state.students[i].lecturerGrade = suggestion;
-        renderTable(); scheduleAutoSave();
+        state.scoresConfirmed = false;
+        renderTable(); applyWorkflowState(); scheduleAutoSave();
       });
     });
   }
@@ -1692,7 +1823,8 @@
       stu.lecturerGrade = s;
       updated++;
     });
-    renderTable(); scheduleAutoSave();
+    state.scoresConfirmed = false;
+    renderTable(); applyWorkflowState(); scheduleAutoSave();
     toast(`Applied suggested grades for ${updated} student${updated !== 1 ? "s" : ""}.`);
   }
 
@@ -1816,7 +1948,10 @@
       });
       hit++;
     });
-    if (hit > 0) { syncSummary(); renderTable(); scheduleAutoSave(); }
+    if (hit > 0) {
+      state.scoresConfirmed = false;
+      syncSummary(); renderTable(); applyWorkflowState(); scheduleAutoSave();
+    }
     if (notify) {
       if (hit > 0) toast(`Applied AI scores for ${hit} student${hit !== 1 ? "s" : ""}.`);
       else toast("No matching students/scores found in AI result.");
@@ -1973,6 +2108,7 @@ Reply conversationally, then include a machine-readable JSON at the end:
     renderTable();
     renderStatus();
     setLockedState(state.subjectLocked);
+    applyWorkflowState();
   }
 
   /* ─── Event binding ─── */
@@ -1997,14 +2133,34 @@ Reply conversationally, then include a machine-readable JSON at the end:
         state.subject.code   = $("subjectCode").value.trim();
         state.subject.title  = $("subjectTitle").value.trim();
         state.subject.credit = Number($("subjectCredit").value) || 0;
+        state.studentsConfirmed = false;
+        state.scoresConfirmed = false;
         renderTable(); scheduleAutoSave();
       });
+    });
+
+    $("confirmSetupBtn").addEventListener("click", () => {
+      const problems = validateSubjectSetup();
+      if (problems.length) {
+        openAlertModal("Subject Setup Incomplete",
+          `<p>Please fix the following before continuing:</p><ul>${problems.map(p => `<li>${esc(p)}</li>`).join("")}</ul>`);
+        return;
+      }
+      state.workflowStep = 2;
+      state.studentsConfirmed = false;
+      state.scoresConfirmed = false;
+      saveLocal({ showToast: false });
+      renderAll();
+      jumpToSection("students");
+      toast("Subject setup confirmed. Import students next.");
     });
 
     /* Add component */
     $("addCompBtn").addEventListener("click", () => {
       state.components.push({ name: "New Component", weight: 0, scheme: "Absolute Score", fullMark: 100 });
       state.students = normalizeStudentsForComponents(state.students, state.components);
+      state.studentsConfirmed = false;
+      state.scoresConfirmed = false;
       renderComponents(); syncSummary(); renderTable(); scheduleAutoSave();
     });
 
@@ -2015,6 +2171,16 @@ Reply conversationally, then include a machine-readable JSON at the end:
       const txt  = await f.text();
       const rows = parseCsv(txt);
       const header = rows.shift() || [];
+      const fileProblems = validateStudentRows(rows, header);
+      if (fileProblems.length) {
+        state.students = [];
+        state.studentsConfirmed = false;
+        state.scoresConfirmed = false;
+        syncSummary(); renderTable(); applyWorkflowState(); scheduleAutoSave();
+        openAlertModal("Student File Format Problem",
+          `<p>Please upload the eAcademic SUBREG CSV with the required columns.</p><ul>${fileProblems.map(p => `<li>${esc(p)}</li>`).join("")}</ul>`);
+        return;
+      }
       state.students = rows.filter(r => r.length).map((r, i) => {
         const obj = Object.fromEntries(header.map((k, j) => [k, r[j] || ""]));
         const scores = {};
@@ -2029,15 +2195,24 @@ Reply conversationally, then include a machine-readable JSON at the end:
           scores, lecturerGrade: ""
         };
       });
-      syncSummary(); renderTable(); scheduleAutoSave();
-      toast(`Imported ${state.students.length} student${state.students.length !== 1 ? "s" : ""}.`);
+      state.studentsConfirmed = false;
+      state.scoresConfirmed = false;
+      state.workflowStep = 3;
+      state.studentsConfirmed = true;
+      saveLocal({ showToast: false });
+      renderAll();
+      jumpToSection("scores");
+      toast(`Imported ${state.students.length} student${state.students.length !== 1 ? "s" : ""}. Enter scores manually or use the AI helper.`);
     });
 
     /* Clear students */
     $("clearStudentsBtn").addEventListener("click", () => {
       if (!confirm("Remove all students and their scores?")) return;
       state.students = [];
-      syncSummary(); renderTable(); scheduleAutoSave();
+      state.studentsConfirmed = false;
+      state.scoresConfirmed = false;
+      state.workflowStep = Math.min(Number(state.workflowStep || 1), 2);
+      syncSummary(); renderTable(); applyWorkflowState(); scheduleAutoSave();
     });
 
     /* Table filter */
@@ -2050,9 +2225,28 @@ Reply conversationally, then include a machine-readable JSON at the end:
     $("exportBtn").addEventListener("click", exportCsv);
     $("useAllSuggestedBtn").addEventListener("click", useAllSuggestedGrades);
 
+    $("confirmScoresBtn").addEventListener("click", () => {
+      const problems = validateScoresForConfirm();
+      if (problems.length) {
+        openAlertModal("Scores Need Checking",
+          `<p>Please complete the score table before final submission:</p><ul>${problems.slice(0, 20).map(p => `<li>${esc(p)}</li>`).join("")}</ul>${problems.length > 20 ? `<p>And ${problems.length - 20} more.</p>` : ""}`);
+        return;
+      }
+      state.workflowStep = 4;
+      state.scoresConfirmed = true;
+      saveLocal({ showToast: false });
+      renderAll();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      toast("Scores confirmed. Enter lecturer name and staff number, then submit.");
+    });
+
     /* Submit */
     $("submitBtn").addEventListener("click", () => {
       if (state.subjectLocked) { toast("This subject is already submitted and locked."); return; }
+      if (Number(state.workflowStep || 1) < 4 || !state.scoresConfirmed) {
+        openAlertModal("Workflow Incomplete", "<p>Please confirm subject setup, student import, and scores before submitting.</p>");
+        return;
+      }
       state.lecturerName = $("lecturerName").value.trim();
       state.staffNumber  = $("staffNumber").value.trim();
       $("lecturerName").classList.remove("invalid");
@@ -2202,6 +2396,7 @@ Reply conversationally, then include a machine-readable JSON at the end:
     bind();
     renderAll();
     updateAiProviderUi();
+    if (!state.subjectLocked) setTimeout(() => showTutorialStep(0), 450);
   }
 
   try { init(); }
