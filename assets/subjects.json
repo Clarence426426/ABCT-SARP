@@ -1,0 +1,1782 @@
+{
+  "sourceWorkbook": "New SARP form_ABCT5102 2025.xlsx",
+  "subjects": [
+    {
+      "code": "ABCT1000",
+      "title": "FRESHMAN SEMINAR",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT1001",
+      "title": "QUANTITATIVE SKILLS FOR CHEMICAL AND LIFE SCIENCES",
+      "credit": 3.0,
+      "ca": 0.4,
+      "exam": 0.6
+    },
+    {
+      "code": "ABCT1002",
+      "title": "FRESHMAN ORIENTATION FOR ABCT STUDENTS",
+      "credit": 1.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT1101",
+      "title": "INTRODUCTORY LIFE SCIENCE",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT1102",
+      "title": "GENERAL BIOLOGY",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT1103",
+      "title": "GENERAL LABORATORY TECHNIQUES AND SAFETY",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT1301",
+      "title": "CHEMISTRY AND MODERN LIVING",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT1303",
+      "title": "BIOTECHNOLOGY AND HUMAN HEALTH",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT1314",
+      "title": "CHEMISTRY AND SUSTAINABLE DEVELOPMENT",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT1700",
+      "title": "INTRODUCTION TO CHEMISTRY",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT1741",
+      "title": "GENERAL CHEMISTRY I",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT1742",
+      "title": "GENERAL CHEMISTRY II",
+      "credit": 3.0,
+      "ca": 0.3,
+      "exam": 0.7
+    },
+    {
+      "code": "ABCT1D01",
+      "title": "CHEMISTRY AND MODERN LIVING",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT1D03",
+      "title": "BIOTECHNOLOGY AND HUMAN HEALTH",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT1D04",
+      "title": "INTRODUCTORY LIFE SCIENCE",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT1D05",
+      "title": "CHINESE MEDICINE: MYTH OR TREASURE?",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT1D06",
+      "title": "NUTRITION AND HEALTHY LIVING",
+      "credit": 3.0,
+      "ca": 0.7,
+      "exam": 0.3
+    },
+    {
+      "code": "ABCT1D07",
+      "title": "THE ENVIRONMENTAL IMPACT OF THE DIETARY CULTURE IN CHINA",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT1D08",
+      "title": "FOOD SAFETY: FROM FARM TO FORK",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT1D09",
+      "title": "GREEN HOUSE GASES AND LIFE",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT1D10",
+      "title": "FOOD COLOR, TASTE AND SMELL",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT1D11D",
+      "title": "LIFE WITHOUT FOSSIL FUEL",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT1D12",
+      "title": "SCIENCE BEHIND CRIME SCENE INVESTIGATION (CSI)",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT1D13",
+      "title": "INTRODUCTION TO CANCER - CAUSE, TREATMENT AND PREVENTION",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT1D14",
+      "title": "CHEMISTRY AND SUSTAINABLE DEVELOPMENT",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT1D15",
+      "title": "OUR ENDANGERED EARTH",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT1D16",
+      "title": "INTRODUCTION TO VACCINES - HISTORY, DEVELOPMENT AND IMPACT",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT1D17",
+      "title": "FUNCTIONAL FOODS AND COSMETICS",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT1D18",
+      "title": "MODERN DAY MATERIAL SCIENCES",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT1D19",
+      "title": "FUN FACTS OF SCIENTIFIC DISCOVERIES",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT1D20",
+      "title": "SCIENCE OF HAPPINESS",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT1Q01",
+      "title": "ESSENTIAL COMPONENTS OF GENERAL EDUCATION",
+      "credit": 0.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT1Q11",
+      "title": "ESSENTIAL COMPONENTS OF GENERAL EDUCATION",
+      "credit": 0.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT2001",
+      "title": "LAB TECHNIQUES IN BIOLOGICAL SCIENCES",
+      "credit": 1.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT2022",
+      "title": "ANALYTICAL CHEMISTRY",
+      "credit": 4.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT2031",
+      "title": "INTRODUCTORY HUMAN PHYSIOLOGY",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT2101",
+      "title": "BIOCHEMISTRY",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT2102",
+      "title": "MOLECULAR BIOLOGY",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT2103",
+      "title": "CELL BIOLOGY",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT2133",
+      "title": "HUMAN PHYSIOLOGY",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT2134",
+      "title": "MICROBIOLOGY",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT2312",
+      "title": "INTRODUCTORY CELL BIOLOGY AND BIOCHEMISTRY",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT2326",
+      "title": "HUMAN PHYSIOLOGY",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT2328",
+      "title": "ADVANCED PHYSIOLOGY",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT2329",
+      "title": "SYSTEMIC PHYSIOLOGY",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT2330",
+      "title": "PHARMACOLOGY IN REHABILITATION",
+      "credit": 1.0,
+      "ca": 0.0,
+      "exam": 1.0
+    },
+    {
+      "code": "ABCT2331",
+      "title": "HUMAN BIOLOGY FOR BIOMEDICAL ENGINEERING I",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT2332",
+      "title": "HUMAN BIOLOGY FOR BIOMEDICAL ENGINEERING II",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT2333",
+      "title": "HUMAN PHYSIOLOGY",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT2334",
+      "title": "HUMAN PATHOPHYSIOLOGY",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT2416",
+      "title": "INTRODUCTION TO FOOD SCIENCE",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT2422",
+      "title": "ANALYTICAL CHEMISTRY",
+      "credit": 4.0,
+      "ca": 0.35,
+      "exam": 0.65
+    },
+    {
+      "code": "ABCT2423",
+      "title": "ORGANIC CHEMISTRY",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT2432",
+      "title": "RAW FOOD MATERIALS",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT2701",
+      "title": "ANALYTICAL CHEMISTRY I",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT2702",
+      "title": "PHYSICAL CHEMISTRY I",
+      "credit": 2.0,
+      "ca": 0.4,
+      "exam": 0.6
+    },
+    {
+      "code": "ABCT2704",
+      "title": "CHEMISTRY LABORATORY I",
+      "credit": 2.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT2705",
+      "title": "CHEMISTRY LABORATORY II",
+      "credit": 2.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT2706",
+      "title": "INORGANIC CHEMISTRY I",
+      "credit": 3.0,
+      "ca": 0.3,
+      "exam": 0.7
+    },
+    {
+      "code": "ABCT2712",
+      "title": "PHYSICAL CHEMISTRY I",
+      "credit": 3.0,
+      "ca": 0.4,
+      "exam": 0.6
+    },
+    {
+      "code": "ABCT2741",
+      "title": "ANALYTICAL CHEMISTRY I",
+      "credit": 2.0,
+      "ca": 0.3,
+      "exam": 0.7
+    },
+    {
+      "code": "ABCT2742",
+      "title": "ORGANIC CHEMISTRY I",
+      "credit": 3.0,
+      "ca": 0.4,
+      "exam": 0.6
+    },
+    {
+      "code": "ABCT2772",
+      "title": "INTRODUCTORY PHYSICAL CHEMISTRY",
+      "credit": 2.0,
+      "ca": 0.4,
+      "exam": 0.6
+    },
+    {
+      "code": "ABCT2774",
+      "title": "CHEMISTRY LABORATORY I",
+      "credit": 1.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT2775",
+      "title": "CHEMISTRY LABORATORY II",
+      "credit": 1.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT2776",
+      "title": "INORGANIC CHEMISTRY I",
+      "credit": 2.0,
+      "ca": 0.3,
+      "exam": 0.7
+    },
+    {
+      "code": "ABCT2S01",
+      "title": "EDUCATING RURAL FARMERS ON HEALTHIER FOOD PRODUCTION",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT2S02",
+      "title": "SERVICE-LEARNING IN NUTRITION AND HEALTHY DIET",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT3002",
+      "title": "FOOD CHEMISTRY",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT3003",
+      "title": "ELEMENTS OF FOOD ENGINEERING",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT3005",
+      "title": "FOOD MICROBIOLOGY",
+      "credit": 4.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT3008",
+      "title": "SENSORY EVALUATION OF FOOD",
+      "credit": 2.0,
+      "ca": 0.7,
+      "exam": 0.3
+    },
+    {
+      "code": "ABCT3009",
+      "title": "FOOD TOXICOLOGY",
+      "credit": 2.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT3010",
+      "title": "FOOD LAWS & REGULATIONS",
+      "credit": 2.0,
+      "ca": 0.7,
+      "exam": 0.3
+    },
+    {
+      "code": "ABCT3011",
+      "title": "PRINCIPLES OF NUTRITION",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT3012",
+      "title": "RAW FOOD MATERIALS & SAFETY INSPECTION",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT3013",
+      "title": "FOOD PROCESSING I",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT3014",
+      "title": "FOOD PROCESSING I LABORATORY",
+      "credit": 1.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT3015",
+      "title": "FOOD ANALYSIS",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT3101",
+      "title": "IMMUNOLOGY",
+      "credit": 3.0,
+      "ca": 0.65,
+      "exam": 0.35
+    },
+    {
+      "code": "ABCT3102",
+      "title": "COMMERCIALIZATION OF BIOTECHNOLOGY PRODUCTS",
+      "credit": 2.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT3103",
+      "title": "ENVIRONMENTAL SCIENCE",
+      "credit": 3.0,
+      "ca": 0.6,
+      "exam": 0.4
+    },
+    {
+      "code": "ABCT3104",
+      "title": "COMMERCIALIZATION OF BIOTECHNOLOGY PRODUCTS",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT3108",
+      "title": "CHEMICAL PATHOLOGY",
+      "credit": 3.0,
+      "ca": 0.6,
+      "exam": 0.4
+    },
+    {
+      "code": "ABCT3109",
+      "title": "HAEMATOLOGY AND TRANSFUSION SCIENCE",
+      "credit": 3.0,
+      "ca": 0.6,
+      "exam": 0.4
+    },
+    {
+      "code": "ABCT3110",
+      "title": "ANATOMICAL PATHOLOGY",
+      "credit": 3.0,
+      "ca": 0.6,
+      "exam": 0.4
+    },
+    {
+      "code": "ABCT3111",
+      "title": "MICROBIOLOGY IN PATHOLOGY LABORATORY",
+      "credit": 3.0,
+      "ca": 0.6,
+      "exam": 0.4
+    },
+    {
+      "code": "ABCT3112",
+      "title": "DNA TECHNOLOGY",
+      "credit": 3.0,
+      "ca": 0.6,
+      "exam": 0.4
+    },
+    {
+      "code": "ABCT3113",
+      "title": "BIOCHEMICAL TECHNIQUES",
+      "credit": 4.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT3116",
+      "title": "EXPERIMENTAL APPROACH IN MOLECULAR BIOLOGY AND BIOCHEMISTRY",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT3260",
+      "title": "APPLIED CHEMISTRY LABORATORY",
+      "credit": 2.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT3273",
+      "title": "APPLIED CHEMISTRY - POLYMER",
+      "credit": 3.0,
+      "ca": 0.4,
+      "exam": 0.6
+    },
+    {
+      "code": "ABCT3276",
+      "title": "APPLIED CHEMISTRY-ENVIRONMENTAL CHEMISTRY",
+      "credit": 3.0,
+      "ca": 0.4,
+      "exam": 0.6
+    },
+    {
+      "code": "ABCT3391",
+      "title": "ECOLOGY AND ECOSYSTEM",
+      "credit": 3.0,
+      "ca": 0.6,
+      "exam": 0.4
+    },
+    {
+      "code": "ABCT3402",
+      "title": "FOOD CHEMISTRY",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT3403",
+      "title": "ELEMENTS OF FOOD ENGINEERING",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT3405",
+      "title": "FOOD MICROBIOLOGY",
+      "credit": 4.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT3408",
+      "title": "SENSORY EVALUATION OF FOOD",
+      "credit": 2.0,
+      "ca": 0.7,
+      "exam": 0.3
+    },
+    {
+      "code": "ABCT3409",
+      "title": "FOOD TOXICOLOGY",
+      "credit": 2.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT3410",
+      "title": "FOOD LAWS & REGULATIONS",
+      "credit": 2.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT3411",
+      "title": "PRINCIPLES OF NUTRITION",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT3413",
+      "title": "FOOD PROCESSING I",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT3415",
+      "title": "FOOD ANALYSIS",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT3417",
+      "title": "LIFE CYCLE NUTRITION",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT3418",
+      "title": "FOOD ENGINEERING AND PROCESSING I",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT3419",
+      "title": "FOOD ENGINEERING AND PROCESSING I LABORATORY",
+      "credit": 1.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT3621",
+      "title": "CHEMICAL PRINCIPLES FOR TESTING AND ANALYSIS",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT3622",
+      "title": "EXPERIMENTAL TECHNIQUES IN CHEMISTRY",
+      "credit": 1.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT3623",
+      "title": "ANALYTICAL SPECTROSCOPY",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT3624",
+      "title": "CHROMATOGRAPHIC ANALYSIS",
+      "credit": 3.0,
+      "ca": 0.3,
+      "exam": 0.7
+    },
+    {
+      "code": "ABCT3625",
+      "title": "CHROMATOGRAPHIC ANALYSIS LABORATORY",
+      "credit": 1.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT3631",
+      "title": "METROLOGY AND CALIBRATION",
+      "credit": 3.0,
+      "ca": 0.7,
+      "exam": 0.3
+    },
+    {
+      "code": "ABCT3641",
+      "title": "MICROBIOLOGY AND TOXICOLOGY",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT3642",
+      "title": "MICROBIOLOGICAL TECHNIQUES",
+      "credit": 2.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT3707",
+      "title": "ORGANIC CHEMISTRY II LABORATORY",
+      "credit": 2.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT3708",
+      "title": "INTERMEDIATE PHYSICAL CHEMISTRY",
+      "credit": 3.0,
+      "ca": 0.4,
+      "exam": 0.6
+    },
+    {
+      "code": "ABCT3709",
+      "title": "ANALYTICAL CHEMISTRY II LABORATORY",
+      "credit": 2.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT3712",
+      "title": "PHYSICAL CHEMISTRY II",
+      "credit": 3.0,
+      "ca": 0.4,
+      "exam": 0.6
+    },
+    {
+      "code": "ABCT3741",
+      "title": "ANALYTICAL CHEMISTRY II",
+      "credit": 3.0,
+      "ca": 0.6,
+      "exam": 0.4
+    },
+    {
+      "code": "ABCT3742",
+      "title": "ORGANIC CHEMISTRY II",
+      "credit": 3.0,
+      "ca": 0.6,
+      "exam": 0.4
+    },
+    {
+      "code": "ABCT3747",
+      "title": "INTRODUCTION TO CHEMICAL & BIOPROCESS TECHNOLOGY",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT3757",
+      "title": "ORGANIC CHEMISTRY II LABORATORY",
+      "credit": 1.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT3759",
+      "title": "ANALYTICAL CHEMISTRY II LABORATORY",
+      "credit": 1.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT3774",
+      "title": "FOOD CHEMISTRY",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT3778",
+      "title": "INTERMEDIATE PHYSICAL CHEMISTRY",
+      "credit": 2.0,
+      "ca": 0.4,
+      "exam": 0.6
+    },
+    {
+      "code": "ABCT3779",
+      "title": "INORGANIC CHEMISTRY II",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT3780",
+      "title": "INORGANIC CHEMISTRY II LABORATORY",
+      "credit": 2.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT4002",
+      "title": "ADVANCED ANALYTICAL TECHNIQUES FOR FOOD HAZARDS",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT4003",
+      "title": "WATER & WASTE MANAGEMENT",
+      "credit": 2.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT4008",
+      "title": "PROJECT",
+      "credit": 4.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT4009",
+      "title": "FOOD BIOTECHNOLOGY",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT4010",
+      "title": "HEALTH FOODS & NUTRACEUTICALS",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT4011",
+      "title": "PRINCIPLES OF EPIDEMIOLOGY & RISK CONTROL",
+      "credit": 2.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT4013",
+      "title": "FOOD PROCESSING II",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT4014",
+      "title": "FOOD PROCESSING II LABORATORY",
+      "credit": 1.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT4015",
+      "title": "SANITATION AND FOOD HYGIENE MANAGEMENT",
+      "credit": 3.0,
+      "ca": 0.7,
+      "exam": 0.3
+    },
+    {
+      "code": "ABCT4016",
+      "title": "QUALITY & FOOD SAFETY MANAGEMENT",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT4101",
+      "title": "ADVANCED MOLECULAR BIOLOGY",
+      "credit": 3.0,
+      "ca": 0.6,
+      "exam": 0.4
+    },
+    {
+      "code": "ABCT4102",
+      "title": "IMMUNOTECHNOLOGY",
+      "credit": 3.0,
+      "ca": 0.55,
+      "exam": 0.45
+    },
+    {
+      "code": "ABCT4103",
+      "title": "PROTEIN BIOTECHNOLOGY",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT4104",
+      "title": "RECENT DEVELOPMENTS IN MEDICAL BIOTECHNOLOGY",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT4105",
+      "title": "METABOLISM AND DISEASES",
+      "credit": 3.0,
+      "ca": 0.6,
+      "exam": 0.4
+    },
+    {
+      "code": "ABCT4106",
+      "title": "PHARMACOLOGY OF DRUG THERAPY",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT4108",
+      "title": "MOLECULAR DIAGNOSTICS IN PATHOLOGY SPECIALTIES",
+      "credit": 3.0,
+      "ca": 0.6,
+      "exam": 0.4
+    },
+    {
+      "code": "ABCT4110",
+      "title": "MICROBIAL BIOTECHNOLOGY",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT4111",
+      "title": "PROJECT",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT4112",
+      "title": "RESEARCH PROJECT",
+      "credit": 6.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT4113",
+      "title": "PROJECT",
+      "credit": 6.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT4115",
+      "title": "BIOINFORMATICS",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT4117",
+      "title": "ADVANCED ANATOMICAL PATHOLOGY",
+      "credit": 3.0,
+      "ca": 0.6,
+      "exam": 0.4
+    },
+    {
+      "code": "ABCT4200",
+      "title": "LABORATORY ATTACHMENT (CLINICAL AND PUBLIC HEALTH)",
+      "credit": 0.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT4402",
+      "title": "ADVANCED ANALYTICAL TECHNIQUES FOR FOOD HAZARDS",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT4403",
+      "title": "WATER AND WASTE MANAGEMENT",
+      "credit": 2.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT4409",
+      "title": "FOOD BIOTECHNOLOGY",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT4410",
+      "title": "HEALTH FOOD AND NUTRACEUTICALS",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT4411",
+      "title": "PRINCIPLES OF EPIDEMIOLOGY & RISK CONTROL",
+      "credit": 2.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT4413",
+      "title": "FOOD PROCESSING II",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT4414",
+      "title": "FOOD PROCESSING LABORATORY",
+      "credit": 1.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT4415",
+      "title": "SANITATION AND FOOD HYGIENE MANAGEMENT",
+      "credit": 2.0,
+      "ca": 0.7,
+      "exam": 0.3
+    },
+    {
+      "code": "ABCT4416",
+      "title": "QUALITY & FOOD SAFETY MANAGEMENT",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT4417",
+      "title": "PROJECT",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT4418",
+      "title": "RESEARCH PROJECT",
+      "credit": 6.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT4631",
+      "title": "TEST METHOD AND MEASUREMENT UNCERTAINTY",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT4632",
+      "title": "INSPECTION AND CERTIFICATION",
+      "credit": 3.0,
+      "ca": 0.6,
+      "exam": 0.4
+    },
+    {
+      "code": "ABCT4633",
+      "title": "QUALITY MANAGEMENT AND LABORATORY ACCREDITATION",
+      "credit": 3.0,
+      "ca": 0.6,
+      "exam": 0.4
+    },
+    {
+      "code": "ABCT465",
+      "title": "ECONOMIC ANALYSIS FOR PROCESS TECHNOLOGY",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT4651",
+      "title": "ENVIRONMENTAL, MEDICINAL, FOOD AND OTHER COMMODITIES TESTING",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT4652",
+      "title": "CAPSTONE PROJECT",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT4708",
+      "title": "PRINCIPLES OF QUALITY ASSURANCE",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT4709",
+      "title": "PROJECT",
+      "credit": 6.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT4712",
+      "title": "PHYSICAL CHEMISTRY III",
+      "credit": 2.0,
+      "ca": 0.6,
+      "exam": 0.4
+    },
+    {
+      "code": "ABCT4713",
+      "title": "PHYSICAL CHEMISTRY LABORATORY",
+      "credit": 1.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT4740",
+      "title": "POLYMER CHEMISTRY AND NANOTECHNOLOGY",
+      "credit": 3.0,
+      "ca": 0.4,
+      "exam": 0.6
+    },
+    {
+      "code": "ABCT4741",
+      "title": "INDUSTRIAL ELECTROCHEMISTRY",
+      "credit": 3.0,
+      "ca": 0.3,
+      "exam": 0.7
+    },
+    {
+      "code": "ABCT4743",
+      "title": "ADVANCED ANALYTICAL TECHNIQUES",
+      "credit": 3.0,
+      "ca": 0.6,
+      "exam": 0.4
+    },
+    {
+      "code": "ABCT4745",
+      "title": "ORGANOMETALLIC CHEMISTRY & CATALYSIS",
+      "credit": 3.0,
+      "ca": 0.3,
+      "exam": 0.7
+    },
+    {
+      "code": "ABCT4747",
+      "title": "FOOD PROCESSING TECHNOLOGY",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT4757",
+      "title": "POLLUTION CONTROL AND ENVIRONMENTAL ANALYSIS",
+      "credit": 3.0,
+      "ca": 0.4,
+      "exam": 0.6
+    },
+    {
+      "code": "ABCT4758",
+      "title": "ADVANCED ANALYTICAL TECHNIQUES LABORATORY",
+      "credit": 1.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT4759",
+      "title": "ORGANOMETALLIC CHEMISTRY & CATALYSIS LABORATORY",
+      "credit": 1.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT4760",
+      "title": "INDUSTRIAL ELECTROCHEMISTRY LABORATORY",
+      "credit": 1.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT4762",
+      "title": "MEDICINAL CHEMISTRY",
+      "credit": 3.0,
+      "ca": 0.6,
+      "exam": 0.4
+    },
+    {
+      "code": "ABCT4763",
+      "title": "POLYMER LABORATORY",
+      "credit": 1.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT4765",
+      "title": "ECONOMIC ANALYSIS FOR PROCESS TECHNOLOGY",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT4769",
+      "title": "PROJECT",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT4770",
+      "title": "RESEARCH PROJECT",
+      "credit": 6.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT4772",
+      "title": "ADVANCED PHYSICAL CHEMISTRY",
+      "credit": 2.0,
+      "ca": 0.6,
+      "exam": 0.4
+    },
+    {
+      "code": "ABCT4773",
+      "title": "ADVANCED PHYSICAL CHEMISTRY LABORATORY",
+      "credit": 1.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT4774",
+      "title": "POLLUTION CONTROL AND ENVIRONMENTAL ANALYSIS LABORATORY",
+      "credit": 1.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT4777",
+      "title": "CHEMICAL & BIOPROCESS TECHNOLOGY",
+      "credit": 3.0,
+      "ca": 0.4,
+      "exam": 0.6
+    },
+    {
+      "code": "ABCT4778",
+      "title": "CHEMICAL & BIOPROCESS TECHNOLOGY LABORATORY",
+      "credit": 2.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT4779",
+      "title": "NATURAL PRODUCTS CHEMISTRY",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT5011",
+      "title": "FOOD SAFETY RISK ANALYSIS",
+      "credit": 6.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT5012",
+      "title": "GLOBAL FOOD SAFETY MANAGEMENT",
+      "credit": 6.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT5013",
+      "title": "FOOD SAFETY IN ACTION",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT5014",
+      "title": "INTERNATIONAL FOOD STANDARDS, LAWS AND REGULATIONS",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT5015",
+      "title": "FOODBORNE CHEMICAL AND MICROBIAL HAZARDS: CASE STUDIES",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT5016",
+      "title": "GLOBAL FOOD SECURITY",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT5017",
+      "title": "CAPSTONE PROJECT",
+      "credit": 6.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT5021",
+      "title": "FOOD PREPARATION AND MENU PLANNING",
+      "credit": 3.0,
+      "ca": 0.6,
+      "exam": 0.4
+    },
+    {
+      "code": "ABCT5022",
+      "title": "NUTRITIONAL ASSESSMENT",
+      "credit": 3.0,
+      "ca": 0.6,
+      "exam": 0.4
+    },
+    {
+      "code": "ABCT5023",
+      "title": "PUBLIC HEALTH NUTRITION",
+      "credit": 3.0,
+      "ca": 0.6,
+      "exam": 0.4
+    },
+    {
+      "code": "ABCT5024",
+      "title": "NUTRITION AND HEALTH FOR OLDER ADULTS",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT5025",
+      "title": "NUTRITION EDUCATION AND COUNSELLING",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT5026",
+      "title": "PRACTICUM I",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT5027",
+      "title": "PRACTICUM II",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT5028",
+      "title": "CAPSTONE PROJECT",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT5029",
+      "title": "ADVANCED HUMAN PHYSIOLOGY AND ANATOMY",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT5031",
+      "title": "ECOLOGICAL APPROACHES FOR CARBON MANAGEMENT",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT5032",
+      "title": "MATERIALS SCIENCE FOR CARBON NEUTRALITY APPLICATIONS",
+      "credit": 3.0,
+      "ca": 0.4,
+      "exam": 0.6
+    },
+    {
+      "code": "ABCT5033",
+      "title": "RENEWABLE ENERGIES AND TECHNOLOGIES I: HYDROGEN AND BIOFUELS",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT5034",
+      "title": "QUALITY ASSURANCE FOR GREENHOUSE GASES (GHGS): STATEMENTS AND MANAGEMENT PRINCIPLES FOR METHODOLOGIES ON CLIMATE ACTIONS",
+      "credit": 3.0,
+      "ca": 0.7,
+      "exam": 0.3
+    },
+    {
+      "code": "ABCT5035",
+      "title": "QUANTITATION AND REPORTING OF GREENHOUSE GASES (GHGS) AND CARBON FOOTPRINT (CFP)",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT5037",
+      "title": "GREEN CHEMISTRY FOR SUSTAINABLE PRODUCTS DEVELOPMENT",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT5038",
+      "title": "EXPERT SEMINARS / SPECIAL TOPICS IN SUSTAINABLE SCIENCE AND TECHNOLOGY",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT5039",
+      "title": "PROJECT",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT5040",
+      "title": "RESEARCH PROJECT",
+      "credit": 6.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT5041",
+      "title": "SUSTAINABLE CHEMISTRY FOR CIRCULAR ECONOMY",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT5101",
+      "title": "MODERN APPROACHES IN BIOPHARMACEUTICAL DEVELOPMENT",
+      "credit": 3.0,
+      "ca": 0.45,
+      "exam": 0.55
+    },
+    {
+      "code": "ABCT5102",
+      "title": "PHARMACOLOGY AND TOXICOLOGY IN BIOTHERAPEUTICS",
+      "credit": 3.0,
+      "ca": 0.55,
+      "exam": 0.45
+    },
+    {
+      "code": "ABCT5103",
+      "title": "INTELLECTUAL PROPERTY STRATEGY FOR BIOTECH ENTREPRENEURSHIP",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT5104",
+      "title": "REGULATORY SCIENCE FOR BIOTECH PRODUCTS",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT5105",
+      "title": "ETHICS AND MANAGEMENT IN LIFE SCIENCES",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT5106",
+      "title": "TECHNOLOGY PLATFORMS IN DRUG DISCOVERY",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT5107",
+      "title": "ADVANCED THERAPEUTIC PRODUCTS",
+      "credit": 3.0,
+      "ca": 0.55,
+      "exam": 0.45
+    },
+    {
+      "code": "ABCT5108",
+      "title": "INVESTMENT FINANCING AND RISK MANAGEMENT IN BIOBUSINESS",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT5109",
+      "title": "ENTREPRENEURSHIP - FROM LAB TO LAUNCH",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT5110",
+      "title": "INDUSTRIAL ATTACHMENT",
+      "credit": 6.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT5111",
+      "title": "INDUSTRIAL PRACTICUM",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT5301",
+      "title": "HUMAN PHYSIOLOGY",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT518",
+      "title": "ANALYTICAL BIOCHEMISTRY",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT520",
+      "title": "ADVANCED CHEMICAL INSTRUMENTATION FOR RESEARCH",
+      "credit": 3.0,
+      "ca": 0.3,
+      "exam": 0.7
+    },
+    {
+      "code": "ABCT521",
+      "title": "NATURAL PRODUCT CHEMISTRY",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT5R07",
+      "title": "ACADEMIC INTEGRITY AND ETHICS IN SCIENCE",
+      "credit": 1.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT5T01",
+      "title": "ACADEMIC INTEGRITY AND ETHICS IN SCIENCE",
+      "credit": 1.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT601",
+      "title": "RESEARCH SEMINAR IN BIOLOGY",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT602",
+      "title": "RESEARCH SEMINAR IN CHEMISTRY",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT604A",
+      "title": "ATTENDANCE IN RESEARCH SEMINARS/WORKSHOPS/CONFERENCES I",
+      "credit": 1.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT604B",
+      "title": "ATTENDANCE IN RESEARCH SEMINARS/WORKSHOPS/CONFERENCES II",
+      "credit": 1.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT604C",
+      "title": "ATTENDANCE IN RESEARCH SEMINARS/WORKSHOPS/CONFERENCES III",
+      "credit": 1.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT604D",
+      "title": "ATTENDANCE IN RESEARCH SEMINARS/WORKSHOPS/CONFERENCES IV",
+      "credit": 1.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT605",
+      "title": "PRACTICUM I",
+      "credit": 1.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT606",
+      "title": "PRACTICUM II",
+      "credit": 1.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT610",
+      "title": "FRONTIER CATALYSIS: AN APPROACH TOWARDS CUTTING-EDGE SUSTAINABLE CHEMISTRY",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT611",
+      "title": "ANALYTICAL BIOCHEMISTRY",
+      "credit": 3.0,
+      "ca": 0.5,
+      "exam": 0.5
+    },
+    {
+      "code": "ABCT612",
+      "title": "ADVANCED CHEMICAL INSTRUMENTATION FOR RESEARCH",
+      "credit": 3.0,
+      "ca": 0.3,
+      "exam": 0.7
+    },
+    {
+      "code": "ABCT613",
+      "title": "ADVANCED INTERDISCIPLINARY RESEARCH IN BIOLOGICAL AND CHEMICAL SCIENCES",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT6805",
+      "title": "GUIDED STUDY ON FRONTIER RESEARCH TOPICS IN CHEMISTRY",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT6806",
+      "title": "GUIDED STUDY ON FRONTIER RESEARCH TOPICS IN BIOLOGY",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    },
+    {
+      "code": "ABCT6807",
+      "title": "GUIDED STUDY ON FRONTIER RESEARCH TOPICS IN CHEMICAL TECHNOLOGY",
+      "credit": 3.0,
+      "ca": 1.0,
+      "exam": 0.0
+    }
+  ],
+  "sarpTemplateSubject": "ABCT5102",
+  "sarpTemplateComponents": [
+    {
+      "name": "Midterm",
+      "weight": 25.0,
+      "scheme": "Absolute Score",
+      "fullMark": 25.0
+    },
+    {
+      "name": "Writen Assignment",
+      "weight": 20.0,
+      "scheme": "Absolute Score",
+      "fullMark": 100.0
+    },
+    {
+      "name": "In Class",
+      "weight": 10.0,
+      "scheme": "Absolute Score",
+      "fullMark": 10.0
+    },
+    {
+      "name": "Final exma",
+      "weight": 45.0,
+      "scheme": "Absolute Score",
+      "fullMark": 100.0
+    }
+  ]
+}

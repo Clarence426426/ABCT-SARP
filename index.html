@@ -1,0 +1,2211 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ABCT SARP Form - PolyU</title>
+  <style>
+    :root {
+      --bg: #f5f5f7;
+      --ink: #1d1d1f;
+      --muted: #6e6e73;
+      --line: rgba(60,60,67,.16);
+      --paper: rgba(255,255,255,.86);
+      --soft: rgba(242,242,247,.78);
+      --brand: #007aff;
+      --brand-hover: #0066d6;
+      --brand-light: rgba(0,122,255,.10);
+      --accent: #007aff;
+      --accent-hover: #0066d6;
+      --accent-light: rgba(0,122,255,.10);
+      --ok: #248a3d;
+      --ok-bg: rgba(52,199,89,.14);
+      --warn: #d70015;
+      --warn-bg: rgba(255,59,48,.12);
+      --amber: #b26a00;
+      --amber-bg: rgba(255,204,0,.16);
+      --shadow-sm: 0 1px 2px rgba(0,0,0,.04), 0 8px 24px rgba(0,0,0,.04);
+      --shadow: 0 12px 36px rgba(0,0,0,.08);
+      --shadow-lg: 0 24px 70px rgba(0,0,0,.18);
+      --radius: 18px;
+      --radius-sm: 12px;
+      --sidebar-w: 268px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", system-ui, sans-serif;
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 18% 0%, rgba(0,122,255,.09), transparent 28%),
+        radial-gradient(circle at 92% 8%, rgba(175,82,222,.08), transparent 30%),
+        linear-gradient(180deg, #fbfbfd 0, var(--bg) 360px),
+        var(--bg);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    /* ─── Layout ─── */
+    .app-shell {
+      display: grid;
+      grid-template-columns: var(--sidebar-w) minmax(0, 1fr);
+      min-height: 100vh;
+    }
+
+    /* ─── Sidebar ─── */
+    .sidebar {
+      background: rgba(246,246,248,.72);
+      color: var(--ink);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding: 22px 16px 24px;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      border-right: 1px solid var(--line);
+      backdrop-filter: saturate(180%) blur(24px);
+      -webkit-backdrop-filter: saturate(180%) blur(24px);
+    }
+    .sidebar-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 2px 8px 18px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 10px;
+    }
+    .brand-logo {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 1px 2px rgba(0,0,0,.06);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .brand-logo img { width: 100%; height: 100%; object-fit: contain; padding: 3px; }
+    .brand-text strong {
+      display: block;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui, sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -.01em;
+    }
+    .brand-text span { display: block; font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+    .sidebar-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--muted);
+      padding: 8px 10px 5px;
+      margin-top: 4px;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 11px;
+      border-radius: 12px;
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      font: inherit;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      width: 100%;
+      text-align: left;
+      transition: background .12s, color .12s;
+    }
+    .nav-item:hover { background: rgba(0,0,0,.04); color: var(--ink); }
+    .nav-item.active {
+      background: rgba(0,122,255,.12);
+      color: var(--brand);
+      box-shadow: none;
+    }
+    .nav-item.active .nav-badge { background: var(--brand); color: #fff; }
+    .nav-badge {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(60,60,67,.10);
+      display: grid;
+      place-items: center;
+      font-size: 11px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .sidebar-divider {
+      height: 1px;
+      background: rgba(255,255,255,.07);
+      margin: 8px 0;
+    }
+
+    .nav-utility {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 10px;
+      border-radius: 8px;
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      font: inherit;
+      font-size: 13px;
+      cursor: pointer;
+      width: 100%;
+      text-align: left;
+      transition: background .12s, color .12s;
+    }
+    .nav-utility:hover { background: rgba(0,0,0,.04); color: var(--ink); }
+    .nav-utility svg { flex-shrink: 0; }
+
+    .status-card {
+      margin-top: auto;
+      padding: 12px;
+      border-radius: 8px;
+      background: rgba(255,255,255,.58);
+      border: 1px solid var(--line);
+    }
+    .status-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--amber);
+      flex-shrink: 0;
+    }
+    .status-dot.ok { background: #22c55e; }
+    .status-label { font-size: 12px; font-weight: 700; color: var(--ink); }
+    .status-sub { font-size: 11px; color: var(--muted); margin-top: 3px; padding-left: 16px; }
+
+    /* ─── Main ─── */
+    main {
+      padding: 32px 38px;
+      min-width: 0;
+      max-width: 1500px;
+    }
+
+    /* ─── Topbar ─── */
+    .topbar {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar-title { flex: 1; min-width: 0; }
+    .topbar-title .lead {
+      margin-top: 8px;
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    h1, h2, h3 {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui, sans-serif;
+      color: var(--ink);
+      letter-spacing: -.025em;
+    }
+    h1 { font-size: 34px; font-weight: 760; line-height: 1.12; margin: 0; }
+    h2 { font-size: 19px; font-weight: 720; line-height: 1.25; margin: 0; }
+    h3 { font-size: 15px; font-weight: 700; margin: 0; }
+    p { margin: 0; }
+
+    .topbar-actions {
+      display: flex;
+      align-items: flex-end;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .lecturer-fields {
+      display: grid;
+      grid-template-columns: 160px 140px;
+      gap: 10px;
+    }
+
+    /* ─── Buttons ─── */
+    button, .btn { font: inherit; border-radius: var(--radius-sm); cursor: pointer; border: 0; }
+    .btn-primary {
+      background: var(--brand);
+      color: #fff;
+      font-weight: 700;
+      padding: 9px 16px;
+      min-height: 38px;
+      transition: background .12s, transform .08s;
+    }
+    .btn-primary:hover { background: var(--brand-hover); }
+    .btn-primary:active { transform: scale(.98); }
+    .btn-primary:disabled { opacity: .5; cursor: not-allowed; }
+    .btn-secondary {
+      background: rgba(255,255,255,.72);
+      color: var(--ink);
+      font-weight: 600;
+      padding: 9px 14px;
+      min-height: 38px;
+      border: 1px solid var(--line);
+      transition: background .12s, border-color .12s;
+    }
+    .btn-secondary:hover { background: rgba(0,122,255,.08); border-color: rgba(0,122,255,.26); }
+    .btn-danger {
+      background: var(--warn-bg);
+      color: var(--warn);
+      font-weight: 600;
+      padding: 9px 14px;
+      min-height: 38px;
+      transition: background .12s;
+    }
+    .btn-danger:hover { background: #fecaca; }
+    .btn-sm {
+      padding: 5px 10px;
+      min-height: 30px;
+      font-size: 12px;
+    }
+    .btn-ghost {
+      background: transparent;
+      color: var(--brand);
+      font-weight: 600;
+      padding: 9px 12px;
+      min-height: 38px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+    }
+    .btn-ghost:hover { background: var(--brand-light); }
+    .btn-icon {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ─── Form controls ─── */
+    label {
+      display: grid;
+      gap: 5px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .045em;
+    }
+    input, textarea, select {
+      font: inherit;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: rgba(255,255,255,.76);
+      color: var(--ink);
+      padding: 8px 10px;
+      width: 100%;
+      min-height: 38px;
+      transition: border-color .12s, box-shadow .12s;
+      font-size: 13px;
+    }
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: var(--brand);
+      box-shadow: 0 0 0 3px rgba(35,57,93,.12);
+    }
+    input.invalid, select.invalid {
+      border-color: var(--warn) !important;
+      box-shadow: 0 0 0 3px rgba(185,28,28,.1) !important;
+    }
+    textarea { resize: vertical; line-height: 1.5; }
+    select { cursor: pointer; }
+
+    /* ─── Panel ─── */
+    .panel {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 18px;
+      overflow: hidden;
+      backdrop-filter: saturate(160%) blur(18px);
+      -webkit-backdrop-filter: saturate(160%) blur(18px);
+    }
+    .panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 15px 20px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.52);
+    }
+    .panel-header-left { display: flex; align-items: center; gap: 10px; }
+    .panel-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 11px;
+      background: var(--brand-light);
+      display: grid;
+      place-items: center;
+      color: var(--brand);
+      flex-shrink: 0;
+    }
+    .panel-title { }
+    .panel-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--muted);
+    }
+    .panel-body { padding: 20px; }
+    .panel-footer {
+      padding: 12px 20px;
+      border-top: 1px solid var(--line);
+      background: var(--soft);
+    }
+    .section-divider {
+      border: 0;
+      border-top: 1px solid var(--line);
+      margin: 20px 0;
+    }
+    .panel-sub-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    /* ─── Form grid ─── */
+    .form-grid-4 {
+      display: grid;
+      grid-template-columns: 1.5fr 0.7fr 1fr 0.6fr;
+      gap: 14px;
+    }
+
+    /* ─── Components ─── */
+    .component-list { display: grid; gap: 8px; }
+    .component-row {
+      display: grid;
+      grid-template-columns: 1.6fr 0.55fr 0.65fr 0.9fr auto;
+      gap: 10px;
+      align-items: end;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: rgba(255,255,255,.58);
+      transition: border-color .12s;
+    }
+    .component-row:hover { border-color: #cbd5e1; }
+    .weight-badge {
+      margin-top: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 700;
+      background: var(--soft);
+      color: var(--muted);
+      border: 1px solid var(--line);
+    }
+    .weight-badge.ok { background: var(--ok-bg); color: var(--ok); border-color: #b8ddcb; }
+    .weight-badge.bad { background: var(--warn-bg); color: var(--warn); border-color: #e5b5ad; }
+
+    /* ─── Dropzone ─── */
+    .dropzone {
+      border: 1px dashed #b7c1ce;
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      background: rgba(255,255,255,.50);
+      transition: border-color .12s, background .12s;
+    }
+    .dropzone:hover { border-color: var(--brand); background: var(--brand-light); }
+    .dropzone-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      background: var(--brand-light);
+      display: grid;
+      place-items: center;
+      color: var(--brand);
+      flex-shrink: 0;
+    }
+    .dropzone-text strong { display: block; font-size: 14px; color: var(--ink); margin-bottom: 3px; }
+    .dropzone-text span { font-size: 12px; color: var(--muted); }
+    .dropzone input[type="file"] { max-width: 280px; min-height: 36px; font-size: 12px; }
+
+    /* ─── Stats strip ─── */
+    .stats-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .stat-card {
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+    }
+    .stat-value {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui, sans-serif;
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--brand);
+    }
+    .stat-label { font-size: 12px; font-weight: 600; color: var(--muted); margin-top: 4px; }
+
+    /* ─── Score table ─── */
+    .table-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .table-filter { max-width: 220px; }
+    .table-wrap {
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      max-height: 62vh;
+    }
+    table { width: 100%; border-collapse: collapse; min-width: 1100px; }
+    thead th {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      background: rgba(242,242,247,.96);
+      color: #344054;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      white-space: nowrap;
+    }
+    thead th button {
+      border: 0;
+      background: transparent;
+      color: inherit;
+      font: inherit;
+      font-weight: 700;
+      text-transform: inherit;
+      letter-spacing: inherit;
+      padding: 0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    thead th button:hover { color: var(--brand); }
+    tbody tr { border-bottom: 1px solid var(--line); }
+    tbody tr:last-child { border-bottom: 0; }
+    tbody tr:nth-child(even) { background: rgba(249,249,251,.72); }
+    tbody tr:hover { background: rgba(0,122,255,.06); }
+    tbody td {
+      padding: 8px 12px;
+      vertical-align: middle;
+      white-space: nowrap;
+      font-size: 13px;
+    }
+    td input, td select {
+      min-width: 88px;
+      padding: 6px 8px;
+      font-size: 12px;
+      min-height: 34px;
+    }
+    td input:focus, td select:focus {
+      z-index: 1;
+      position: relative;
+    }
+    .score-over { border-color: var(--warn) !important; background: var(--warn-bg) !important; }
+    .student-name { font-weight: 700; color: var(--ink); }
+    .muted { color: var(--muted); font-size: 11px; }
+    .grade-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 48px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      background: var(--brand-light);
+      color: var(--brand);
+      border: 1px solid #ccd7e6;
+    }
+    .use-btn { white-space: nowrap; }
+
+    /* ─── AI section ─── */
+    .ai-layout {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 16px;
+    }
+    .ai-card {
+      display: grid;
+      gap: 14px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: rgba(255,255,255,.58);
+    }
+    .ai-output {
+      font-family: "Cascadia Code", "Fira Code", "Consolas", monospace;
+      font-size: 12px;
+      min-height: 180px;
+      max-height: 320px;
+      overflow: auto;
+      background: rgba(28,28,30,.96);
+      color: #f5f5f7;
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      white-space: pre-wrap;
+      line-height: 1.6;
+    }
+    .provider-hint {
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.5;
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 8px 10px;
+    }
+    .file-list-note {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    /* ─── Toast ─── */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 9999;
+      background: rgba(28,28,30,.94);
+      color: #f1f5f9;
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-lg);
+      font-size: 13px;
+      font-weight: 500;
+      max-width: 380px;
+      transform: translateY(calc(100% + 24px));
+      transition: transform .2s cubic-bezier(.16,1,.3,1), opacity .2s;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .toast.show { transform: translateY(0); opacity: 1; }
+
+    /* ─── Modal ─── */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15,23,42,.6);
+      backdrop-filter: blur(2px);
+      display: grid;
+      place-items: center;
+      z-index: 1000;
+      padding: 16px;
+    }
+    .modal-backdrop[hidden] { display: none; }
+    .modal {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      width: min(480px, 100%);
+      overflow: hidden;
+    }
+    .modal-header {
+      padding: 20px 20px 0;
+    }
+    .modal-header h3 { font-size: 18px; font-weight: 700; }
+    .modal-body {
+      padding: 12px 20px 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 13px;
+    }
+    .modal-body p { margin-bottom: 8px; }
+    .modal-body ul { margin: 8px 0 0 0; padding-left: 18px; }
+    .modal-body li { margin-bottom: 4px; }
+    .modal-footer {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      padding: 20px;
+    }
+    .modal-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      display: grid;
+      place-items: center;
+      margin-bottom: 14px;
+    }
+    .modal-icon.warn { background: var(--warn-bg); color: var(--warn); }
+    .modal-icon.info { background: var(--brand-light); color: var(--brand); }
+
+    /* ─── Tutorial popover ─── */
+    .tutorial-pop {
+      position: fixed;
+      z-index: 1200;
+      width: min(360px, calc(100vw - 24px));
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      padding: 16px;
+    }
+    .tutorial-pop[hidden] { display: none; }
+    .tutorial-pop h4 {
+      margin: 0 0 6px;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui, sans-serif;
+      font-size: 16px;
+      letter-spacing: -.015em;
+    }
+    .tutorial-pop p { font-size: 13px; color: var(--muted); line-height: 1.55; margin: 0; }
+    .tutorial-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .tutorial-arrow {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: var(--paper);
+      border-left: 1px solid var(--line);
+      border-top: 1px solid var(--line);
+      transform: rotate(45deg);
+      top: -7px;
+      left: 20px;
+    }
+    .tutorial-pop.above .tutorial-arrow { top: auto; bottom: -7px; transform: rotate(225deg); }
+    .tutorial-pop.below .tutorial-arrow { top: -7px; transform: rotate(45deg); }
+    .tutorial-target {
+      outline: 2.5px solid var(--brand) !important;
+      outline-offset: 3px;
+      border-radius: var(--radius-sm);
+      position: relative;
+      z-index: 1100;
+    }
+    .tutorial-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 1050;
+      background: rgba(15,23,42,.35);
+    }
+    .tutorial-backdrop[hidden] { display: none; }
+
+    /* ─── Misc ─── */
+    .submit-meta-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .link { color: var(--brand); font-weight: 600; text-decoration: none; font-size: 13px; }
+    .link:hover { text-decoration: underline; }
+    .unlock-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      background: var(--amber-bg);
+      border: 1px solid #fde68a;
+      border-radius: var(--radius-sm);
+      margin-bottom: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #92400e;
+    }
+    .unlock-bar[hidden] { display: none; }
+    .actions-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 960px) {
+      :root { --sidebar-w: 1fr; }
+      .app-shell { grid-template-columns: 1fr; }
+      .sidebar { position: static; height: auto; padding: 16px; flex-direction: row; flex-wrap: wrap; gap: 8px; }
+      .sidebar-brand { border-bottom: 0; margin-bottom: 0; padding-bottom: 4px; }
+      .sidebar-label, .sidebar-divider, .status-card { display: none; }
+      main { padding: 20px; }
+      .topbar { flex-direction: column; }
+      .topbar-actions { flex-direction: column; align-items: flex-start; width: 100%; }
+      .lecturer-fields { grid-template-columns: 1fr 1fr; }
+      .form-grid-4 { grid-template-columns: 1fr 1fr; }
+      .component-row { grid-template-columns: 1fr 1fr; }
+      .stats-strip { grid-template-columns: 1fr; }
+      .ai-layout { grid-template-columns: 1fr; }
+      .submit-meta-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 580px) {
+      h1 { font-size: 25px; }
+      .lecturer-fields { grid-template-columns: 1fr; }
+      .form-grid-4 { grid-template-columns: 1fr; }
+      .stats-strip { grid-template-columns: 1fr; }
+      .panel-header { align-items: flex-start; flex-direction: column; }
+      .topbar-actions { gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="app-shell">
+
+  <!-- ─── Sidebar ─── -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <a class="brand-logo" href="https://www.polyu.edu.hk/abct/" target="_blank" rel="noreferrer" title="ABCT Department">
+        <img src="https://static.cdnlogo.com/logos/h/5/hong-kong-polytechnic-university.svg" alt="HKPolyU">
+      </a>
+      <div class="brand-text">
+        <strong>ABCT SARP Form</strong>
+        <span>Semester 2 - 2025/26</span>
+      </div>
+    </div>
+
+    <div class="sidebar-label">Workflow</div>
+
+    <button class="nav-item active" data-jump="setup">
+      <span class="nav-badge">1</span>
+      Subject Setup
+    </button>
+    <button class="nav-item" data-jump="students">
+      <span class="nav-badge">2</span>
+      Student Import
+    </button>
+    <button class="nav-item" data-jump="scores">
+      <span class="nav-badge">3</span>
+      Score Entry
+    </button>
+    <button class="nav-item" data-jump="ai">
+      <span class="nav-badge">4</span>
+      AI Helper
+    </button>
+
+    <div class="sidebar-divider"></div>
+
+    <button class="nav-utility" id="tutorialBtn" type="button">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      Tutorial
+    </button>
+
+    <div class="status-card">
+      <div class="status-row">
+        <div class="status-dot" id="statusDot"></div>
+        <span class="status-label" id="statusLabel">Draft</span>
+      </div>
+      <div class="status-sub" id="statusSub">Not yet saved</div>
+    </div>
+  </aside>
+
+  <!-- ─── Main ─── -->
+  <main>
+
+    <!-- Topbar -->
+    <div class="topbar">
+      <div class="topbar-title">
+        <p class="eyebrow">Department Score Workflow</p>
+        <h1>ABCT SARP Form</h1>
+        <p class="lead">Academic assessment record preparation for subject teams and departmental review.</p>
+      </div>
+      <div class="topbar-actions">
+        <div class="lecturer-fields">
+          <label>Lecturer Name
+            <input id="lecturerName" placeholder="Enter your name" autocomplete="name">
+          </label>
+          <label>Staff Number
+            <input id="staffNumber" placeholder="e.g. 12345678">
+          </label>
+        </div>
+        <button class="btn-primary btn-icon" id="submitBtn" type="button">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M22 2 11 13"/><path d="m22 2-7 20-4-9-9-4 20-7z"/></svg>
+          Submit Final
+        </button>
+      </div>
+    </div>
+
+    <!-- Unlock bar (shown when locked) -->
+    <div class="unlock-bar" id="unlockBar" hidden>
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>
+      This subject is submitted and locked.
+      <button class="btn-secondary btn-sm" id="unlockBtn" type="button">Unlock</button>
+    </div>
+
+    <!-- ── 1. Subject Setup ── -->
+    <section class="panel" id="setup">
+      <div class="panel-header">
+        <div class="panel-header-left">
+          <div class="panel-icon">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          </div>
+          <div>
+            <p class="panel-eyebrow">Step 1</p>
+            <h2>Subject Setup</h2>
+          </div>
+        </div>
+        <div class="actions-row">
+          <button class="btn-secondary btn-sm btn-icon" id="loadSubjectsBtn" type="button">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            Load subjects.json
+          </button>
+          <a class="link" href="https://www.polyu.edu.hk/abct/study/undergraduate-programmes/list-of-all-subjects_ug/" target="_blank" rel="noreferrer">Official list ↗</a>
+        </div>
+      </div>
+      <div class="panel-body">
+        <div class="form-grid-4">
+          <label>Subject
+            <select id="subjectSelect"></select>
+          </label>
+          <label>Code
+            <input id="subjectCode" placeholder="ABCT1234">
+          </label>
+          <label>Title
+            <input id="subjectTitle" placeholder="Subject title">
+          </label>
+          <label>Credits
+            <input id="subjectCredit" type="number" min="0" step=".5" placeholder="3">
+          </label>
+        </div>
+
+        <hr class="section-divider">
+
+        <div class="panel-sub-header">
+          <div>
+            <p class="eyebrow" style="margin-bottom:2px">Assessment</p>
+            <h3>Components &amp; Weightings</h3>
+          </div>
+          <button class="btn-secondary btn-sm btn-icon" id="addCompBtn" type="button">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add component
+          </button>
+        </div>
+
+        <div class="component-list" id="compList"></div>
+        <div class="weight-badge" id="weightInfo"></div>
+      </div>
+    </section>
+
+    <!-- ── 2. Student Import ── -->
+    <section class="panel" id="students">
+      <div class="panel-header">
+        <div class="panel-header-left">
+          <div class="panel-icon">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <p class="panel-eyebrow">Step 2</p>
+            <h2>Student Import</h2>
+          </div>
+        </div>
+        <button class="btn-danger btn-sm btn-icon" id="clearStudentsBtn" type="button">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>
+          Clear students
+        </button>
+      </div>
+      <div class="panel-body">
+        <div class="dropzone">
+          <div class="dropzone-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          </div>
+          <div class="dropzone-text">
+            <strong>Upload class roster CSV</strong>
+            <span>From eAcademic SUBREG export — expects columns: Student No., Name in English, Primary PS, Programme Title, Student Status</span>
+            <div style="margin-top:10px">
+              <input id="studentFile" type="file" accept=".csv,text/csv">
+            </div>
+          </div>
+        </div>
+
+        <div class="stats-strip">
+          <div class="stat-card">
+            <div class="stat-value" id="sCount">0</div>
+            <div class="stat-label">Total students</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="aCount">0</div>
+            <div class="stat-label">Active students</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="fCount">0</div>
+            <div class="stat-label">With scores</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 3. Score Entry ── -->
+    <section class="panel" id="scores">
+      <div class="panel-header">
+        <div class="panel-header-left">
+          <div class="panel-icon">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>
+          </div>
+          <div>
+            <p class="panel-eyebrow">Step 3</p>
+            <h2>Score Entry</h2>
+          </div>
+        </div>
+        <div class="table-controls">
+          <input class="table-filter" id="tableFilter" placeholder="Filter students...">
+          <button class="btn-secondary btn-sm btn-icon" id="useAllSuggestedBtn" type="button">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Use all suggested
+          </button>
+          <button class="btn-secondary btn-sm btn-icon" id="exportBtn" type="button">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Export CSV
+          </button>
+        </div>
+      </div>
+      <div class="panel-body" style="padding:0">
+        <div class="table-wrap">
+          <table id="scoreTable">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 4. AI Helper ── -->
+    <section class="panel" id="ai">
+      <div class="panel-header">
+        <div class="panel-header-left">
+          <div class="panel-icon">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 8v4l3 3"/><path d="M18 2l4 4-4 4"/><path d="M22 2l-4 4"/></svg>
+          </div>
+          <div>
+            <p class="panel-eyebrow">Step 4</p>
+            <h2>AI Score Helper</h2>
+          </div>
+        </div>
+      </div>
+      <div class="panel-body">
+        <div class="ai-layout">
+          <!-- Config card -->
+          <div class="ai-card">
+            <label>Provider
+              <select id="aiProvider">
+                <option value="poe" selected>Poe API</option>
+                <option value="gemini">Google Gemini</option>
+                <option value="openai">OpenAI</option>
+              </select>
+            </label>
+            <label>API Key
+              <input id="apiKey" type="password" placeholder="pkey-..." autocomplete="off">
+            </label>
+            <label>Model
+              <input id="aiModel" value="DeepSeek-V3.1">
+            </label>
+            <div class="provider-hint" id="aiProviderHint"></div>
+          </div>
+
+          <!-- Prompt card -->
+          <div class="ai-card">
+            <label>Prompt
+              <textarea id="aiPrompt" rows="5" placeholder="e.g. Analyse the uploaded score sheet and fill Midterm scores into the student table."></textarea>
+            </label>
+            <label>Attach documents
+              <input id="aiFile" type="file" multiple accept=".pdf,.xlsx,.xls,.docx,.doc,.txt,.csv,.json,.md">
+            </label>
+            <p class="file-list-note" id="aiFileList">Accepted: PDF, Excel, Word, TXT, CSV, JSON, MD</p>
+            <button class="btn-primary btn-icon" id="askAiBtn" type="button">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M22 2 11 13"/><path d="m22 2-7 20-4-9-9-4 20-7z"/></svg>
+              Send to AI
+            </button>
+            <pre class="ai-output" id="aiOut">AI response will appear here...</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- Submit confirmation modal -->
+<div class="modal-backdrop" id="submitModal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="submitModalTitle">
+    <div class="modal-header">
+      <div class="modal-icon warn">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      </div>
+      <h3 id="submitModalTitle">Confirm Final Submission</h3>
+    </div>
+    <div class="modal-body">
+      <p>Once submitted, this record will be <strong>locked</strong> and cannot be changed without manually unlocking it.</p>
+      <p>Are you sure you want to proceed?</p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-secondary" id="confirmSubmitNo" type="button">Cancel</button>
+      <button class="btn-primary" id="confirmSubmitYes" type="button">Yes, Submit</button>
+    </div>
+  </div>
+</div>
+
+<!-- Alert modal -->
+<div class="modal-backdrop" id="alertModal" hidden>
+  <div class="modal" role="alertdialog" aria-modal="true" aria-labelledby="alertModalTitle">
+    <div class="modal-header">
+      <div class="modal-icon warn">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      </div>
+      <h3 id="alertModalTitle">Alert</h3>
+    </div>
+    <div class="modal-body" id="alertModalBody"></div>
+    <div class="modal-footer">
+      <button class="btn-primary" id="alertModalOk" type="button">OK</button>
+    </div>
+  </div>
+</div>
+
+<!-- Tutorial -->
+<div class="tutorial-backdrop" id="tutorialBackdrop" hidden></div>
+<div class="tutorial-pop" id="tutorialPop" hidden>
+  <div class="tutorial-arrow"></div>
+  <h4 id="tutorialTitle"></h4>
+  <p id="tutorialText"></p>
+  <div class="tutorial-footer">
+    <span class="muted" id="tutorialIndex"></span>
+    <div class="actions-row">
+      <button class="btn-secondary btn-sm" id="tutorialSkip" type="button">Skip</button>
+      <button class="btn-primary btn-sm" id="tutorialNext" type="button">Next</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  /* ─── Constants ─── */
+  const SUBJECTS = [
+    ["ABCT1000","Freshman Seminar"],["ABCT1001","Quantitative Skills for Chemical and Life Sciences"],["ABCT1002","Freshman Orientation for ABCT students"],
+    ["ABCT1101","Introductory Life Science"],["ABCT1102","General Biology"],["ABCT1103","General Laboratory Techniques and Safety"],
+    ["ABCT1700","Introduction to Chemistry"],["ABCT1741","General Chemistry I"],["ABCT1742","General Chemistry II"],
+    ["ABCT1D01","Chemistry and Modern Living"],["ABCT1D03","Biotechnology and Human Health"],["ABCT1D04","Introductory Life Science"],
+    ["ABCT1D09","Green House Gases and Life"],["ABCT1D11D","Life without Fossil Fuel"],["ABCT1D12","Science behind Crime Scene Investigation (CSI)"],
+    ["ABCT1D13","Introduction to cancer - cause, treatment and prevention"],["ABCT1D14","Chemistry and Sustainable Development"],["ABCT1D15","Our Endangered Earth"],
+    ["ABCT1D16","Introduction to vaccines -history, development and impact"],["ABCT1D18","Modern Day Material Sciences"],["ABCT1D19","Fun Facts of Scientific Discoveries"],
+    ["ABCT1D20","Science of Happiness"],["ABCT2001","Lab Techniques in Biological Sciences"],["ABCT2101","Biochemistry"],["ABCT2102","Molecular Biology"],
+    ["ABCT2103","Cell Biology"],["ABCT2133","Human Physiology"],["ABCT2134","Microbiology"],["ABCT2312","Introduction Cell Biology and Biochemistry"],
+    ["ABCT2326","Human Physiology"],["ABCT2328","Advanced Physiology"],["ABCT2329","Systemic Physiology"],["ABCT2330","Pharmacology In Rehabilitation"],
+    ["ABCT2331","Human Biology for Biomedical Engineering I"],["ABCT2332","Human Biology for Biomedical Engineering II"],["ABCT2422","Analytical Chemistry"],
+    ["ABCT2423","Organic Chemistry"],["ABCT2701","Analytical Chemistry I"],["ABCT2702","Physical Chemistry I"],["ABCT2704","Chemistry Laboratory I"],
+    ["ABCT2705","Chemistry Laboratory II"],["ABCT2706","Inorganic Chemistry I"],["ABCT2712","Physical Chemistry I"],["ABCT2742","Organic Chemistry I"],
+    ["ABCT2772","Introductory Physical Chemistry"],["ABCT2774","Chemistry Laboratory I"],["ABCT2S01","Educating Rural Farmers on Healthier Food Production"],
+    ["ABCT3101","Immunology"],["ABCT3102","Commercialization of Biotechnology Products"],["ABCT3103","Environmental Science"],
+    ["ABCT3104","Commercialization of Biotechnology Products"],["ABCT3108","Chemical Pathology"],["ABCT3109","Haematology and Transfusion Science"],
+    ["ABCT3110","Anatomical Pathology"],["ABCT3112","DNA Technology"],["ABCT3113","Biochemical Techniques"],["ABCT3116","Experimental Approach in Molecular Biology and Biochemistry"],
+    ["ABCT3260","Applied Chemistry Laboratory"],["ABCT3273","Applied Chemistry - Polymer"],["ABCT3276","Applied Chemistry - Environmental Chemistry"],
+    ["ABCT3391","Ecology and Ecosystem"],["ABCT3621","Chemical Principles for Testing and Analysis"],["ABCT3622","Experimental Techniques in Chemistry"],
+    ["ABCT3623","Analytical Spectroscopy"],["ABCT3624","Chromatographic Analysis"],["ABCT3625","Chromatographic Analysis Laboratory"],["ABCT3626","Biomolecules"],
+    ["ABCT3631","Metrology and Calibration"],["ABCT3641","Microbiology and Toxicology"],["ABCT3642","Microbiological Techniques"],["ABCT3707","Organic Chemistry II Laboratory"],
+    ["ABCT3708","Intermediate Physical Chemistry"],["ABCT3709","Analytical Chemistry II Laboratory"],["ABCT3712","Physical Chemistry II"],["ABCT3741","Analytical Chemistry II"],
+    ["ABCT3742","Organic Chemistry II"],["ABCT3747","Introduction to Chemical and Bioprocess Technology"],["ABCT3759","Analytical Chemistry II Laboratory"],
+    ["ABCT3779","Inorganic Chemistry II"],["ABCT3780","Inorganic Chemistry II Laboratory"],["ABCT4000","Project"],["ABCT4100","Research Project"],
+    ["ABCT4101","Advanced Molecular Biology"],["ABCT4102","Immunotechnology"],["ABCT4103","Protein Biotechnology"],["ABCT4104","Recent Developments in Medical Biotechnology"],
+    ["ABCT4105","Metabolism and Diseases"],["ABCT4106","Pharmacology of Drug Therapy"],["ABCT4110","Microbial Biotechnology"],["ABCT4111","Project"],
+    ["ABCT4112","Research Project"],["ABCT4113","Project"],["ABCT4115","Bioinformatics"],["ABCT4117","Advanced Anatomical Pathology"],
+    ["ABCT4403","Water & Waste Management"],["ABCT4631","Test Method, Measurement and Uncertainty"],["ABCT4632","Inspection and Certification"],
+    ["ABCT4633","Quality Management and Laboratory Accreditation"],["ABCT4634","Environmental, Social and Governance (ESG), and Sustainability Principles for Science Students"],
+    ["ABCT4635","Laboratory Quality Management Systems and Automation for Analytical Sciences"],["ABCT4651","Environmental, Medicinal, Food and Other Commodities Testing"],
+    ["ABCT4652","Capstone Project"],["ABCT4708","Principles of Quality Assurance"],["ABCT4709","Project"],["ABCT4712","Physical Chemistry III"],
+    ["ABCT4713","Physical Chemistry Laboratory"],["ABCT4740","Polymer Chemistry and Nanotechnology"],["ABCT4741","Industrial Electrochemistry"],
+    ["ABCT4743","Advanced Analytical Techniques"],["ABCT4745","Organometallic Chemistry & Catalysis"],["ABCT4758","Advanced Analytical Techniques Laboratory"],
+    ["ABCT4759","Organometallic Chemistry & Catalysis Laboratory"],["ABCT4760","Industrial Electrochemistry Laboratory"],["ABCT4762","Medicinal Chemistry"],
+    ["ABCT4763","Polymer Laboratory"],["ABCT4765","Economic Analysis for Process Technology"],["ABCT4769","Project"],["ABCT4770","Research Project"],
+    ["ABCT4772","Advanced Physical Chemistry"],["ABCT4773","Advanced Physical Chemistry Laboratory"],["ABCT4779","Natural Products Chemistry"]
+  ];
+
+  const gradeBands = [
+    [95,"A+"], [80,"A or A+"], [75,"A- or A"], [70,"B+ or A-"], [65,"B or B+"], [60,"B- or B"],
+    [55,"C+ or B-"], [50,"C or C+"], [45,"C- or C"], [40,"D+ or C-"], [35,"D or D+"], [30,"F or D"], [0,"F"]
+  ];
+  const gradeOptions = ["A+","A","A-","B+","B","B-","C+","C","C-","D+","D","F"];
+
+  const STORAGE_KEY = "abct_sarp_v3";
+  const GOOGLE_SHEETS_WEB_APP_URL = "";
+  const defaultComponents = [
+    { name: "Midterm",            weight: 25, scheme: "Absolute Score", fullMark: 25  },
+    { name: "Written Assignment", weight: 20, scheme: "Absolute Score", fullMark: 100 },
+    { name: "In Class",           weight: 10, scheme: "Absolute Score", fullMark: 10  },
+    { name: "Final Exam",         weight: 45, scheme: "Absolute Score", fullMark: 100 }
+  ];
+
+  /* ─── State ─── */
+  const state = {
+    subjects: SUBJECTS.map(([code, title]) => ({ code, title, credit: 0, ca: 0, exam: 0 })),
+    subject: {},
+    components: deepClone(defaultComponents),
+    students: [],
+    subjectWork: {},
+    lecturerName: "",
+    staffNumber: "",
+    sort: { key: "name", dir: "asc" },
+    filter: "",
+    subjectLocked: false,
+    savedAt: ""
+  };
+
+  /* ─── Helpers ─── */
+  const $ = id => document.getElementById(id);
+  function deepClone(v) { return JSON.parse(JSON.stringify(v)); }
+  function esc(v) {
+    return String(v ?? "").replace(/[&<>"']/g, c =>
+      ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;" }[c]));
+  }
+  function round(n) { return Math.round((Number(n) + Number.EPSILON) * 100) / 100; }
+
+  let toastTimer;
+  function toast(msg) {
+    const el = $("toast");
+    el.textContent = msg;
+    el.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => el.classList.remove("show"), 2800);
+  }
+
+  /* ─── Status bar ─── */
+  function renderStatus() {
+    const dot = $("statusDot");
+    const label = $("statusLabel");
+    const sub = $("statusSub");
+    if (state.subjectLocked) {
+      dot.className = "status-dot ok";
+      label.textContent = "Submitted & Locked";
+      sub.textContent = state.subject.code || "";
+    } else if (state.savedAt) {
+      dot.className = "status-dot";
+      label.textContent = "Draft";
+      sub.textContent = `Saved ${new Date(state.savedAt).toLocaleString()}`;
+    } else {
+      dot.className = "status-dot";
+      label.textContent = "Draft";
+      sub.textContent = "Not yet saved";
+    }
+  }
+
+  /* ─── Lock / unlock ─── */
+  function setLockedState(locked) {
+    const controls = document.querySelectorAll("main input, main select, main textarea, main button");
+    controls.forEach(el => {
+      if (["confirmSubmitYes","confirmSubmitNo","subjectSelect","unlockBtn"].includes(el.id)) return;
+      el.disabled = !!locked;
+    });
+    document.body.classList.toggle("subject-locked", !!locked);
+    $("unlockBar").hidden = !locked;
+    if (locked) $("submitModal").hidden = true;
+  }
+
+  /* ─── Modals ─── */
+  function openSubmitModal() {
+    if (state.subjectLocked) return;
+    $("submitModal").hidden = false;
+  }
+  function closeSubmitModal() { $("submitModal").hidden = true; }
+
+  function openAlertModal(title, html) {
+    $("alertModalTitle").textContent = title;
+    $("alertModalBody").innerHTML = html;
+    $("alertModal").hidden = false;
+  }
+  function closeAlertModal() { $("alertModal").hidden = true; }
+
+  /* ─── Tutorial ─── */
+  let tutorialStep = -1;
+  let aiUploads = [];
+
+  const tutorialSteps = [
+    { selector: "#subjectSelect",   title: "Step 1 - Choose a Subject", text: "Select the subject you are grading from the dropdown, or load a custom subjects.json file." },
+    { selector: "#compList",        title: "Step 2 - Assessment Components", text: "Edit assessment components and their percentage weightings. The total must equal 100%." },
+    { selector: "#studentFile",     title: "Step 3 - Import Students", text: "Upload the class roster CSV exported from eAcademic (SUBREG)." },
+    { selector: "#scores",          title: "Step 4 - Enter Scores", text: "Type scores directly in the table, or use the AI Helper to extract scores from an uploaded document.", prefer: "above" },
+    { selector: ".topbar-actions",  title: "Step 5 - Submit", text: "Enter your name and staff number, then click Submit Final to lock and export the submission." }
+  ];
+
+  function clearTutorialHighlight() {
+    document.querySelectorAll(".tutorial-target").forEach(el => el.classList.remove("tutorial-target"));
+  }
+  function closeTutorial() {
+    clearTutorialHighlight();
+    $("tutorialBackdrop").hidden = true;
+    $("tutorialPop").hidden = true;
+    tutorialStep = -1;
+  }
+  function positionTutorialPopover(target, step) {
+    const pop = $("tutorialPop");
+    const rect = target.getBoundingClientRect();
+    const popH = pop.getBoundingClientRect().height;
+    const vw = window.innerWidth, vh = window.innerHeight, margin = 12;
+    const visW = Math.min(rect.right, vw) - Math.max(rect.left, 0);
+    const visH = Math.min(rect.bottom, vh) - Math.max(rect.top, 0);
+    if (visW < 24 || visH < 18 || vw < 300 || vh < 220) return false;
+    const above = rect.top - margin, below = vh - rect.bottom - margin, needed = popH + 14;
+    const prefer = step?.prefer || "";
+    let place = "below";
+    if (prefer === "above") place = above >= needed ? "above" : (below >= needed ? "below" : "fallback");
+    else if (prefer === "below") place = below >= needed ? "below" : (above >= needed ? "above" : "fallback");
+    else place = below >= needed ? "below" : (above >= needed ? "above" : "fallback");
+    let top = place === "below" ? rect.bottom + 12 : place === "above" ? rect.top - popH - 14 : vh - popH - margin;
+    let left = Math.min(Math.max(rect.left, margin), vw - pop.getBoundingClientRect().width - margin);
+    if (top < margin) top = margin;
+    if (top + popH > vh - margin) top = vh - popH - margin;
+    pop.classList.remove("above","below");
+    if (place === "above" || place === "below") pop.classList.add(place);
+    pop.style.top = `${top}px`;
+    pop.style.left = `${left}px`;
+    pop.style.maxHeight = `${Math.max(160, vh - 2*margin)}px`;
+    pop.style.overflow = "auto";
+    return true;
+  }
+  function showTutorialStep(index) {
+    if (index < 0 || index >= tutorialSteps.length) { closeTutorial(); return; }
+    tutorialStep = index;
+    const step = tutorialSteps[index];
+    const target = document.querySelector(step.selector);
+    if (!target) { closeTutorial(); return; }
+    clearTutorialHighlight();
+    target.classList.add("tutorial-target");
+    target.scrollIntoView({ behavior: "smooth", block: "center" });
+    $("tutorialTitle").textContent = step.title;
+    $("tutorialText").textContent = step.text;
+    $("tutorialIndex").textContent = `${index + 1} / ${tutorialSteps.length}`;
+    $("tutorialNext").textContent = index === tutorialSteps.length - 1 ? "Finish" : "Next";
+    $("tutorialBackdrop").hidden = false;
+    $("tutorialPop").hidden = false;
+    setTimeout(() => {
+      if (!positionTutorialPopover(target, step)) {
+        Object.assign($("tutorialPop").style, { top:"12px", left:"12px", maxHeight:"calc(100vh - 24px)", overflow:"auto" });
+      }
+    }, 120);
+  }
+
+  /* ─── Validation ─── */
+  function validateBeforeSubmit() {
+    const errors = [];
+    if (!state.lecturerName.trim()) errors.push("Lecturer name is required.");
+    if (!state.staffNumber.trim()) errors.push("Staff number is required.");
+    const total = round(state.components.reduce((s, c) => s + Number(c.weight || 0), 0));
+    if (Math.abs(total - 100) > 0.01) errors.push(`Assessment total is ${total}%. It must be 100%.`);
+    state.students.forEach(stu => {
+      state.components.forEach(c => {
+        const raw = Number(stu.scores?.[c.name]);
+        if (Number.isFinite(raw) && raw > Number(c.fullMark || 0))
+          errors.push(`Score exceeds full mark: ${stu.studentNo || stu.name} → ${c.name} (${raw} > ${c.fullMark}).`);
+      });
+    });
+    return errors;
+  }
+
+  /* ─── Subject workspace ─── */
+  function defaultComponentsForSubject(subject) {
+    const ca   = Number(subject?.ca   || 0);
+    const exam = Number(subject?.exam || 0);
+    const next = [];
+    if (ca   > 0) next.push({ name: "Continuous Assessment", weight: round(ca * 100),   scheme: "Absolute Score", fullMark: 100 });
+    if (exam > 0) next.push({ name: "Final Exam",            weight: round(exam * 100), scheme: "Absolute Score", fullMark: 100 });
+    return next.length ? next : deepClone(defaultComponents);
+  }
+
+  function normalizeStudentsForComponents(students, components) {
+    return (students || []).map((stu, i) => {
+      const scores = {};
+      (components || []).forEach(c => { scores[c.name] = stu?.scores?.[c.name] ?? ""; });
+      return { ...stu, no: i + 1, scores };
+    });
+  }
+
+  function saveCurrentSubjectWorkspace() {
+    const code = String(state.subject?.code || "").trim();
+    if (!code) return;
+    state.subjectWork[code] = {
+      subject: { ...state.subject },
+      components: deepClone(state.components),
+      students: deepClone(state.students),
+      locked: !!state.subjectLocked
+    };
+  }
+
+  function loadSubjectWorkspace(subject) {
+    const code = String(subject?.code || "").trim();
+    state.subject = { ...subject };
+    const rec = code ? state.subjectWork[code] : null;
+    if (rec) {
+      state.subject = { ...state.subject, ...(rec.subject || {}), code };
+      state.components = Array.isArray(rec.components) ? deepClone(rec.components) : defaultComponentsForSubject(state.subject);
+      state.students   = Array.isArray(rec.students)   ? deepClone(rec.students)   : [];
+      state.subjectLocked = !!rec.locked;
+    } else {
+      state.components = defaultComponentsForSubject(state.subject);
+      state.students   = [];
+      state.subjectLocked = false;
+      saveCurrentSubjectWorkspace();
+    }
+    state.students = normalizeStudentsForComponents(state.students, state.components);
+  }
+
+  /* ─── Persistence ─── */
+  let autoSaveTimer;
+  function saveLocal({ showToast = true } = {}) {
+    saveCurrentSubjectWorkspace();
+    state.savedAt = new Date().toISOString();
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch {}
+    renderStatus();
+    if (showToast) toast("Progress saved.");
+  }
+  function scheduleAutoSave() {
+    clearTimeout(autoSaveTimer);
+    autoSaveTimer = setTimeout(() => saveLocal({ showToast: false }), 400);
+  }
+  function loadLocal() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return;
+      const saved = JSON.parse(raw);
+      state.subject      = saved.subject      || state.subject;
+      state.components   = Array.isArray(saved.components) ? saved.components : state.components;
+      state.students     = Array.isArray(saved.students)   ? saved.students   : state.students;
+      state.subjectWork  = (saved.subjectWork && typeof saved.subjectWork === "object") ? saved.subjectWork : {};
+      state.lecturerName = String(saved.lecturerName || "");
+      state.staffNumber  = String(saved.staffNumber  || "");
+      state.sort         = saved.sort || state.sort;
+      state.filter       = saved.filter || "";
+      state.subjectLocked = !!saved.subjectLocked;
+      state.savedAt      = saved.savedAt || "";
+    } catch {}
+  }
+
+  /* ─── Subject selection ─── */
+  function selectSubject(subject) {
+    if (!subject) return;
+    const prevCode = String(state.subject?.code || "").trim();
+    if (prevCode && prevCode !== subject.code) saveCurrentSubjectWorkspace();
+    loadSubjectWorkspace(subject);
+    renderAll();
+    scheduleAutoSave();
+  }
+
+  /* ─── Render: Subject ─── */
+  function renderSubjectOptions() {
+    const sorted = [...state.subjects].sort((a, b) =>
+      String(a.code).localeCompare(String(b.code), undefined, { numeric: true }));
+    $("subjectSelect").innerHTML = sorted
+      .map(s => `<option value="${esc(s.code)}">${esc(`${s.code} - ${s.title}`)}</option>`)
+      .join("");
+    if (state.subject.code) $("subjectSelect").value = state.subject.code;
+  }
+  function updateSubjectInputs() {
+    $("subjectSelect").value  = state.subject.code   || "";
+    $("subjectCode").value    = state.subject.code   || "";
+    $("subjectTitle").value   = state.subject.title  || "";
+    $("subjectCredit").value  = state.subject.credit || "";
+  }
+
+  /* ─── Render: Components ─── */
+  function renderComponents() {
+    $("compList").innerHTML = state.components.map((c, i) => `
+      <div class="component-row">
+        <label>Name
+          <input data-c="${i}" data-f="name" value="${esc(c.name)}">
+        </label>
+        <label>Weight %
+          <input data-c="${i}" data-f="weight" type="number" step=".01" min="0" max="100" value="${c.weight}">
+        </label>
+        <label>Full mark
+          <input data-c="${i}" data-f="fullMark" type="number" step=".01" min="1" value="${c.fullMark}">
+        </label>
+        <label>Scheme
+          <select data-c="${i}" data-f="scheme">
+            <option ${c.scheme === "Absolute Score" ? "selected" : ""}>Absolute Score</option>
+            <option ${c.scheme === "Percentage" ? "selected" : ""}>Percentage</option>
+          </select>
+        </label>
+        <button class="btn-danger btn-sm" data-rm="${i}" type="button">Remove</button>
+      </div>
+    `).join("");
+
+    $("compList").querySelectorAll("[data-c]").forEach(n => {
+      n.addEventListener("change", e => {
+        const idx   = Number(e.target.dataset.c);
+        const field = e.target.dataset.f;
+        const oldName = state.components[idx]?.name;
+        state.components[idx][field] = ["weight","fullMark"].includes(field)
+          ? (Number(e.target.value) || 0) : e.target.value;
+        if (field === "name" && oldName && oldName !== state.components[idx].name) {
+          const newName = state.components[idx].name;
+          state.students.forEach(stu => {
+            if (!stu.scores) return;
+            if (Object.prototype.hasOwnProperty.call(stu.scores, oldName) &&
+                !Object.prototype.hasOwnProperty.call(stu.scores, newName)) {
+              stu.scores[newName] = stu.scores[oldName];
+            }
+            delete stu.scores[oldName];
+          });
+        }
+        state.students = normalizeStudentsForComponents(state.students, state.components);
+        renderComponents();
+        syncSummary();
+        renderTable();
+        scheduleAutoSave();
+      });
+    });
+    $("compList").querySelectorAll("[data-rm]").forEach(n => {
+      n.addEventListener("click", () => {
+        const removed     = state.components.splice(Number(n.dataset.rm), 1);
+        const removedName = removed?.[0]?.name;
+        if (removedName) state.students.forEach(stu => { if (stu.scores) delete stu.scores[removedName]; });
+        state.students = normalizeStudentsForComponents(state.students, state.components);
+        renderComponents(); syncSummary(); renderTable(); scheduleAutoSave();
+      });
+    });
+
+    const total = round(state.components.reduce((s, c) => s + (Number(c.weight) || 0), 0));
+    const w = $("weightInfo");
+    const ok = Math.abs(total - 100) < 0.01;
+    w.textContent = ok ? `Total weighting: ${total}%` : `Total weighting: ${total}% (must be 100%)`;
+    w.className = "weight-badge " + (ok ? "ok" : "bad");
+  }
+
+  /* ─── CSV parser ─── */
+  function parseCsv(txt) {
+    const rows = [];
+    let row = [], field = "", inQ = false;
+    for (let i = 0; i < txt.length; i++) {
+      const ch = txt[i], nx = txt[i+1];
+      if (ch === '"' && inQ && nx === '"') { field += '"'; i++; continue; }
+      if (ch === '"') { inQ = !inQ; continue; }
+      if (ch === "," && !inQ) { row.push(field); field = ""; continue; }
+      if ((ch === "\n" || ch === "\r") && !inQ) {
+        if (ch === "\r" && nx === "\n") i++;
+        row.push(field);
+        if (row.some(v => v !== "")) rows.push(row);
+        row = []; field = ""; continue;
+      }
+      field += ch;
+    }
+    row.push(field);
+    if (row.some(v => v !== "")) rows.push(row);
+    return rows;
+  }
+
+  /* ─── Grade logic ─── */
+  function calcOverall(stu) {
+    const totalWeight = round(state.components.reduce((s, c) => s + Number(c.weight || 0), 0));
+    if (Math.abs(totalWeight - 100) > 0.01) return NaN;
+    return round(state.components.reduce((sum, c) => {
+      const value = String(stu.scores?.[c.name] ?? "").trim();
+      if (value === "") return sum;
+      const raw = Number(value);
+      if (!Number.isFinite(raw)) return sum;
+      return sum + (raw / (Number(c.fullMark) || 100)) * Number(c.weight || 0);
+    }, 0));
+  }
+  function suggestGrade(score) {
+    if (!Number.isFinite(score)) return "";
+    return gradeBands.find(([min]) => Math.round(score) >= min)?.[1] || "F";
+  }
+  function higherGrade(suggestion) {
+    if (!suggestion) return "";
+    return suggestion.includes(" or ") ? suggestion.split(" or ")[1].trim() : suggestion.trim();
+  }
+
+  /* ─── Summary strip ─── */
+  function syncSummary() {
+    $("sCount").textContent = state.students.length;
+    $("aCount").textContent = state.students.filter(s => (s.status || "").toLowerCase() === "active").length;
+    $("fCount").textContent = state.students.filter(s =>
+      Object.values(s.scores || {}).some(v => String(v).trim() !== "")).length;
+  }
+
+  /* ─── Visible + sorted students ─── */
+  function visibleStudents() {
+    const q = (state.filter || "").toLowerCase();
+    const list = state.students.filter(s => {
+      const h = `${s.studentNo} ${s.name} ${s.programme} ${s.programmeTitle}`.toLowerCase();
+      return h.includes(q);
+    });
+    const dir = state.sort.dir === "asc" ? 1 : -1;
+    const key = state.sort.key;
+    return list.sort((a, b) => {
+      let av, bv;
+      if (key === "overall") {
+        av = calcOverall(a); bv = calcOverall(b);
+      } else if (key.startsWith("comp:")) {
+        const compName = key.slice(5);
+        av = Number(a.scores?.[compName] ?? NaN);
+        bv = Number(b.scores?.[compName] ?? NaN);
+        if (!Number.isFinite(av)) av = -Infinity;
+        if (!Number.isFinite(bv)) bv = -Infinity;
+        return (av - bv) * dir;
+      } else {
+        av = a[key] ?? ""; bv = b[key] ?? "";
+      }
+      return String(av).localeCompare(String(bv), undefined, { numeric: true }) * dir;
+    });
+  }
+
+  /* ─── Render: Score table ─── */
+  function renderTable() {
+    const focused = document.activeElement;
+    const focusedDataset = focused?.dataset ? { ...focused.dataset } : null;
+
+    const columns = [
+      ["no","No."], ["studentNo","Student No."], ["name","Name"], ["programme","Programme"],
+      ...state.components.map(c => [`comp:${c.name}`, `${c.name} (${c.weight}%)`]),
+      ["overall","Overall"], ["grade","Suggested"], ["lecturerGrade","Lecturer Grade"], ["useSuggestion",""]
+    ];
+
+    $("scoreTable").tHead.innerHTML = `<tr>${columns.map(([k, t]) =>
+      `<th><button type="button" data-sort="${esc(k)}">${esc(t)}</button></th>`
+    ).join("")}</tr>`;
+    $("scoreTable").tHead.querySelectorAll("[data-sort]").forEach(b => {
+      b.addEventListener("click", () => {
+        const raw = b.dataset.sort;
+        if (raw === "useSuggestion" || raw === "grade") return;
+        state.sort = { key: raw, dir: (state.sort.key === raw && state.sort.dir === "asc") ? "desc" : "asc" };
+        renderTable();
+      });
+    });
+
+    $("scoreTable").tBodies[0].innerHTML = visibleStudents().map((s, idx) => {
+      const real    = state.students.indexOf(s);
+      const overall = calcOverall(s);
+      const grade   = suggestGrade(overall);
+      const cells   = state.components.map(c => {
+        const value = String(s.scores?.[c.name] ?? "").trim();
+        const raw  = value === "" ? NaN : Number(value);
+        const over = Number.isFinite(raw) && raw > Number(c.fullMark || 0);
+        return `<td><input class="${over ? "score-over" : ""}" type="number" step=".01" min="0" max="${c.fullMark}" value="${s.scores[c.name] ?? ""}" data-si="${real}" data-comp="${esc(c.name)}"></td>`;
+      }).join("");
+      const gradeCell = `<select data-gi="${real}"><option value=""></option>${
+        gradeOptions.map(g => `<option value="${g}" ${s.lecturerGrade === g ? "selected" : ""}>${g}</option>`).join("")
+      }</select>`;
+      return `<tr>
+        <td>${idx + 1}</td>
+        <td><code style="font-size:11px">${esc(s.studentNo)}</code></td>
+        <td><span class="student-name">${esc(s.name)}</span><div class="muted">${esc(s.status || "")}</div></td>
+        <td>${esc(s.programme)}<div class="muted">${esc(s.programmeTitle)}</div></td>
+        ${cells}
+        <td><strong>${Number.isFinite(overall) ? overall.toFixed(2) : "—"}</strong></td>
+        <td><span class="grade-pill">${esc(grade) || "—"}</span></td>
+        <td>${gradeCell}</td>
+        <td><button class="btn-secondary btn-sm use-btn" type="button" data-use="${real}">Use suggested</button></td>
+      </tr>`;
+    }).join("");
+
+    $("scoreTable").tBodies[0].querySelectorAll("[data-si]").forEach(n => {
+      n.addEventListener("change", e => {
+        const i    = Number(e.target.dataset.si);
+        const comp = e.target.dataset.comp;
+        state.students[i].scores[comp] = e.target.value;
+        const cfg  = state.components.find(c => c.name === comp);
+        const raw  = Number(e.target.value);
+        const full = Number(cfg?.fullMark || 0);
+        if (Number.isFinite(raw) && Number.isFinite(full) && raw > full) {
+          openAlertModal("Score Exceeds Full Mark",
+            `<p><strong>${esc(state.students[i].studentNo || state.students[i].name)}</strong> has a ${esc(comp)} score of <strong>${raw}</strong>, which exceeds the full mark of <strong>${full}</strong>.</p><p>The cell is highlighted in red. Please correct or confirm this score.</p>`);
+        }
+        syncSummary();
+        renderTable();
+        scheduleAutoSave();
+        /* restore focus after re-render */
+        if (focusedDataset?.si === String(i) && focusedDataset?.comp === comp) {
+          const el = document.querySelector(`[data-si="${i}"][data-comp="${esc(comp)}"]`);
+          el?.focus();
+        }
+      });
+    });
+    $("scoreTable").tBodies[0].querySelectorAll("[data-gi]").forEach(n => {
+      n.addEventListener("change", e => {
+        state.students[Number(e.target.dataset.gi)].lecturerGrade = e.target.value;
+        scheduleAutoSave();
+      });
+    });
+    $("scoreTable").tBodies[0].querySelectorAll("[data-use]").forEach(n => {
+      n.addEventListener("click", e => {
+        const i = Number(e.target.dataset.use);
+        const suggestion = higherGrade(suggestGrade(calcOverall(state.students[i])));
+        if (!suggestion) { toast("Set assessment total to 100% first."); return; }
+        state.students[i].lecturerGrade = suggestion;
+        renderTable(); scheduleAutoSave();
+      });
+    });
+  }
+
+  /* ─── Export CSV ─── */
+  function exportCsv() {
+    const headers = ["Student No.","Name","Programme",
+      ...state.components.map(c => c.name), "Overall","Suggested Grade","Lecturer Grade"];
+    const rows = state.students.map(s => {
+      const ov = calcOverall(s);
+      return [s.studentNo, s.name, s.programme,
+        ...state.components.map(c => s.scores[c.name] || ""),
+        ov, suggestGrade(ov), s.lecturerGrade || suggestGrade(ov)];
+    });
+    const csv = [headers, ...rows].map(r =>
+      r.map(x => { const t = String(x ?? ""); return /[",\n]/.test(t) ? `"${t.replaceAll('"','""')}"` : t; }).join(",")
+    ).join("\n");
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv" }));
+    a.download = `${state.subject.code || "scores"}-scores.csv`;
+    a.click();
+    URL.revokeObjectURL(a.href);
+  }
+
+  /* ─── Use all suggested grades ─── */
+  function useAllSuggestedGrades() {
+    let updated = 0;
+    state.students.forEach(stu => {
+      const s = higherGrade(suggestGrade(calcOverall(stu)));
+      if (!s) return;
+      stu.lecturerGrade = s;
+      updated++;
+    });
+    renderTable(); scheduleAutoSave();
+    toast(`Applied suggested grades for ${updated} student${updated !== 1 ? "s" : ""}.`);
+  }
+
+  /* ─── Submission ─── */
+  function buildSubmission() {
+    return {
+      submissionId: `${state.subject.code || "subject"}-${Date.now()}`,
+      submittedAt: new Date().toISOString(),
+      subject: state.subject,
+      lecturer: { name: state.lecturerName, staffNumber: state.staffNumber },
+      components: state.components,
+      students: state.students.map(s => {
+        const ov = calcOverall(s);
+        return { studentNo: s.studentNo, name: s.name, programme: s.programme,
+          scores: s.scores, overall: ov, suggestedGrade: suggestGrade(ov),
+          lecturerGrade: s.lecturerGrade || suggestGrade(ov) };
+      })
+    };
+  }
+  function isGoogleSheetsConfigured() {
+    return /^https:\/\/script\.google\.com\/macros\/s\/.+\/exec$/.test(GOOGLE_SHEETS_WEB_APP_URL.trim());
+  }
+  async function submitToGoogleSheets(payload) {
+    if (!isGoogleSheetsConfigured()) {
+      throw new Error("Google Sheets web app URL is not configured.");
+    }
+    await fetch(GOOGLE_SHEETS_WEB_APP_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(payload)
+    });
+  }
+  function downloadJson(obj, filename) {
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([JSON.stringify(obj, null, 2)], { type: "application/json" }));
+    a.download = filename;
+    a.click();
+    URL.revokeObjectURL(a.href);
+  }
+
+  /* ─── AI helpers ─── */
+  function extractOutputText(data) {
+    if (data.output_text) return data.output_text;
+    return (data.output || []).flatMap(x => x.content || [])
+      .filter(x => x.type === "output_text").map(x => x.text).join("\n");
+  }
+  function extractGeminiText(data) {
+    return (data.candidates || []).flatMap(c => c.content?.parts || []).map(p => p.text || "").filter(Boolean).join("\n");
+  }
+  function defaultAiModel(provider) {
+    if (provider === "gemini") return "gemini-2.5-flash";
+    if (provider === "poe") return "DeepSeek-V3.1";
+    return "gpt-4.1-mini";
+  }
+  function updateAiProviderUi({ resetModel = false } = {}) {
+    const provider = $("aiProvider").value;
+    const model    = $("aiModel").value.trim();
+    const knownDefaults = ["gemini-2.5-flash","gpt-4.1-mini","Claude-Sonnet-4.6","DeepSeek-V3.1","Kimi-K2","GLM-4.5-Air","Llama-4-Scout-B10"];
+    if (provider === "gemini") {
+      $("apiKey").placeholder = "AIza...";
+      $("aiProviderHint").textContent = "Sends requests to Google Generative Language API (api.google.com).";
+    } else if (provider === "poe") {
+      $("apiKey").placeholder = "pkey-...";
+      $("aiProviderHint").textContent = "Uses api.poe.com/v1 (OpenAI-compatible). Get a key at poe.com/api/keys. Alternatives: Kimi-K2, GLM-4.5-Air, Llama-4-Scout-B10.";
+    } else {
+      $("apiKey").placeholder = "sk-...";
+      $("aiProviderHint").textContent = "Uses OpenAI Responses API at api.openai.com/v1/responses.";
+    }
+    if (resetModel || !model || knownDefaults.includes(model)) {
+      $("aiModel").value = defaultAiModel(provider);
+    }
+  }
+  function extractJson(text) {
+    const ao = text.indexOf("["), ae = text.lastIndexOf("]");
+    const oo = text.indexOf("{"), oe = text.lastIndexOf("}");
+    if (oo >= 0 && oe > oo && (ao < 0 || oo < ao)) return text.slice(oo, oe + 1);
+    return ao >= 0 && ae > ao ? text.slice(ao, ae + 1) : "";
+  }
+  function parseAiResult(text) {
+    const json = extractJson(text);
+    if (!json) return { updates: [], warnings: [] };
+    const parsed = JSON.parse(json);
+    if (Array.isArray(parsed)) return { updates: parsed, warnings: [] };
+    return {
+      updates:  Array.isArray(parsed?.updates)  ? parsed.updates  : Array.isArray(parsed?.students) ? parsed.students : [],
+      warnings: Array.isArray(parsed?.warnings) ? parsed.warnings : []
+    };
+  }
+  function studentMatchForUpdate(update) {
+    const no   = String(update.studentNo || update.studentNumber || update.id || "").trim();
+    const name = String(update.name || update.studentName || "").trim().toLowerCase();
+    const byNo   = no   ? state.students.filter(s => String(s.studentNo || "").trim() === no)   : [];
+    const byName = name ? state.students.filter(s => String(s.name || "").trim().toLowerCase() === name) : [];
+    if (no && byNo.length !== 1) return { student: null, warning: `No exact student number match for "${no}"${name ? ` (${update.name})` : ""}.` };
+    if (no && name && String(byNo[0].name || "").trim().toLowerCase() !== name)
+      return { student: null, warning: `Student number "${no}" matched ${byNo[0].name}, but uploaded name was "${update.name}".` };
+    if (byNo.length === 1) return { student: byNo[0], warning: "" };
+    if (name && byName.length === 1) return { student: byName[0], warning: "" };
+    if (name && byName.length > 1) return { student: null, warning: `Multiple name matches for "${update.name}". Student number required.` };
+    return { student: null, warning: `No match for "${no || update.name || "unknown"}".` };
+  }
+  function applyAiUpdates(updates, { notify = true } = {}) {
+    let hit = 0;
+    const warnings = [];
+    updates.forEach(u => {
+      const { student, warning } = studentMatchForUpdate(u);
+      if (!student) { warnings.push(warning); return; }
+      const scores = u.scores || u.score || {};
+      if (!scores || typeof scores !== "object") return;
+      Object.entries(scores).forEach(([k, v]) => {
+        const comp = state.components.find(c => c.name.toLowerCase() === String(k).toLowerCase());
+        if (comp) {
+          student.scores[comp.name] = v;
+          const raw = Number(v);
+          if (Number.isFinite(raw) && raw > Number(comp.fullMark || 0))
+            warnings.push(`${student.studentNo || student.name}: ${comp.name} score ${raw} > full mark ${comp.fullMark}.`);
+        } else {
+          warnings.push(`Unknown component "${k}" for ${student.studentNo || student.name}.`);
+        }
+      });
+      hit++;
+    });
+    if (hit > 0) { syncSummary(); renderTable(); scheduleAutoSave(); }
+    if (notify) {
+      if (hit > 0) toast(`Applied AI scores for ${hit} student${hit !== 1 ? "s" : ""}.`);
+      else toast("No matching students/scores found in AI result.");
+    }
+    if (warnings.length)
+      openAlertModal("AI Matching Warnings",
+        `<p>The following rows could not be updated automatically:</p><ul>${warnings.map(w => `<li>${esc(w)}</li>`).join("")}</ul>`);
+    return { hit, warnings };
+  }
+  function applyAiResultFromOutput(text) {
+    const result  = parseAiResult(text);
+    const applied = applyAiUpdates(result.updates, { notify: false });
+    const warnings = [...(applied.warnings || []), ...result.warnings];
+    if (applied.hit > 0) toast(`Applied AI scores for ${applied.hit} student${applied.hit !== 1 ? "s" : ""}.`);
+    else if (result.updates.length) toast("No matching students/scores found in AI result.");
+    if (warnings.length)
+      openAlertModal("AI Matching Warnings",
+        `<p>The following rows need checking:</p><ul>${warnings.map(w => `<li>${esc(w)}</li>`).join("")}</ul>`);
+  }
+
+  function fileToDataUrl(file) {
+    return new Promise((resolve, reject) => {
+      const r = new FileReader();
+      r.onload  = () => resolve(String(r.result || ""));
+      r.onerror = () => reject(r.error || new Error("Could not read file"));
+      r.readAsDataURL(file);
+    });
+  }
+  function isTextLike(file) {
+    return /text|csv|json|markdown/i.test(file.type) || /\.(txt|csv|json|md)$/i.test(file.name);
+  }
+  async function readAiUploads(files) {
+    aiUploads = await Promise.all([...files].map(async file => {
+      const dataUrl = await fileToDataUrl(file);
+      const text = isTextLike(file) ? await file.text() : "";
+      return { name: file.name, type: file.type || "application/octet-stream", size: file.size, dataUrl, text };
+    }));
+    $("aiFileList").textContent = aiUploads.length
+      ? `Attached: ${aiUploads.map(f => f.name).join(", ")}`
+      : "Accepted: PDF, Excel, Word, TXT, CSV, JSON, MD";
+  }
+  function buildAiPrompt(context) {
+    const textUploads = aiUploads.filter(f => f.text).map(f => `--- ${f.name} ---\n${f.text}`).join("\n\n");
+    const fileList    = aiUploads.map(f => `${f.name} (${f.type}, ${f.size} bytes)`).join("\n");
+    return `You are a chat assistant for a lecturer, specialised in analysing assessment files and updating score tables.
+
+Current score table context:
+${JSON.stringify(context, null, 2)}
+
+Uploaded files:
+${fileList || "No files attached."}
+
+Text from text-like uploads:
+${textUploads || "No text content."}
+
+User message:
+${$("aiPrompt").value}
+
+When the user provides scores, behave like an exact VLOOKUP:
+- Match by exact student number when available.
+- If missing, match by exact full English name only when unique.
+- Do not guess similar names or numbers.
+- Return warnings for unmatched, ambiguous, or mismatched rows.
+- Use assessment component names exactly as listed in context.components.
+
+Reply conversationally, then include a machine-readable JSON at the end:
+{"reply":"short summary","updates":[{"studentNo":"exact","name":"exact","scores":{"Component":0}}],"warnings":["unmatched rows"]}`;
+  }
+  function buildPoeContent(promptText) {
+    const content = [{ type: "text", text: promptText }];
+    aiUploads.forEach(f => content.push({ type: "file", file: { filename: f.name, file_data: f.dataUrl } }));
+    return content;
+  }
+  function clearAiInputs() {
+    $("aiPrompt").value = "";
+    $("aiFile").value   = "";
+    aiUploads = [];
+    $("aiFileList").textContent = "Accepted: PDF, Excel, Word, TXT, CSV, JSON, MD";
+  }
+
+  async function askAi() {
+    const key      = $("apiKey").value.trim();
+    const provider = $("aiProvider").value;
+    const model    = $("aiModel").value.trim() || defaultAiModel(provider);
+    if (!key) { toast("Please enter your API key first."); return; }
+    if (!state.students.length) { toast("Import students before using the AI helper."); return; }
+
+    const btn = $("askAiBtn");
+    btn.disabled = true;
+    btn.textContent = "Sending...";
+    $("aiOut").textContent = "AI request in progress...";
+
+    const context = {
+      subject: state.subject,
+      components: state.components,
+      students: state.students.map(s => ({ studentNo: s.studentNo, name: s.name }))
+    };
+    const promptText = buildAiPrompt(context);
+
+    try {
+      if (provider === "gemini") {
+        const url = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent?key=${encodeURIComponent(key)}`;
+        const res  = await fetch(url, { method:"POST", headers:{"Content-Type":"application/json"},
+          body: JSON.stringify({ contents:[{parts:[{text:promptText}]}], generationConfig:{temperature:0.2} }) });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error?.message || "Gemini request failed");
+        $("aiOut").textContent = extractGeminiText(data) || JSON.stringify(data, null, 2);
+        try { applyAiResultFromOutput($("aiOut").textContent); } catch {}
+      } else if (provider === "poe") {
+        const res  = await fetch("https://api.poe.com/v1/chat/completions", {
+          method:"POST", headers:{"Content-Type":"application/json","Authorization":`Bearer ${key}`},
+          body: JSON.stringify({ model, temperature:0.2, messages:[
+            { role:"system", content:"You are a chat assistant for lecturers. Analyse uploaded score files and return conversational help plus the requested JSON for automatic table updates." },
+            { role:"user",   content: buildPoeContent(promptText) }
+          ]})
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error?.message || "Poe request failed");
+        $("aiOut").textContent = data.choices?.[0]?.message?.content || JSON.stringify(data, null, 2);
+        try { applyAiResultFromOutput($("aiOut").textContent); } catch {}
+      } else {
+        const res  = await fetch("https://api.openai.com/v1/responses", {
+          method:"POST", headers:{"Content-Type":"application/json","Authorization":`Bearer ${key}`},
+          body: JSON.stringify({ model, instructions:"Return concise output. If user asks for scores, produce valid JSON.", input: promptText })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error?.message || "OpenAI request failed");
+        $("aiOut").textContent = extractOutputText(data) || JSON.stringify(data, null, 2);
+        try { applyAiResultFromOutput($("aiOut").textContent); } catch {}
+      }
+    } catch (e) {
+      const msg = String(e.message || "");
+      if (provider === "gemini" && (msg.includes("no longer available") || msg.includes("not found")))
+        $("aiOut").textContent = `Error: ${msg}\n\nTry: gemini-2.5-flash or gemini-2.5-flash-lite`;
+      else if (provider === "poe")
+        $("aiOut").textContent = `Error: ${msg}\n\nCheck: Poe API key is valid, you have Poe points, and the model name is exactly correct.`;
+      else
+        $("aiOut").textContent = `Error: ${msg}`;
+    } finally {
+      btn.disabled = false;
+      btn.innerHTML = `<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M22 2 11 13"/><path d="m22 2-7 20-4-9-9-4 20-7z"/></svg> Send to AI`;
+      clearAiInputs();
+    }
+  }
+
+  /* ─── renderAll ─── */
+  function renderAll() {
+    renderSubjectOptions();
+    updateSubjectInputs();
+    $("lecturerName").value = state.lecturerName || "";
+    $("staffNumber").value  = state.staffNumber  || "";
+    renderComponents();
+    syncSummary();
+    renderTable();
+    renderStatus();
+    setLockedState(state.subjectLocked);
+  }
+
+  /* ─── Event binding ─── */
+  function bind() {
+    /* Sidebar nav */
+    document.querySelectorAll("[data-jump]").forEach(b => {
+      b.addEventListener("click", () => {
+        document.querySelectorAll("[data-jump]").forEach(x => x.classList.remove("active"));
+        b.classList.add("active");
+        $(b.dataset.jump).scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+
+    /* Subject select */
+    $("subjectSelect").addEventListener("change", e => {
+      const code = String(e.target.value || "").trim().toUpperCase();
+      const s = state.subjects.find(x => x.code === code);
+      if (s) selectSubject(s);
+    });
+    ["subjectCode","subjectTitle","subjectCredit"].forEach(id => {
+      $(id).addEventListener("change", () => {
+        state.subject.code   = $("subjectCode").value.trim();
+        state.subject.title  = $("subjectTitle").value.trim();
+        state.subject.credit = Number($("subjectCredit").value) || 0;
+        renderTable(); scheduleAutoSave();
+      });
+    });
+
+    /* Add component */
+    $("addCompBtn").addEventListener("click", () => {
+      state.components.push({ name: "New Component", weight: 0, scheme: "Absolute Score", fullMark: 100 });
+      state.students = normalizeStudentsForComponents(state.students, state.components);
+      renderComponents(); syncSummary(); renderTable(); scheduleAutoSave();
+    });
+
+    /* Student file */
+    $("studentFile").addEventListener("change", async e => {
+      const f = e.target.files[0];
+      if (!f) return;
+      const txt  = await f.text();
+      const rows = parseCsv(txt);
+      const header = rows.shift() || [];
+      state.students = rows.filter(r => r.length).map((r, i) => {
+        const obj = Object.fromEntries(header.map((k, j) => [k, r[j] || ""]));
+        const scores = {};
+        state.components.forEach(c => { scores[c.name] = ""; });
+        return {
+          no: i + 1,
+          studentNo: obj["Student No."] || obj["Student ID"] || "",
+          name: obj["Name in English"] || obj["Name"] || "",
+          programme: obj["Primary PS"] || obj["Programme  PS"] || "",
+          programmeTitle: obj["Programme Title"] || "",
+          status: obj["Student Status"] || "",
+          scores, lecturerGrade: ""
+        };
+      });
+      syncSummary(); renderTable(); scheduleAutoSave();
+      toast(`Imported ${state.students.length} student${state.students.length !== 1 ? "s" : ""}.`);
+    });
+
+    /* Clear students */
+    $("clearStudentsBtn").addEventListener("click", () => {
+      if (!confirm("Remove all students and their scores?")) return;
+      state.students = [];
+      syncSummary(); renderTable(); scheduleAutoSave();
+    });
+
+    /* Table filter */
+    $("tableFilter").addEventListener("input", e => {
+      state.filter = e.target.value || "";
+      renderTable();
+    });
+
+    /* Export & bulk grade */
+    $("exportBtn").addEventListener("click", exportCsv);
+    $("useAllSuggestedBtn").addEventListener("click", useAllSuggestedGrades);
+
+    /* Submit */
+    $("submitBtn").addEventListener("click", () => {
+      if (state.subjectLocked) { toast("This subject is already submitted and locked."); return; }
+      state.lecturerName = $("lecturerName").value.trim();
+      state.staffNumber  = $("staffNumber").value.trim();
+      $("lecturerName").classList.remove("invalid");
+      $("staffNumber").classList.remove("invalid");
+      if (!state.lecturerName || !state.staffNumber) {
+        if (!state.lecturerName) $("lecturerName").classList.add("invalid");
+        if (!state.staffNumber)  $("staffNumber").classList.add("invalid");
+        openAlertModal("Missing Information", "<p>Lecturer name and staff number are required before submission.</p>");
+        return;
+      }
+      const problems = validateBeforeSubmit();
+      if (problems.length) {
+        openAlertModal("Submission Blocked",
+          `<p>Please fix the following issues first:</p><ul>${problems.map(p => `<li>${esc(p)}</li>`).join("")}</ul>`);
+        return;
+      }
+      openSubmitModal();
+    });
+    $("confirmSubmitNo").addEventListener("click", closeSubmitModal);
+    $("confirmSubmitYes").addEventListener("click", async () => {
+      const submitButton = $("confirmSubmitYes");
+      const originalLabel = submitButton.textContent;
+      const submission = buildSubmission();
+      submitButton.disabled = true;
+      submitButton.textContent = "Submitting...";
+
+      if (isGoogleSheetsConfigured()) {
+        try {
+          await submitToGoogleSheets(submission);
+        } catch (error) {
+          submitButton.disabled = false;
+          submitButton.textContent = originalLabel;
+          openAlertModal("Submission Failed",
+            `<p>The form could not be sent to Google Sheets. Please check the Apps Script deployment URL and internet connection.</p><p class="muted">${esc(error.message || error)}</p>`);
+          return;
+        }
+      } else {
+        downloadJson(submission, `${state.subject.code || "subject"}-sarp-submission.json`);
+      }
+
+      state.subjectLocked = true;
+      saveLocal({ showToast: false });
+      closeSubmitModal();
+      renderStatus();
+      setLockedState(true);
+      submitButton.disabled = false;
+      submitButton.textContent = originalLabel;
+      toast(isGoogleSheetsConfigured()
+        ? `Submitted and saved: ${state.subject.code}.`
+        : `Submitted and locked: ${state.subject.code}. JSON downloaded.`);
+    });
+
+    /* Alert modal */
+    $("alertModalOk").addEventListener("click", closeAlertModal);
+
+    /* Unlock */
+    $("unlockBtn").addEventListener("click", () => {
+      if (!state.subjectLocked) return;
+      state.subjectLocked = false;
+      saveLocal({ showToast: false });
+      renderStatus(); setLockedState(false);
+      toast(`Unlocked ${state.subject.code}. Editing re-enabled.`);
+    });
+
+    /* Lecturer/staff inputs */
+    $("lecturerName").addEventListener("input", () => {
+      state.lecturerName = $("lecturerName").value;
+      $("lecturerName").classList.remove("invalid");
+      scheduleAutoSave();
+    });
+    $("staffNumber").addEventListener("input", () => {
+      state.staffNumber = $("staffNumber").value;
+      $("staffNumber").classList.remove("invalid");
+      scheduleAutoSave();
+    });
+
+    /* Tutorial */
+    $("tutorialBtn").addEventListener("click", () => showTutorialStep(0));
+    $("tutorialSkip").addEventListener("click", closeTutorial);
+    $("tutorialNext").addEventListener("click", () => showTutorialStep(tutorialStep + 1));
+    window.addEventListener("resize", () => {
+      if (tutorialStep >= 0) {
+        const step   = tutorialSteps[tutorialStep];
+        const target = document.querySelector(step.selector);
+        if (target) {
+          if (!positionTutorialPopover(target, step))
+            Object.assign($("tutorialPop").style, { top:"12px", left:"12px", maxHeight:"calc(100vh - 24px)", overflow:"auto" });
+        }
+      }
+    });
+
+    /* AI */
+    $("aiFile").addEventListener("change", async e => {
+      if (!e.target.files.length) {
+        aiUploads = [];
+        $("aiFileList").textContent = "Accepted: PDF, Excel, Word, TXT, CSV, JSON, MD";
+        return;
+      }
+      try {
+        await readAiUploads(e.target.files);
+        toast(`Attached ${aiUploads.length} file${aiUploads.length !== 1 ? "s" : ""} for AI analysis.`);
+      } catch (err) {
+        toast(`Could not read file: ${err.message}`);
+      }
+    });
+    $("aiProvider").addEventListener("change", () => updateAiProviderUi({ resetModel: true }));
+    $("askAiBtn").addEventListener("click", askAi);
+
+    /* Load subjects.json */
+    $("loadSubjectsBtn").addEventListener("click", () => {
+      const picker = document.createElement("input");
+      picker.type = "file";
+      picker.accept = ".json";
+      picker.onchange = async () => {
+        const f = picker.files[0];
+        if (!f) return;
+        try {
+          const obj = JSON.parse(await f.text());
+          if (!Array.isArray(obj.subjects)) throw new Error("Invalid schema - expected { subjects: [...] }");
+          state.subjects = obj.subjects.map(x => ({
+            code:   String(x.code   || "").trim(),
+            title:  String(x.title  || "").trim(),
+            credit: Number(x.credit || 0),
+            ca:     Number(x.ca     || 0),
+            exam:   Number(x.exam   || 0)
+          })).filter(x => x.code && x.title);
+          state.subjects.sort((a, b) => String(a.code).localeCompare(String(b.code), undefined, { numeric: true }));
+          if (!state.subjects.find(x => x.code === state.subject.code)) {
+            state.subject = { ...state.subjects[0] };
+            loadSubjectWorkspace(state.subject);
+          }
+          renderAll(); scheduleAutoSave();
+          toast(`Loaded ${state.subjects.length} subjects from file.`);
+        } catch (e) {
+          toast(`Load failed: ${e.message}`);
+        }
+      };
+      picker.click();
+    });
+  }
+
+  /* ─── Init ─── */
+  function init() {
+    loadLocal();
+    const target = state.subjects.find(x => x.code === state.subject.code) || state.subjects[0];
+    if (target) loadSubjectWorkspace(target);
+    bind();
+    renderAll();
+    updateAiProviderUi();
+  }
+
+  try { init(); }
+  catch (e) { console.error(e); toast("Initialization error - please refresh the page."); }
+</script>
+</body>
+</html>
