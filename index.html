@@ -1507,8 +1507,7 @@
       locked: !!state.subjectLocked,
       workflowStep: Number(state.workflowStep || 1),
       studentsConfirmed: !!state.studentsConfirmed,
-      scoresConfirmed: !!state.scoresConfirmed,
-      tutorialComplete: !!state.tutorialComplete
+      scoresConfirmed: !!state.scoresConfirmed
     };
   }
 
@@ -1524,7 +1523,6 @@
       state.workflowStep = Number(rec.workflowStep || 1);
       state.studentsConfirmed = !!rec.studentsConfirmed;
       state.scoresConfirmed = !!rec.scoresConfirmed;
-      state.tutorialComplete = !!rec.tutorialComplete;
     } else {
       state.components = defaultComponentsForSubject(state.subject);
       state.students   = [];
@@ -1532,7 +1530,6 @@
       state.workflowStep = 1;
       state.studentsConfirmed = false;
       state.scoresConfirmed = false;
-      state.tutorialComplete = false;
       saveCurrentSubjectWorkspace();
     }
     state.students = normalizeStudentsForComponents(state.students, state.components);
@@ -1577,8 +1574,14 @@
   function selectSubject(subject) {
     if (!subject) return;
     const prevCode = String(state.subject?.code || "").trim();
+    const wasInSetup = Number(state.workflowStep || 1) <= 1;
     if (prevCode && prevCode !== subject.code) saveCurrentSubjectWorkspace();
     loadSubjectWorkspace(subject);
+    if (wasInSetup && !state.subjectLocked) {
+      state.workflowStep = 1;
+      state.studentsConfirmed = false;
+      state.scoresConfirmed = false;
+    }
     renderAll();
     scheduleAutoSave();
   }
