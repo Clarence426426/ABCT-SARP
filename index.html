@@ -844,18 +844,7 @@
       background: var(--bg);
     }
     body::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      left: 0;
-      height: 520px;
-      pointer-events: none;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0) 0 420px, #faf7f7 420px),
-        repeating-linear-gradient(110deg, rgba(255,255,255,.13) 0 1px, transparent 1px 120px),
-        linear-gradient(146deg, #62131d 0%, #8b1e2d 52%, #a5283a 100%);
-      z-index: 0;
+      content: none;
     }
     .app-shell {
       position: relative;
@@ -935,6 +924,7 @@
       padding: 54px 44px 36px;
       overflow: hidden;
       border-bottom: 0;
+      background: linear-gradient(146deg, #62131d 0%, #8b1e2d 52%, #a5283a 100%);
       color: #fff;
       isolation: isolate;
     }
@@ -968,8 +958,7 @@
       bottom: -102px;
       transform: rotate(-12deg);
       background:
-        linear-gradient(90deg, #fff 0 18%, #fbf8f8 18% 100%),
-        repeating-linear-gradient(0deg, transparent 0 38px, rgba(139,30,45,.10) 39px 40px);
+        linear-gradient(90deg, #fff 0 18%, #fbf8f8 18% 100%);
     }
     .topbar-title {
       max-width: 570px;
@@ -1015,13 +1004,15 @@
 
     .panel {
       border-color: rgba(139, 30, 45, .14);
-      background: rgba(255,255,255,.90);
+      background: #fff;
       border-radius: 8px;
       box-shadow: var(--shadow-sm);
     }
     .panel-header {
-      background:
-        linear-gradient(90deg, rgba(255,255,255,.78), rgba(252,248,248,.90));
+      background: #fff;
+    }
+    .panel-footer {
+      background: #fff;
     }
     .panel-icon,
     .dropzone-icon {
@@ -1129,14 +1120,54 @@
       background: #351019;
     }
 
+    body {
+      font-family: Arial, "Helvetica Neue", Helvetica, "Microsoft JhengHei", "PingFang HK", sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    h1, h2, h3,
+    .brand-text strong,
+    .stat-value,
+    .tutorial-pop h4 {
+      font-family: Arial, "Helvetica Neue", Helvetica, "Microsoft JhengHei", "PingFang HK", sans-serif;
+      letter-spacing: 0;
+    }
+    h1 {
+      font-size: clamp(38px, 4.8vw, 60px);
+      font-weight: 700;
+      line-height: 1.12;
+    }
+    h2 {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+    h3 {
+      font-size: 16px;
+      font-weight: 700;
+    }
+    .topbar .lead {
+      font-size: 17px;
+      line-height: 1.65;
+    }
+    .eyebrow,
+    .panel-eyebrow,
+    .sidebar-label,
+    thead th,
+    label {
+      font-weight: 700;
+      letter-spacing: .02em;
+    }
+    .nav-item,
+    .nav-utility,
+    button,
+    input,
+    textarea,
+    select {
+      font-weight: 600;
+    }
+
     @media (max-width: 960px) {
-      body::before {
-        height: 620px;
-        background:
-          linear-gradient(180deg, rgba(255,255,255,0) 0 520px, #faf7f7 520px),
-          repeating-linear-gradient(110deg, rgba(255,255,255,.10) 0 1px, transparent 1px 120px),
-          linear-gradient(146deg, #62131d 0%, #8b1e2d 52%, #a5283a 100%);
-      }
       .app-shell {
         grid-template-columns: 1fr;
       }
