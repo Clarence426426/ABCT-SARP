@@ -816,6 +816,13 @@
       </div>
     </div>
 
+    <button class="nav-utility" id="tutorialBtn" type="button">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      Tutorial
+    </button>
+
+    <div class="sidebar-divider"></div>
+
     <div class="sidebar-label">Workflow</div>
 
     <button class="nav-item active" data-jump="setup">
@@ -833,13 +840,6 @@
     <button class="nav-item" data-jump="ai">
       <span class="nav-badge">4</span>
       AI Helper
-    </button>
-
-    <div class="sidebar-divider"></div>
-
-    <button class="nav-utility" id="tutorialBtn" type="button">
-      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-      Tutorial
     </button>
 
     <div class="status-card">
@@ -1211,7 +1211,8 @@
     savedAt: "",
     workflowStep: 1,
     studentsConfirmed: false,
-    scoresConfirmed: false
+    scoresConfirmed: false,
+    tutorialComplete: false
   };
 
   /* ─── Helpers ─── */
@@ -1268,22 +1269,28 @@
   function applyWorkflowState() {
     const step = Math.max(1, Math.min(4, Number(state.workflowStep || 1)));
     const submitted = !!state.subjectLocked;
-    setSectionDisabled("setup", submitted || step > 1);
-    setSectionDisabled("students", submitted || step < 2 || step > 2);
-    setSectionDisabled("scores", submitted || step < 3 || step > 3);
-    setSectionDisabled("ai", submitted || step < 3 || step > 3);
-    $("confirmSetupBtn").disabled = submitted || step !== 1;
+    const tutorialLocked = !state.tutorialComplete;
+    setSectionDisabled("setup", tutorialLocked || submitted || step > 1);
+    setSectionDisabled("students", tutorialLocked || submitted || step < 2 || step > 2);
+    setSectionDisabled("scores", tutorialLocked || submitted || step < 3 || step > 3);
+    setSectionDisabled("ai", tutorialLocked || submitted || step < 3 || step > 3);
+    $("confirmSetupBtn").disabled = tutorialLocked || submitted || step !== 1;
     $("confirmScoresBtn").disabled = submitted || step !== 3;
-    $("lecturerName").disabled = submitted || step < 4;
-    $("staffNumber").disabled = submitted || step < 4;
-    $("submitBtn").disabled = submitted || step < 4;
+    $("lecturerName").disabled = tutorialLocked || submitted || step < 4;
+    $("staffNumber").disabled = tutorialLocked || submitted || step < 4;
+    $("submitBtn").disabled = tutorialLocked || submitted || step < 4;
     $("setup").classList.toggle("workflow-complete", step > 1 || submitted);
     $("students").classList.toggle("workflow-complete", state.studentsConfirmed || step > 2 || submitted);
     $("scores").classList.toggle("workflow-complete", state.scoresConfirmed || step > 3 || submitted);
     document.querySelectorAll("[data-jump]").forEach(btn => {
       const order = { setup: 1, students: 2, scores: 3, ai: 3 }[btn.dataset.jump] || 1;
-      btn.disabled = order > step && !submitted;
+      btn.disabled = tutorialLocked || (order > step && !submitted);
     });
+    $("tutorialBtn").disabled = false;
+    if (tutorialLocked && !submitted) {
+      $("statusLabel").textContent = "Tutorial Required";
+      $("statusSub").textContent = "Finish tutorial to begin";
+    }
   }
 
   function setLockedState(locked) {
@@ -1332,6 +1339,12 @@
     $("tutorialBackdrop").hidden = true;
     $("tutorialPop").hidden = true;
     tutorialStep = -1;
+    if (!state.tutorialComplete) {
+      state.tutorialComplete = true;
+      saveLocal({ showToast: false });
+      applyWorkflowState();
+      toast("Tutorial complete. Start with Subject Setup.");
+    }
   }
   function positionTutorialPopover(target, step) {
     const pop = $("tutorialPop");
@@ -1466,7 +1479,8 @@
       locked: !!state.subjectLocked,
       workflowStep: Number(state.workflowStep || 1),
       studentsConfirmed: !!state.studentsConfirmed,
-      scoresConfirmed: !!state.scoresConfirmed
+      scoresConfirmed: !!state.scoresConfirmed,
+      tutorialComplete: !!state.tutorialComplete
     };
   }
 
@@ -1482,6 +1496,7 @@
       state.workflowStep = Number(rec.workflowStep || 1);
       state.studentsConfirmed = !!rec.studentsConfirmed;
       state.scoresConfirmed = !!rec.scoresConfirmed;
+      state.tutorialComplete = !!rec.tutorialComplete;
     } else {
       state.components = defaultComponentsForSubject(state.subject);
       state.students   = [];
@@ -1489,6 +1504,7 @@
       state.workflowStep = 1;
       state.studentsConfirmed = false;
       state.scoresConfirmed = false;
+      state.tutorialComplete = false;
       saveCurrentSubjectWorkspace();
     }
     state.students = normalizeStudentsForComponents(state.students, state.components);
@@ -1525,6 +1541,7 @@
       state.workflowStep = Number(saved.workflowStep || 1);
       state.studentsConfirmed = !!saved.studentsConfirmed;
       state.scoresConfirmed = !!saved.scoresConfirmed;
+      state.tutorialComplete = !!saved.tutorialComplete;
     } catch {}
   }
 
