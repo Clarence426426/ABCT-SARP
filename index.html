@@ -1831,14 +1831,36 @@
     if (Math.abs(total - 100) > 0.01) errors.push(`Assessment total is ${total}%. It must be 100%.`);
     return errors;
   }
+  function normalizeCsvHeader(value) {
+    return String(value || "")
+      .replace(/^\uFEFF/, "")
+      .trim()
+      .toLowerCase()
+      .replace(/\s+/g, " ")
+      .replace(/[._-]+$/g, "");
+  }
+  function csvRecord(header, row) {
+    const record = {};
+    header.forEach((key, i) => {
+      record[normalizeCsvHeader(key)] = String(row[i] || "").trim();
+    });
+    return record;
+  }
+  function csvField(record, aliases) {
+    for (const alias of aliases) {
+      const value = record[normalizeCsvHeader(alias)];
+      if (value) return value;
+    }
+    return "";
+  }
   function validateStudentRows(rows, header) {
-    const normalized = header.map(h => String(h || "").trim());
-    const hasStudentNo = normalized.some(h => ["Student No.", "Student ID", "Student Number"].includes(h));
-    const hasName = normalized.some(h => ["Name in English", "Name"].includes(h));
+    const normalized = header.map(normalizeCsvHeader);
+    const hasStudentNo = normalized.some(h => ["student no", "student id", "student number"].includes(h));
+    const hasName = normalized.some(h => ["name in english", "name", "student name", "english name"].includes(h));
     const dataRows = rows.filter(r => r.some(v => String(v || "").trim()));
     const errors = [];
-    if (!hasStudentNo) errors.push("CSV must include Student No., Student ID, or Student Number.");
-    if (!hasName) errors.push("CSV must include Name in English or Name.");
+    if (!hasStudentNo) errors.push("CSV must include Student No, Student ID, or Student Number.");
+    if (!hasName) errors.push("CSV must include Name in English, Name, Student Name, or English Name.");
     if (!dataRows.length) errors.push("CSV does not contain any student rows.");
     return errors;
   }
@@ -2603,19 +2625,20 @@ Reply conversationally, then include a machine-readable JSON at the end:
         syncSummary(); renderTable(); applyWorkflowState(); scheduleAutoSave();
         openAlertModal("Student File Format Problem",
           `<p>Please upload the eAcademic SUBREG CSV with the required columns.</p><ul>${fileProblems.map(p => `<li>${esc(p)}</li>`).join("")}</ul>`);
+        e.target.value = "";
         return;
       }
-      state.students = rows.filter(r => r.length).map((r, i) => {
-        const obj = Object.fromEntries(header.map((k, j) => [k, r[j] || ""]));
+      state.students = rows.filter(r => r.some(v => String(v || "").trim())).map((r, i) => {
+        const obj = csvRecord(header, r);
         const scores = {};
         state.components.forEach(c => { scores[c.name] = ""; });
         return {
           no: i + 1,
-          studentNo: obj["Student No."] || obj["Student ID"] || "",
-          name: obj["Name in English"] || obj["Name"] || "",
-          programme: obj["Primary PS"] || obj["Programme  PS"] || "",
-          programmeTitle: obj["Programme Title"] || "",
-          status: obj["Student Status"] || "",
+          studentNo: csvField(obj, ["Student No.", "Student No", "Student ID", "Student Number"]),
+          name: csvField(obj, ["Name in English", "Name", "Student Name", "English Name"]),
+          programme: csvField(obj, ["Primary PS", "Programme  PS", "Programme PS", "Programme", "Program"]),
+          programmeTitle: csvField(obj, ["Programme Title", "Program Title"]),
+          status: csvField(obj, ["Student Status", "Status"]),
           scores, lecturerGrade: ""
         };
       });
@@ -2628,6 +2651,7 @@ Reply conversationally, then include a machine-readable JSON at the end:
       jumpToSection("scores");
       setTimeout(() => showTutorialStep(2), 450);
       toast(`Imported ${state.students.length} student${state.students.length !== 1 ? "s" : ""}. Enter scores manually or use the AI helper.`);
+      e.target.value = "";
     });
 
     /* Clear students */
