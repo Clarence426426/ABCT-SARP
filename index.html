@@ -1275,7 +1275,7 @@
     setSectionDisabled("scores", tutorialLocked || submitted || step < 3 || step > 3);
     setSectionDisabled("ai", tutorialLocked || submitted || step < 3 || step > 3);
     $("confirmSetupBtn").disabled = tutorialLocked || submitted || step !== 1;
-    $("confirmScoresBtn").disabled = submitted || step !== 3;
+    $("confirmScoresBtn").disabled = tutorialLocked || submitted || step !== 3;
     $("lecturerName").disabled = tutorialLocked || submitted || step < 4;
     $("staffNumber").disabled = tutorialLocked || submitted || step < 4;
     $("submitBtn").disabled = tutorialLocked || submitted || step < 4;
@@ -1322,6 +1322,7 @@
   /* ─── Tutorial ─── */
   let tutorialStep = -1;
   let aiUploads = [];
+  let resetToSetupAfterTutorial = false;
 
   const tutorialSteps = [
     { selector: "#setup",           title: "Step 1 - Subject Setup", text: "Choose the subject, check the subject details, then enter the assessment components. Confirm this step only when the total weighting is 100%." },
@@ -1339,20 +1340,39 @@
     $("tutorialPop").hidden = true;
     const closedStep = tutorialStep;
     tutorialStep = -1;
-    if (!state.tutorialComplete) {
+    if (resetToSetupAfterTutorial && closedStep === 0) {
+      state.workflowStep = 1;
+      state.studentsConfirmed = false;
+      state.scoresConfirmed = false;
       state.tutorialComplete = true;
-      if (closedStep === 0) {
-        state.workflowStep = 1;
-        state.studentsConfirmed = false;
-        state.scoresConfirmed = false;
-      }
+      resetToSetupAfterTutorial = false;
       saveLocal({ showToast: false });
-      applyWorkflowState();
+      renderAll();
       toast("Tutorial complete. Start with Subject Setup.");
+    } else if (!state.tutorialComplete) {
+      state.tutorialComplete = true;
+      saveLocal({ showToast: false });
+      renderAll();
+      toast("Tutorial complete. Start with Subject Setup.");
+    } else {
+      resetToSetupAfterTutorial = false;
+      applyWorkflowState();
     }
   }
   function finishTutorialStep() {
     closeTutorial();
+  }
+  function currentTutorialIndex() {
+    if (Number(state.workflowStep || 1) >= 4) return 3;
+    if (Number(state.workflowStep || 1) >= 3) return 2;
+    if (Number(state.workflowStep || 1) >= 2) return 1;
+    return 0;
+  }
+  function startEntryTutorial() {
+    resetToSetupAfterTutorial = true;
+    state.tutorialComplete = false;
+    applyWorkflowState();
+    showTutorialStep(0);
   }
   function positionTutorialPopover(target, step) {
     const pop = $("tutorialPop");
@@ -2352,7 +2372,7 @@ Reply conversationally, then include a machine-readable JSON at the end:
     });
 
     /* Tutorial */
-    $("tutorialBtn").addEventListener("click", () => showTutorialStep(0));
+    $("tutorialBtn").addEventListener("click", () => showTutorialStep(currentTutorialIndex()));
     $("tutorialSkip").addEventListener("click", closeTutorial);
     $("tutorialNext").addEventListener("click", finishTutorialStep);
     window.addEventListener("resize", () => {
@@ -2424,7 +2444,7 @@ Reply conversationally, then include a machine-readable JSON at the end:
     bind();
     renderAll();
     updateAiProviderUi();
-    if (!state.subjectLocked) setTimeout(() => showTutorialStep(0), 450);
+    if (!state.subjectLocked) setTimeout(startEntryTutorial, 450);
   }
 
   try { init(); }
