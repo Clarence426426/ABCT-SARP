@@ -883,10 +883,10 @@
     .sidebar {
       margin: 18px 0 18px 18px;
       height: calc(100vh - 36px);
-      border: 1px solid rgba(255,255,255,.20);
-      border-right: 1px solid rgba(255,255,255,.20);
+      border: 1px solid rgba(255,255,255,.18);
+      border-right: 1px solid rgba(255,255,255,.18);
       border-radius: 8px;
-      background: rgba(98, 19, 29, .72);
+      background: linear-gradient(180deg, #7f1b29 0%, #62131d 100%);
       box-shadow: 0 24px 70px rgba(64, 18, 24, .24);
       color: #fff;
     }
@@ -1755,29 +1755,24 @@
   function applyWorkflowState() {
     const step = Math.max(1, Math.min(4, Number(state.workflowStep || 1)));
     const submitted = !!state.subjectLocked;
-    const tutorialLocked = !state.tutorialComplete;
+    const tutorialLocked = false;
     setSectionDisabled("setup", tutorialLocked || submitted);
-    setSectionDisabled("students", tutorialLocked || submitted || step < 2);
-    setSectionDisabled("scores", tutorialLocked || submitted || step < 3);
-    setSectionDisabled("ai", tutorialLocked || submitted || step < 3);
+    setSectionDisabled("students", tutorialLocked || submitted);
+    setSectionDisabled("scores", tutorialLocked || submitted);
+    setSectionDisabled("ai", tutorialLocked || submitted);
     $("confirmSetupBtn").disabled = tutorialLocked || submitted;
-    $("confirmScoresBtn").disabled = tutorialLocked || submitted || step < 3;
-    $("uploadStudentsBtn").disabled = tutorialLocked || submitted || step < 2 || !selectedStudentFile;
+    $("confirmScoresBtn").disabled = tutorialLocked || submitted;
+    $("uploadStudentsBtn").disabled = tutorialLocked || submitted || !selectedStudentFile;
     $("lecturerName").disabled = tutorialLocked || submitted;
     $("staffNumber").disabled = tutorialLocked || submitted;
-    $("submitBtn").disabled = tutorialLocked || submitted || step < 4;
+    $("submitBtn").disabled = tutorialLocked || submitted;
     $("setup").classList.toggle("workflow-complete", step > 1 || submitted);
     $("students").classList.toggle("workflow-complete", state.studentsConfirmed || step > 2 || submitted);
     $("scores").classList.toggle("workflow-complete", state.scoresConfirmed || step > 3 || submitted);
     document.querySelectorAll("[data-jump]").forEach(btn => {
-      const order = { setup: 1, students: 2, scores: 3, ai: 3 }[btn.dataset.jump] || 1;
-      btn.disabled = tutorialLocked || (order > step && !submitted);
+      btn.disabled = tutorialLocked && !submitted;
     });
     $("tutorialBtn").disabled = false;
-    if (tutorialLocked && !submitted) {
-      $("statusLabel").textContent = "Tutorial Required";
-      $("statusSub").textContent = "Finish tutorial to begin";
-    }
   }
 
   function setLockedState(locked) {
@@ -1848,7 +1843,8 @@
     }
   }
   function finishTutorialStep() {
-    closeTutorial();
+    if (tutorialStep < tutorialSteps.length - 1) showTutorialStep(tutorialStep + 1);
+    else closeTutorial();
   }
   function currentTutorialIndex() {
     if (Number(state.workflowStep || 1) >= 4) return 3;
@@ -1900,7 +1896,7 @@
     $("tutorialTitle").textContent = step.title;
     $("tutorialText").textContent = step.text;
     $("tutorialIndex").textContent = `Guide ${index + 1} / ${tutorialSteps.length}`;
-    $("tutorialNext").textContent = "Got it";
+    $("tutorialNext").textContent = index === tutorialSteps.length - 1 ? "Got it" : "Next";
     $("tutorialBackdrop").hidden = false;
     $("tutorialPop").hidden = false;
     setTimeout(() => {
@@ -2989,7 +2985,7 @@ Reply conversationally, then include a machine-readable JSON at the end:
     bind();
     renderAll();
     updateAiProviderUi();
-    if (!state.subjectLocked && !state.tutorialComplete) setTimeout(startEntryTutorial, 450);
+    if (!state.subjectLocked) setTimeout(startEntryTutorial, 450);
   }
 
   try { init(); }
