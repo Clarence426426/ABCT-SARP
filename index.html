@@ -478,6 +478,16 @@
     .dropzone-text strong { display: block; font-size: 14px; color: var(--ink); margin-bottom: 3px; }
     .dropzone-text span { font-size: 12px; color: var(--muted); }
     .dropzone input[type="file"] { max-width: 280px; min-height: 36px; font-size: 12px; }
+    .file-upload-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    .file-upload-row input[type="file"] {
+      max-width: min(420px, 100%);
+    }
 
     /* ─── Stats strip ─── */
     .stats-strip {
@@ -801,15 +811,15 @@
 
     /* Reference dashboard skin */
     :root {
-      --bg: #fff7f4;
-      --ink: #311714;
-      --muted: #806b66;
-      --line: rgba(144, 74, 56, .18);
+      --bg: #faf7f7;
+      --ink: #261616;
+      --muted: #756665;
+      --line: rgba(139, 30, 45, .16);
       --paper: rgba(255, 255, 255, .88);
-      --soft: rgba(255, 247, 244, .78);
-      --brand: #a33a2a;
-      --brand-hover: #8f2e22;
-      --brand-light: rgba(163, 58, 42, .12);
+      --soft: rgba(250, 247, 247, .84);
+      --brand: #8b1e2d;
+      --brand-hover: #741725;
+      --brand-light: rgba(139, 30, 45, .12);
       --accent: #ffffff;
       --accent-hover: #f4edff;
       --accent-light: rgba(255, 255, 255, .16);
@@ -817,11 +827,11 @@
       --ok-bg: rgba(22, 163, 74, .12);
       --warn: #d94a64;
       --warn-bg: rgba(244, 63, 94, .12);
-      --amber: #f59e0b;
-      --amber-bg: rgba(251, 191, 36, .18);
-      --shadow-sm: 0 14px 40px rgba(115, 52, 39, .10);
-      --shadow: 0 22px 60px rgba(128, 55, 40, .14);
-      --shadow-lg: 0 30px 90px rgba(88, 35, 27, .26);
+      --amber: #8b1e2d;
+      --amber-bg: rgba(139, 30, 45, .12);
+      --shadow-sm: 0 14px 40px rgba(83, 24, 31, .10);
+      --shadow: 0 22px 60px rgba(83, 24, 31, .14);
+      --shadow-lg: 0 30px 90px rgba(64, 18, 24, .26);
       --radius: 8px;
       --radius-sm: 8px;
       --sidebar-w: 254px;
@@ -842,9 +852,9 @@
       height: 520px;
       pointer-events: none;
       background:
-        linear-gradient(180deg, rgba(255,255,255,0) 0 420px, #fff7f4 420px),
+        linear-gradient(180deg, rgba(255,255,255,0) 0 420px, #faf7f7 420px),
         repeating-linear-gradient(110deg, rgba(255,255,255,.13) 0 1px, transparent 1px 120px),
-        linear-gradient(146deg, #9f3b2c 0%, #b9553e 42%, #d28a58 100%);
+        linear-gradient(146deg, #62131d 0%, #8b1e2d 52%, #a5283a 100%);
       z-index: 0;
     }
     .app-shell {
@@ -863,8 +873,8 @@
       border: 1px solid rgba(255,255,255,.20);
       border-right: 1px solid rgba(255,255,255,.20);
       border-radius: 8px;
-      background: rgba(112, 43, 33, .62);
-      box-shadow: 0 24px 70px rgba(72, 28, 22, .24);
+      background: rgba(98, 19, 29, .72);
+      box-shadow: 0 24px 70px rgba(64, 18, 24, .24);
       color: #fff;
     }
     .sidebar-brand {
@@ -873,7 +883,7 @@
     .brand-logo {
       border-radius: 50%;
       background: #fff;
-      box-shadow: 0 10px 28px rgba(91, 34, 26, .22);
+      box-shadow: 0 10px 28px rgba(64, 18, 24, .22);
     }
     .brand-text strong,
     .status-label {
@@ -895,16 +905,16 @@
       background: rgba(255,255,255,.12);
     }
     .nav-item.active {
-      color: #7d2d22;
+      color: #7d1a29;
       background: #fff;
-      box-shadow: 0 12px 34px rgba(92, 34, 27, .18);
+      box-shadow: 0 12px 34px rgba(83, 24, 31, .18);
     }
     .nav-badge {
       background: rgba(255,255,255,.16);
       color: #fff;
     }
     .nav-item.active .nav-badge {
-      background: #a33a2a;
+      background: #8b1e2d;
       color: #fff;
     }
     .status-card {
@@ -936,9 +946,9 @@
       border-radius: 8px;
       background:
         linear-gradient(90deg, rgba(255,255,255,.94) 0 18%, rgba(250,247,255,.96) 18% 100%),
-        linear-gradient(140deg, rgba(163,58,42,.18), rgba(210,138,88,.16));
+        linear-gradient(140deg, rgba(139,30,45,.18), rgba(98,19,29,.10));
       border: 1px solid rgba(255,255,255,.72);
-      box-shadow: 0 24px 70px rgba(72, 28, 22, .22);
+      box-shadow: 0 24px 70px rgba(64, 18, 24, .22);
       transform: rotate(-14deg);
       z-index: -1;
     }
@@ -948,8 +958,8 @@
       right: -58px;
       top: 22px;
       background:
-        radial-gradient(circle at 72% 34%, rgba(245, 158, 11, .24) 0 5%, transparent 6%),
-        linear-gradient(90deg, #fff 0 18%, #fbf8ff 18% 100%);
+        radial-gradient(circle at 72% 34%, rgba(139, 30, 45, .18) 0 5%, transparent 6%),
+        linear-gradient(90deg, #fff 0 18%, #fbf8f8 18% 100%);
     }
     .topbar::after {
       width: 430px;
@@ -958,8 +968,8 @@
       bottom: -102px;
       transform: rotate(-12deg);
       background:
-        linear-gradient(90deg, #fff 0 18%, #fbf8ff 18% 100%),
-        repeating-linear-gradient(0deg, transparent 0 38px, rgba(163,58,42,.10) 39px 40px);
+        linear-gradient(90deg, #fff 0 18%, #fbf8f8 18% 100%),
+        repeating-linear-gradient(0deg, transparent 0 38px, rgba(139,30,45,.10) 39px 40px);
     }
     .topbar-title {
       max-width: 570px;
@@ -995,7 +1005,7 @@
       border: 1px solid rgba(255,255,255,.28);
       border-radius: 8px;
       background: rgba(255,255,255,.16);
-      box-shadow: 0 18px 50px rgba(91, 34, 26, .20);
+      box-shadow: 0 18px 50px rgba(64, 18, 24, .20);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
     }
@@ -1004,26 +1014,26 @@
     }
 
     .panel {
-      border-color: rgba(118, 89, 158, .16);
+      border-color: rgba(139, 30, 45, .14);
       background: rgba(255,255,255,.90);
       border-radius: 8px;
       box-shadow: var(--shadow-sm);
     }
     .panel-header {
       background:
-        linear-gradient(90deg, rgba(255,255,255,.78), rgba(250,247,255,.86));
+        linear-gradient(90deg, rgba(255,255,255,.78), rgba(252,248,248,.90));
     }
     .panel-icon,
     .dropzone-icon {
       border-radius: 50%;
-      background: linear-gradient(135deg, #a33a2a, #d28a58);
+      background: linear-gradient(135deg, #8b1e2d, #b02b3f);
       color: #fff;
     }
     .panel-eyebrow {
-      color: #8a78a8;
+      color: #9a7275;
     }
     .eyebrow {
-      color: #a33a2a;
+      color: #8b1e2d;
     }
 
     button,
@@ -1049,30 +1059,30 @@
     }
     .btn-primary {
       background: #fff;
-      color: #873126;
-      box-shadow: 0 10px 24px rgba(110, 43, 33, .12);
+      color: #7d1a29;
+      box-shadow: 0 10px 24px rgba(83, 24, 31, .12);
     }
     .btn-primary:hover {
-      background: #f6efff;
+      background: #fff5f6;
     }
     .panel .btn-primary,
     .modal .btn-primary,
     .tutorial-pop .btn-primary {
-      background: linear-gradient(135deg, #a33a2a, #c65c43);
+      background: linear-gradient(135deg, #8b1e2d, #a5283a);
       color: #fff;
     }
     .panel .btn-primary:hover,
     .modal .btn-primary:hover,
     .tutorial-pop .btn-primary:hover {
-      background: linear-gradient(135deg, #8f2e22, #b84e38);
+      background: linear-gradient(135deg, #741725, #8b1e2d);
     }
     .btn-secondary {
       background: #fff;
-      color: #5d4976;
+      color: #60494c;
     }
     .btn-secondary:hover {
-      background: #f7f0ff;
-      border-color: rgba(163,58,42,.30);
+      background: #fff5f6;
+      border-color: rgba(139,30,45,.30);
     }
 
     input,
@@ -1083,8 +1093,8 @@
     input:focus,
     textarea:focus,
     select:focus {
-      border-color: #b9553e;
-      box-shadow: 0 0 0 4px rgba(185, 85, 62, .16);
+      border-color: #8b1e2d;
+      box-shadow: 0 0 0 4px rgba(139, 30, 45, .16);
     }
 
     .component-row,
@@ -1094,38 +1104,38 @@
     }
     .stat-card {
       background:
-        linear-gradient(145deg, #fff, #fbf8ff);
+        linear-gradient(145deg, #fff, #fcf8f8);
     }
     .stat-value {
-      color: #a33a2a;
+      color: #8b1e2d;
     }
     thead th {
-      background: #f8f3ff;
-      color: #6a5a85;
+      background: #fcf4f5;
+      color: #705b5f;
     }
     tbody tr:hover {
-      background: rgba(163,58,42,.06);
+      background: rgba(139,30,45,.06);
     }
     .grade-pill {
-      background: rgba(163,58,42,.10);
-      border-color: rgba(163,58,42,.18);
-      color: #8f2e22;
+      background: rgba(139,30,45,.10);
+      border-color: rgba(139,30,45,.18);
+      color: #741725;
     }
     .ai-output {
-      background: #351814;
+      background: #2f1117;
     }
     .toast {
       border-radius: 999px;
-      background: #3f1d18;
+      background: #351019;
     }
 
     @media (max-width: 960px) {
       body::before {
         height: 620px;
         background:
-          linear-gradient(180deg, rgba(255,255,255,0) 0 520px, #fff7f4 520px),
+          linear-gradient(180deg, rgba(255,255,255,0) 0 520px, #faf7f7 520px),
           repeating-linear-gradient(110deg, rgba(255,255,255,.10) 0 1px, transparent 1px 120px),
-          linear-gradient(146deg, #9f3b2c 0%, #b9553e 42%, #d28a58 100%);
+          linear-gradient(146deg, #62131d 0%, #8b1e2d 52%, #a5283a 100%);
       }
       .app-shell {
         grid-template-columns: 1fr;
@@ -1353,8 +1363,12 @@
           <div class="dropzone-text">
             <strong>Upload class roster CSV</strong>
             <span>From eAcademic SUBREG export — expects columns: Student No., Name in English, Primary PS, Programme Title, Student Status</span>
-            <div style="margin-top:10px">
+            <div class="file-upload-row">
               <input id="studentFile" type="file" accept=".csv,text/csv">
+              <button class="btn-primary btn-sm btn-icon" id="uploadStudentsBtn" type="button" disabled>
+                <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                Upload
+              </button>
             </div>
           </div>
         </div>
@@ -1662,6 +1676,7 @@
     setSectionDisabled("ai", tutorialLocked || submitted || step < 3 || step > 3);
     $("confirmSetupBtn").disabled = tutorialLocked || submitted || step !== 1;
     $("confirmScoresBtn").disabled = tutorialLocked || submitted || step !== 3;
+    $("uploadStudentsBtn").disabled = tutorialLocked || submitted || step !== 2 || !selectedStudentFile;
     $("lecturerName").disabled = tutorialLocked || submitted || step < 4;
     $("staffNumber").disabled = tutorialLocked || submitted || step < 4;
     $("submitBtn").disabled = tutorialLocked || submitted || step < 4;
@@ -1708,6 +1723,7 @@
   /* ─── Tutorial ─── */
   let tutorialStep = -1;
   let aiUploads = [];
+  let selectedStudentFile = null;
   let resetToSetupAfterTutorial = false;
 
   const tutorialSteps = [
@@ -2270,6 +2286,54 @@
     URL.revokeObjectURL(a.href);
   }
 
+  async function importStudentFile(file) {
+    if (!file) {
+      toast("Choose a CSV file first.");
+      return;
+    }
+    const txt  = await file.text();
+    const rows = parseCsv(txt);
+    const header = rows.shift() || [];
+    const fileProblems = validateStudentRows(rows, header);
+    if (fileProblems.length) {
+      state.students = [];
+      state.studentsConfirmed = false;
+      state.scoresConfirmed = false;
+      syncSummary(); renderTable(); applyWorkflowState(); scheduleAutoSave();
+      openAlertModal("Student File Format Problem",
+        `<p>Please upload the eAcademic SUBREG CSV with the required columns.</p><ul>${fileProblems.map(p => `<li>${esc(p)}</li>`).join("")}</ul>`);
+      selectedStudentFile = null;
+      $("studentFile").value = "";
+      $("uploadStudentsBtn").disabled = true;
+      return;
+    }
+    state.students = rows.filter(r => r.some(v => String(v || "").trim())).map((r, i) => {
+      const obj = csvRecord(header, r);
+      const scores = {};
+      state.components.forEach(c => { scores[c.name] = ""; });
+      return {
+        no: i + 1,
+        studentNo: csvField(obj, ["Student No.", "Student No", "Student ID", "Student Number"]),
+        name: csvField(obj, ["Name in English", "Name", "Student Name", "English Name"]),
+        programme: csvField(obj, ["Primary PS", "Programme  PS", "Programme PS", "Programme", "Program"]),
+        programmeTitle: csvField(obj, ["Programme Title", "Program Title"]),
+        status: csvField(obj, ["Student Status", "Status"]),
+        scores, lecturerGrade: ""
+      };
+    });
+    state.studentsConfirmed = false;
+    state.scoresConfirmed = false;
+    state.workflowStep = 3;
+    state.studentsConfirmed = true;
+    selectedStudentFile = null;
+    $("studentFile").value = "";
+    $("uploadStudentsBtn").disabled = true;
+    saveLocal({ showToast: false });
+    renderAll();
+    jumpToSection("scores");
+    toast(`Imported ${state.students.length} student${state.students.length !== 1 ? "s" : ""}. Enter scores manually or use the AI helper.`);
+  }
+
   /* ─── Use all suggested grades ─── */
   function useAllSuggestedGrades() {
     let updated = 0;
@@ -2608,7 +2672,6 @@ Reply conversationally, then include a machine-readable JSON at the end:
       saveLocal({ showToast: false });
       renderAll();
       jumpToSection("students");
-      setTimeout(() => showTutorialStep(1), 450);
       toast("Subject setup confirmed. Import students next.");
     });
 
@@ -2622,47 +2685,21 @@ Reply conversationally, then include a machine-readable JSON at the end:
     });
 
     /* Student file */
-    $("studentFile").addEventListener("change", async e => {
-      const f = e.target.files[0];
-      if (!f) return;
-      const txt  = await f.text();
-      const rows = parseCsv(txt);
-      const header = rows.shift() || [];
-      const fileProblems = validateStudentRows(rows, header);
-      if (fileProblems.length) {
-        state.students = [];
-        state.studentsConfirmed = false;
-        state.scoresConfirmed = false;
-        syncSummary(); renderTable(); applyWorkflowState(); scheduleAutoSave();
-        openAlertModal("Student File Format Problem",
-          `<p>Please upload the eAcademic SUBREG CSV with the required columns.</p><ul>${fileProblems.map(p => `<li>${esc(p)}</li>`).join("")}</ul>`);
-        e.target.value = "";
-        return;
+    $("studentFile").addEventListener("change", e => {
+      selectedStudentFile = e.target.files[0] || null;
+      applyWorkflowState();
+      if (selectedStudentFile) toast(`Ready to upload ${selectedStudentFile.name}.`);
+    });
+    $("uploadStudentsBtn").addEventListener("click", async () => {
+      const btn = $("uploadStudentsBtn");
+      btn.disabled = true;
+      btn.textContent = "Uploading...";
+      try {
+        await importStudentFile(selectedStudentFile);
+      } finally {
+        btn.innerHTML = '<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>Upload';
+        btn.disabled = !selectedStudentFile;
       }
-      state.students = rows.filter(r => r.some(v => String(v || "").trim())).map((r, i) => {
-        const obj = csvRecord(header, r);
-        const scores = {};
-        state.components.forEach(c => { scores[c.name] = ""; });
-        return {
-          no: i + 1,
-          studentNo: csvField(obj, ["Student No.", "Student No", "Student ID", "Student Number"]),
-          name: csvField(obj, ["Name in English", "Name", "Student Name", "English Name"]),
-          programme: csvField(obj, ["Primary PS", "Programme  PS", "Programme PS", "Programme", "Program"]),
-          programmeTitle: csvField(obj, ["Programme Title", "Program Title"]),
-          status: csvField(obj, ["Student Status", "Status"]),
-          scores, lecturerGrade: ""
-        };
-      });
-      state.studentsConfirmed = false;
-      state.scoresConfirmed = false;
-      state.workflowStep = 3;
-      state.studentsConfirmed = true;
-      saveLocal({ showToast: false });
-      renderAll();
-      jumpToSection("scores");
-      setTimeout(() => showTutorialStep(2), 450);
-      toast(`Imported ${state.students.length} student${state.students.length !== 1 ? "s" : ""}. Enter scores manually or use the AI helper.`);
-      e.target.value = "";
     });
 
     /* Clear students */
