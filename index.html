@@ -349,12 +349,7 @@
       -webkit-backdrop-filter: saturate(160%) blur(18px);
     }
     .panel.workflow-locked {
-      opacity: .58;
-    }
-    .panel.workflow-locked .panel-body,
-    .panel.workflow-locked .panel-header > button,
-    .panel.workflow-locked .table-controls {
-      pointer-events: none;
+      opacity: 1;
     }
     .panel.workflow-complete {
       border-color: rgba(30, 126, 62, .35);
@@ -1141,6 +1136,36 @@
       border-color: rgba(139,30,45,.18);
       color: #741725;
     }
+    .grade-pill.grade-a,
+    select.grade-a {
+      background: #dff6e8;
+      border-color: #a9dfbf;
+      color: #17623a;
+    }
+    .grade-pill.grade-b,
+    select.grade-b {
+      background: #e5f0ff;
+      border-color: #b9d3ff;
+      color: #1f4f91;
+    }
+    .grade-pill.grade-c,
+    select.grade-c {
+      background: #fff4d7;
+      border-color: #f5d47c;
+      color: #7a5200;
+    }
+    .grade-pill.grade-d,
+    select.grade-d {
+      background: #ffe8d9;
+      border-color: #ffc29d;
+      color: #884111;
+    }
+    .grade-pill.grade-f,
+    select.grade-f {
+      background: #ffe2e8;
+      border-color: #f7a8b8;
+      color: #8b1e2d;
+    }
     .ai-output {
       background: #2f1117;
     }
@@ -1719,6 +1744,7 @@
     if (!section) return;
     section.classList.toggle("workflow-locked", !!disabled);
     section.querySelectorAll("input, select, textarea, button").forEach(el => {
+      if (el.id === "tutorialBtn") return;
       el.disabled = !!disabled;
     });
   }
@@ -1730,15 +1756,15 @@
     const step = Math.max(1, Math.min(4, Number(state.workflowStep || 1)));
     const submitted = !!state.subjectLocked;
     const tutorialLocked = !state.tutorialComplete;
-    setSectionDisabled("setup", tutorialLocked || submitted || step > 1);
-    setSectionDisabled("students", tutorialLocked || submitted || step < 2 || step > 2);
-    setSectionDisabled("scores", tutorialLocked || submitted || step < 3 || step > 3);
-    setSectionDisabled("ai", tutorialLocked || submitted || step < 3 || step > 3);
-    $("confirmSetupBtn").disabled = tutorialLocked || submitted || step !== 1;
-    $("confirmScoresBtn").disabled = tutorialLocked || submitted || step !== 3;
-    $("uploadStudentsBtn").disabled = tutorialLocked || submitted || step !== 2 || !selectedStudentFile;
-    $("lecturerName").disabled = tutorialLocked || submitted || step < 4;
-    $("staffNumber").disabled = tutorialLocked || submitted || step < 4;
+    setSectionDisabled("setup", tutorialLocked || submitted);
+    setSectionDisabled("students", tutorialLocked || submitted || step < 2);
+    setSectionDisabled("scores", tutorialLocked || submitted || step < 3);
+    setSectionDisabled("ai", tutorialLocked || submitted || step < 3);
+    $("confirmSetupBtn").disabled = tutorialLocked || submitted;
+    $("confirmScoresBtn").disabled = tutorialLocked || submitted || step < 3;
+    $("uploadStudentsBtn").disabled = tutorialLocked || submitted || step < 2 || !selectedStudentFile;
+    $("lecturerName").disabled = tutorialLocked || submitted;
+    $("staffNumber").disabled = tutorialLocked || submitted;
     $("submitBtn").disabled = tutorialLocked || submitted || step < 4;
     $("setup").classList.toggle("workflow-complete", step > 1 || submitted);
     $("students").classList.toggle("workflow-complete", state.studentsConfirmed || step > 2 || submitted);
@@ -2197,6 +2223,15 @@
     if (!suggestion) return "";
     return suggestion.includes(" or ") ? suggestion.split(" or ")[1].trim() : suggestion.trim();
   }
+  function gradeTone(grade) {
+    const value = String(grade || "").trim().toUpperCase();
+    if (value.startsWith("A")) return "grade-a";
+    if (value.startsWith("B")) return "grade-b";
+    if (value.startsWith("C")) return "grade-c";
+    if (value.startsWith("D")) return "grade-d";
+    if (value.startsWith("F")) return "grade-f";
+    return "";
+  }
 
   /* ─── Summary strip ─── */
   function syncSummary() {
@@ -2266,7 +2301,7 @@
         const over = Number.isFinite(raw) && raw > Number(c.fullMark || 0);
         return `<td><input class="${over ? "score-over" : ""}" type="number" step=".01" min="0" max="${c.fullMark}" value="${s.scores[c.name] ?? ""}" data-si="${real}" data-comp="${esc(c.name)}"></td>`;
       }).join("");
-      const gradeCell = `<select data-gi="${real}"><option value=""></option>${
+      const gradeCell = `<select class="${gradeTone(s.lecturerGrade)}" data-gi="${real}"><option value=""></option>${
         gradeOptions.map(g => `<option value="${g}" ${s.lecturerGrade === g ? "selected" : ""}>${g}</option>`).join("")
       }</select>`;
       return `<tr>
@@ -2276,7 +2311,7 @@
         <td>${esc(s.programme)}<div class="muted">${esc(s.programmeTitle)}</div></td>
         ${cells}
         <td><strong>${Number.isFinite(overall) ? overall.toFixed(2) : "—"}</strong></td>
-        <td><span class="grade-pill">${esc(grade) || "—"}</span></td>
+        <td><span class="grade-pill ${gradeTone(higherGrade(grade) || grade)}">${esc(grade) || "—"}</span></td>
         <td>${gradeCell}</td>
         <td><button class="btn-secondary btn-sm use-btn" type="button" data-use="${real}">Use suggested</button></td>
       </tr>`;
@@ -2310,6 +2345,7 @@
       n.addEventListener("change", e => {
         state.students[Number(e.target.dataset.gi)].lecturerGrade = e.target.value;
         state.scoresConfirmed = false;
+        renderTable();
         applyWorkflowState();
         scheduleAutoSave();
       });
@@ -2794,7 +2830,6 @@ Reply conversationally, then include a machine-readable JSON at the end:
       saveLocal({ showToast: false });
       renderAll();
       window.scrollTo({ top: 0, behavior: "smooth" });
-      setTimeout(() => showTutorialStep(3), 450);
       toast("Scores confirmed. Enter lecturer name and staff number, then submit.");
     });
 
@@ -2954,7 +2989,7 @@ Reply conversationally, then include a machine-readable JSON at the end:
     bind();
     renderAll();
     updateAiProviderUi();
-    if (!state.subjectLocked) setTimeout(startEntryTutorial, 450);
+    if (!state.subjectLocked && !state.tutorialComplete) setTimeout(startEntryTutorial, 450);
   }
 
   try { init(); }
