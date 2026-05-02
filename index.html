@@ -828,19 +828,28 @@
     }
 
     body {
+      position: relative;
+      min-height: 100vh;
       color: var(--ink);
-      background:
-        linear-gradient(146deg, #9f3b2c 0%, #b9553e 42%, #d28a58 100%) fixed;
+      background: var(--bg);
     }
     body::before {
       content: "";
-      position: fixed;
-      inset: 0;
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 520px;
       pointer-events: none;
       background:
         linear-gradient(180deg, rgba(255,255,255,0) 0 420px, #fff7f4 420px),
-        repeating-linear-gradient(110deg, rgba(255,255,255,.13) 0 1px, transparent 1px 120px);
-      z-index: -2;
+        repeating-linear-gradient(110deg, rgba(255,255,255,.13) 0 1px, transparent 1px 120px),
+        linear-gradient(146deg, #9f3b2c 0%, #b9553e 42%, #d28a58 100%);
+      z-index: 0;
+    }
+    .app-shell {
+      position: relative;
+      z-index: 1;
     }
 
     .app-shell {
@@ -1112,9 +1121,11 @@
 
     @media (max-width: 960px) {
       body::before {
+        height: 620px;
         background:
           linear-gradient(180deg, rgba(255,255,255,0) 0 520px, #fff7f4 520px),
-          repeating-linear-gradient(110deg, rgba(255,255,255,.10) 0 1px, transparent 1px 120px);
+          repeating-linear-gradient(110deg, rgba(255,255,255,.10) 0 1px, transparent 1px 120px),
+          linear-gradient(146deg, #9f3b2c 0%, #b9553e 42%, #d28a58 100%);
       }
       .app-shell {
         grid-template-columns: 1fr;
