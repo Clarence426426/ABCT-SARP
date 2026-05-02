@@ -1136,36 +1136,18 @@
       border-color: rgba(139,30,45,.18);
       color: #741725;
     }
-    .grade-pill.grade-a,
-    select.grade-a {
-      background: #dff6e8;
-      border-color: #a9dfbf;
-      color: #17623a;
-    }
-    .grade-pill.grade-b,
-    select.grade-b {
-      background: #e5f0ff;
-      border-color: #b9d3ff;
-      color: #1f4f91;
-    }
-    .grade-pill.grade-c,
-    select.grade-c {
-      background: #fff4d7;
-      border-color: #f5d47c;
-      color: #7a5200;
-    }
-    .grade-pill.grade-d,
-    select.grade-d {
-      background: #ffe8d9;
-      border-color: #ffc29d;
-      color: #884111;
-    }
-    .grade-pill.grade-f,
-    select.grade-f {
-      background: #ffe2e8;
-      border-color: #f7a8b8;
-      color: #8b1e2d;
-    }
+    .grade-pill.grade-ap, select.grade-ap { background: #d8f7df; border-color: #92d7a1; color: #0d5f2a; }
+    .grade-pill.grade-a, select.grade-a { background: #e4f8de; border-color: #abd99b; color: #2e6413; }
+    .grade-pill.grade-am, select.grade-am { background: #eff8dc; border-color: #c7dd95; color: #53680d; }
+    .grade-pill.grade-bp, select.grade-bp { background: #def4ff; border-color: #95d6f3; color: #075a7a; }
+    .grade-pill.grade-b, select.grade-b { background: #e6efff; border-color: #acc9f5; color: #1f4f91; }
+    .grade-pill.grade-bm, select.grade-bm { background: #eeeaff; border-color: #c5b8f2; color: #4f3b8b; }
+    .grade-pill.grade-cp, select.grade-cp { background: #fff7cd; border-color: #ecd86e; color: #705c00; }
+    .grade-pill.grade-c, select.grade-c { background: #fff0c2; border-color: #e6c15f; color: #7a5200; }
+    .grade-pill.grade-cm, select.grade-cm { background: #ffe7c7; border-color: #e6a96c; color: #814616; }
+    .grade-pill.grade-dp, select.grade-dp { background: #ffddcd; border-color: #ef9c72; color: #8a3512; }
+    .grade-pill.grade-d, select.grade-d { background: #ffd4dc; border-color: #ea91a1; color: #8b1e2d; }
+    .grade-pill.grade-f, select.grade-f { background: #f5d6dc; border-color: #d97f92; color: #6f1422; }
     .ai-output {
       background: #2f1117;
     }
@@ -1770,15 +1752,15 @@
     $("students").classList.toggle("workflow-complete", state.studentsConfirmed || step > 2 || submitted);
     $("scores").classList.toggle("workflow-complete", state.scoresConfirmed || step > 3 || submitted);
     document.querySelectorAll("[data-jump]").forEach(btn => {
-      btn.disabled = tutorialLocked && !submitted;
+      btn.disabled = submitted ? true : tutorialLocked;
     });
-    $("tutorialBtn").disabled = false;
+    $("tutorialBtn").disabled = submitted;
   }
 
   function setLockedState(locked) {
-    const controls = document.querySelectorAll("main input, main select, main textarea, main button");
+    const controls = document.querySelectorAll("main input, main select, main textarea, main button, .sidebar button");
     controls.forEach(el => {
-      if (["confirmSubmitYes","confirmSubmitNo","subjectSelect","unlockBtn"].includes(el.id)) return;
+      if (el.id === "unlockBtn") return;
       el.disabled = !!locked;
     });
     document.body.classList.toggle("subject-locked", !!locked);
@@ -2221,11 +2203,10 @@
   }
   function gradeTone(grade) {
     const value = String(grade || "").trim().toUpperCase();
-    if (value.startsWith("A")) return "grade-a";
-    if (value.startsWith("B")) return "grade-b";
-    if (value.startsWith("C")) return "grade-c";
-    if (value.startsWith("D")) return "grade-d";
-    if (value.startsWith("F")) return "grade-f";
+    const key = value.replace("+", "P").replace("-", "M");
+    if (["AP", "A", "AM", "BP", "B", "BM", "CP", "C", "CM", "DP", "D", "F"].includes(key)) {
+      return `grade-${key.toLowerCase()}`;
+    }
     return "";
   }
 
@@ -2297,7 +2278,8 @@
         const over = Number.isFinite(raw) && raw > Number(c.fullMark || 0);
         return `<td><input class="${over ? "score-over" : ""}" type="number" step=".01" min="0" max="${c.fullMark}" value="${s.scores[c.name] ?? ""}" data-si="${real}" data-comp="${esc(c.name)}"></td>`;
       }).join("");
-      const gradeCell = `<select class="${gradeTone(s.lecturerGrade)}" data-gi="${real}"><option value=""></option>${
+      const lecturerGrade = s.lecturerGrade || higherGrade(grade) || "";
+      const gradeCell = `<select class="${gradeTone(lecturerGrade)}" data-gi="${real}"><option value=""></option>${
         gradeOptions.map(g => `<option value="${g}" ${s.lecturerGrade === g ? "selected" : ""}>${g}</option>`).join("")
       }</select>`;
       return `<tr>
