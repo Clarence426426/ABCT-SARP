@@ -1324,11 +1324,10 @@
   let aiUploads = [];
 
   const tutorialSteps = [
-    { selector: "#subjectSelect",   title: "Step 1 - Choose a Subject", text: "Select the subject you are grading from the dropdown, or load a custom subjects.json file." },
-    { selector: "#compList",        title: "Step 2 - Assessment Components", text: "Edit assessment components and their percentage weightings. The total must equal 100%." },
-    { selector: "#studentFile",     title: "Step 3 - Import Students", text: "Upload the class roster CSV exported from eAcademic (SUBREG)." },
-    { selector: "#scores",          title: "Step 4 - Enter Scores", text: "Type scores directly in the table, or use the AI Helper to extract scores from an uploaded document.", prefer: "above" },
-    { selector: ".topbar-actions",  title: "Step 5 - Submit", text: "Enter your name and staff number, then click Submit Final to lock and export the submission." }
+    { selector: "#setup",           title: "Step 1 - Subject Setup", text: "Choose the subject, check the subject details, then enter the assessment components. Confirm this step only when the total weighting is 100%." },
+    { selector: "#studentFile",     title: "Step 2 - Import Students", text: "Upload the class roster CSV exported from eAcademic SUBREG. A valid file will move you directly to score entry." },
+    { selector: "#scores",          title: "Step 3 - Enter Scores", text: "Enter scores manually in the table, or use the AI Helper below to extract scores from uploaded documents. Confirm scores when finished.", prefer: "above" },
+    { selector: ".topbar-actions",  title: "Final Step - Submit", text: "Enter your lecturer name and staff number, then click Submit Final to lock and save the record." }
   ];
 
   function clearTutorialHighlight() {
@@ -1345,6 +1344,9 @@
       applyWorkflowState();
       toast("Tutorial complete. Start with Subject Setup.");
     }
+  }
+  function finishTutorialStep() {
+    closeTutorial();
   }
   function positionTutorialPopover(target, step) {
     const pop = $("tutorialPop");
@@ -1383,8 +1385,8 @@
     target.scrollIntoView({ behavior: "smooth", block: "center" });
     $("tutorialTitle").textContent = step.title;
     $("tutorialText").textContent = step.text;
-    $("tutorialIndex").textContent = `${index + 1} / ${tutorialSteps.length}`;
-    $("tutorialNext").textContent = index === tutorialSteps.length - 1 ? "Finish" : "Next";
+    $("tutorialIndex").textContent = `Guide ${index + 1} / ${tutorialSteps.length}`;
+    $("tutorialNext").textContent = "Got it";
     $("tutorialBackdrop").hidden = false;
     $("tutorialPop").hidden = false;
     setTimeout(() => {
@@ -2169,6 +2171,7 @@ Reply conversationally, then include a machine-readable JSON at the end:
       saveLocal({ showToast: false });
       renderAll();
       jumpToSection("students");
+      setTimeout(() => showTutorialStep(1), 450);
       toast("Subject setup confirmed. Import students next.");
     });
 
@@ -2219,6 +2222,7 @@ Reply conversationally, then include a machine-readable JSON at the end:
       saveLocal({ showToast: false });
       renderAll();
       jumpToSection("scores");
+      setTimeout(() => showTutorialStep(2), 450);
       toast(`Imported ${state.students.length} student${state.students.length !== 1 ? "s" : ""}. Enter scores manually or use the AI helper.`);
     });
 
@@ -2254,6 +2258,7 @@ Reply conversationally, then include a machine-readable JSON at the end:
       saveLocal({ showToast: false });
       renderAll();
       window.scrollTo({ top: 0, behavior: "smooth" });
+      setTimeout(() => showTutorialStep(3), 450);
       toast("Scores confirmed. Enter lecturer name and staff number, then submit.");
     });
 
@@ -2343,7 +2348,7 @@ Reply conversationally, then include a machine-readable JSON at the end:
     /* Tutorial */
     $("tutorialBtn").addEventListener("click", () => showTutorialStep(0));
     $("tutorialSkip").addEventListener("click", closeTutorial);
-    $("tutorialNext").addEventListener("click", () => showTutorialStep(tutorialStep + 1));
+    $("tutorialNext").addEventListener("click", finishTutorialStep);
     window.addEventListener("resize", () => {
       if (tutorialStep >= 0) {
         const step   = tutorialSteps[tutorialStep];
