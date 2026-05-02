@@ -1337,9 +1337,15 @@
     clearTutorialHighlight();
     $("tutorialBackdrop").hidden = true;
     $("tutorialPop").hidden = true;
+    const closedStep = tutorialStep;
     tutorialStep = -1;
     if (!state.tutorialComplete) {
       state.tutorialComplete = true;
+      if (closedStep === 0) {
+        state.workflowStep = 1;
+        state.studentsConfirmed = false;
+        state.scoresConfirmed = false;
+      }
       saveLocal({ showToast: false });
       applyWorkflowState();
       toast("Tutorial complete. Start with Subject Setup.");
