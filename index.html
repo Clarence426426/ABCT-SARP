@@ -336,6 +336,15 @@
     }
     textarea { resize: vertical; line-height: 1.5; }
     select { cursor: pointer; }
+    select.subject-completed {
+      background: #e8f6ec;
+      border-color: rgba(30, 126, 62, .38);
+    }
+    select option.subject-completed {
+      background: #e8f6ec;
+      color: #1f5f38;
+      font-weight: 700;
+    }
 
     /* ─── Panel ─── */
     .panel {
@@ -2080,10 +2089,20 @@
   function renderSubjectOptions() {
     const sorted = [...state.subjects].sort((a, b) =>
       String(a.code).localeCompare(String(b.code), undefined, { numeric: true }));
+    const isCompletedSubject = code => {
+      const key = String(code || "").trim();
+      const rec = key ? state.subjectWork[key] : null;
+      return !!rec?.locked || (key && key === state.subject.code && !!state.subjectLocked);
+    };
     $("subjectSelect").innerHTML = sorted
-      .map(s => `<option value="${esc(s.code)}">${esc(`${s.code} - ${s.title}`)}</option>`)
+      .map(s => {
+        const completed = isCompletedSubject(s.code);
+        const label = `${completed ? "✓ " : ""}${s.code} - ${s.title}`;
+        return `<option value="${esc(s.code)}" class="${completed ? "subject-completed" : ""}">${esc(label)}</option>`;
+      })
       .join("");
     if (state.subject.code) $("subjectSelect").value = state.subject.code;
+    $("subjectSelect").classList.toggle("subject-completed", isCompletedSubject(state.subject.code));
   }
   function updateSubjectInputs() {
     $("subjectSelect").value  = state.subject.code   || "";
