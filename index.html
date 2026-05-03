@@ -1619,52 +1619,13 @@
 <script src="assets/assessment-database.js"></script>
 <script>
   /* ─── Constants ─── */
-  const SUBJECTS = [
-    ["ABCT1000","Freshman Seminar"],["ABCT1001","Quantitative Skills for Chemical and Life Sciences"],["ABCT1002","Freshman Orientation for ABCT students"],
-    ["ABCT1101","Introductory Life Science"],["ABCT1102","General Biology"],["ABCT1103","General Laboratory Techniques and Safety"],
-    ["ABCT1700","Introduction to Chemistry"],["ABCT1741","General Chemistry I"],["ABCT1742","General Chemistry II"],
-    ["ABCT1D01","Chemistry and Modern Living"],["ABCT1D03","Biotechnology and Human Health"],["ABCT1D04","Introductory Life Science"],
-    ["ABCT1D09","Green House Gases and Life"],["ABCT1D11D","Life without Fossil Fuel"],["ABCT1D12","Science behind Crime Scene Investigation (CSI)"],
-    ["ABCT1D13","Introduction to cancer - cause, treatment and prevention"],["ABCT1D14","Chemistry and Sustainable Development"],["ABCT1D15","Our Endangered Earth"],
-    ["ABCT1D16","Introduction to vaccines -history, development and impact"],["ABCT1D18","Modern Day Material Sciences"],["ABCT1D19","Fun Facts of Scientific Discoveries"],
-    ["ABCT1D20","Science of Happiness"],["ABCT2001","Lab Techniques in Biological Sciences"],["ABCT2101","Biochemistry"],["ABCT2102","Molecular Biology"],
-    ["ABCT2103","Cell Biology"],["ABCT2133","Human Physiology"],["ABCT2134","Microbiology"],["ABCT2312","Introduction Cell Biology and Biochemistry"],
-    ["ABCT2326","Human Physiology"],["ABCT2328","Advanced Physiology"],["ABCT2329","Systemic Physiology"],["ABCT2330","Pharmacology In Rehabilitation"],
-    ["ABCT2331","Human Biology for Biomedical Engineering I"],["ABCT2332","Human Biology for Biomedical Engineering II"],["ABCT2422","Analytical Chemistry"],
-    ["ABCT2423","Organic Chemistry"],["ABCT2701","Analytical Chemistry I"],["ABCT2702","Physical Chemistry I"],["ABCT2704","Chemistry Laboratory I"],
-    ["ABCT2705","Chemistry Laboratory II"],["ABCT2706","Inorganic Chemistry I"],["ABCT2712","Physical Chemistry I"],["ABCT2742","Organic Chemistry I"],
-    ["ABCT2772","Introductory Physical Chemistry"],["ABCT2774","Chemistry Laboratory I"],["ABCT2S01","Educating Rural Farmers on Healthier Food Production"],
-    ["ABCT3101","Immunology"],["ABCT3102","Commercialization of Biotechnology Products"],["ABCT3103","Environmental Science"],
-    ["ABCT3104","Commercialization of Biotechnology Products"],["ABCT3108","Chemical Pathology"],["ABCT3109","Haematology and Transfusion Science"],
-    ["ABCT3110","Anatomical Pathology"],["ABCT3112","DNA Technology"],["ABCT3113","Biochemical Techniques"],["ABCT3116","Experimental Approach in Molecular Biology and Biochemistry"],
-    ["ABCT3260","Applied Chemistry Laboratory"],["ABCT3273","Applied Chemistry - Polymer"],["ABCT3276","Applied Chemistry - Environmental Chemistry"],
-    ["ABCT3391","Ecology and Ecosystem"],["ABCT3621","Chemical Principles for Testing and Analysis"],["ABCT3622","Experimental Techniques in Chemistry"],
-    ["ABCT3623","Analytical Spectroscopy"],["ABCT3624","Chromatographic Analysis"],["ABCT3625","Chromatographic Analysis Laboratory"],["ABCT3626","Biomolecules"],
-    ["ABCT3631","Metrology and Calibration"],["ABCT3641","Microbiology and Toxicology"],["ABCT3642","Microbiological Techniques"],["ABCT3707","Organic Chemistry II Laboratory"],
-    ["ABCT3708","Intermediate Physical Chemistry"],["ABCT3709","Analytical Chemistry II Laboratory"],["ABCT3712","Physical Chemistry II"],["ABCT3741","Analytical Chemistry II"],
-    ["ABCT3742","Organic Chemistry II"],["ABCT3747","Introduction to Chemical and Bioprocess Technology"],["ABCT3759","Analytical Chemistry II Laboratory"],
-    ["ABCT3779","Inorganic Chemistry II"],["ABCT3780","Inorganic Chemistry II Laboratory"],["ABCT4000","Project"],["ABCT4100","Research Project"],
-    ["ABCT4101","Advanced Molecular Biology"],["ABCT4102","Immunotechnology"],["ABCT4103","Protein Biotechnology"],["ABCT4104","Recent Developments in Medical Biotechnology"],
-    ["ABCT4105","Metabolism and Diseases"],["ABCT4106","Pharmacology of Drug Therapy"],["ABCT4110","Microbial Biotechnology"],["ABCT4111","Project"],
-    ["ABCT4112","Research Project"],["ABCT4113","Project"],["ABCT4115","Bioinformatics"],["ABCT4117","Advanced Anatomical Pathology"],
-    ["ABCT4403","Water & Waste Management"],["ABCT4631","Test Method, Measurement and Uncertainty"],["ABCT4632","Inspection and Certification"],
-    ["ABCT4633","Quality Management and Laboratory Accreditation"],["ABCT4634","Environmental, Social and Governance (ESG), and Sustainability Principles for Science Students"],
-    ["ABCT4635","Laboratory Quality Management Systems and Automation for Analytical Sciences"],["ABCT4651","Environmental, Medicinal, Food and Other Commodities Testing"],
-    ["ABCT4652","Capstone Project"],["ABCT4708","Principles of Quality Assurance"],["ABCT4709","Project"],["ABCT4712","Physical Chemistry III"],
-    ["ABCT4713","Physical Chemistry Laboratory"],["ABCT4740","Polymer Chemistry and Nanotechnology"],["ABCT4741","Industrial Electrochemistry"],
-    ["ABCT4743","Advanced Analytical Techniques"],["ABCT4745","Organometallic Chemistry & Catalysis"],["ABCT4758","Advanced Analytical Techniques Laboratory"],
-    ["ABCT4759","Organometallic Chemistry & Catalysis Laboratory"],["ABCT4760","Industrial Electrochemistry Laboratory"],["ABCT4762","Medicinal Chemistry"],
-    ["ABCT4763","Polymer Laboratory"],["ABCT4765","Economic Analysis for Process Technology"],["ABCT4769","Project"],["ABCT4770","Research Project"],
-    ["ABCT4772","Advanced Physical Chemistry"],["ABCT4773","Advanced Physical Chemistry Laboratory"],["ABCT4779","Natural Products Chemistry"]
-  ];
-
   const gradeBands = [
     [95,"A+"], [80,"A or A+"], [75,"A- or A"], [70,"B+ or A-"], [65,"B or B+"], [60,"B- or B"],
     [55,"C+ or B-"], [50,"C or C+"], [45,"C- or C"], [40,"D+ or C-"], [35,"D or D+"], [30,"F or D"], [0,"F"]
   ];
   const gradeOptions = ["A+","A","A-","B+","B","B-","C+","C","C-","D+","D","F"];
 
-  const STORAGE_KEY = "abct_sarp_v3";
+  const STORAGE_KEY = "abct_sarp_v4";
   const GOOGLE_SHEETS_WEB_APP_URL = "";
   const ASSESSMENT_DATABASE = window.ASSESSMENT_DATABASE || {};
   const defaultComponents = [
@@ -1676,17 +1637,13 @@
 
   /* ─── State ─── */
   function initialSubjects() {
-    const subjects = new Map();
-    Object.entries(ASSESSMENT_DATABASE).forEach(([code, rec]) => {
+    return Object.entries(ASSESSMENT_DATABASE).map(([code, rec]) => {
       const key = String(code || "").trim().toUpperCase();
       const title = String(rec?.title || "").trim();
-      if (key && title) subjects.set(key, { code: key, title, credit: Number(rec?.credit || 0), ca: 0, exam: 0 });
-    });
-    SUBJECTS.forEach(([code, title]) => {
-      const key = String(code || "").trim().toUpperCase();
-      if (key && !subjects.has(key)) subjects.set(key, { code: key, title, credit: 0, ca: 0, exam: 0 });
-    });
-    return [...subjects.values()].sort((a, b) => String(a.code).localeCompare(String(b.code), undefined, { numeric: true }));
+      return { code: key, title, credit: Number(rec?.credit || 0), ca: 0, exam: 0 };
+    })
+      .filter(subject => subject.code && subject.title)
+      .sort((a, b) => String(a.code).localeCompare(String(b.code), undefined, { numeric: true }));
   }
 
   const state = {
