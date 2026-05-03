@@ -2856,8 +2856,6 @@ Reply conversationally, then include a machine-readable JSON at the end:
             `<p>The form could not be sent to Google Sheets. Please check the Apps Script deployment URL and internet connection.</p><p class="muted">${esc(error.message || error)}</p>`);
           return;
         }
-      } else {
-        downloadJson(submission, `${state.subject.code || "subject"}-sarp-submission.json`);
       }
 
       state.subjectLocked = true;
@@ -2867,9 +2865,7 @@ Reply conversationally, then include a machine-readable JSON at the end:
       setLockedState(true);
       submitButton.disabled = false;
       submitButton.textContent = originalLabel;
-      toast(isGoogleSheetsConfigured()
-        ? `Submitted and saved: ${state.subject.code}.`
-        : `Submitted and locked: ${state.subject.code}. JSON downloaded.`);
+      toast(`Submitted and locked: ${state.subject.code}.`);
     });
 
     /* Alert modal */
