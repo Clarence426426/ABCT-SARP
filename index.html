@@ -1726,7 +1726,7 @@
     if (!section) return;
     section.classList.toggle("workflow-locked", !!disabled);
     section.querySelectorAll("input, select, textarea, button").forEach(el => {
-      if (el.id === "tutorialBtn") return;
+      if (el.id === "subjectSelect") return;
       el.disabled = !!disabled;
     });
   }
@@ -1755,12 +1755,13 @@
       btn.disabled = submitted ? true : tutorialLocked;
     });
     $("tutorialBtn").disabled = submitted;
+    $("subjectSelect").disabled = false;
   }
 
   function setLockedState(locked) {
     const controls = document.querySelectorAll("main input, main select, main textarea, main button, .sidebar button");
     controls.forEach(el => {
-      if (el.id === "unlockBtn") return;
+      if (["unlockBtn", "subjectSelect"].includes(el.id)) return;
       el.disabled = !!locked;
     });
     document.body.classList.toggle("subject-locked", !!locked);
@@ -2071,6 +2072,7 @@
       state.scoresConfirmed = false;
     }
     renderAll();
+    setLockedState(state.subjectLocked);
     scheduleAutoSave();
   }
 
