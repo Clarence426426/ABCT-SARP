@@ -1616,6 +1616,7 @@
   </div>
 </div>
 
+<script src="assets/assessment-database.js"></script>
 <script>
   /* ─── Constants ─── */
   const SUBJECTS = [
@@ -1665,6 +1666,7 @@
 
   const STORAGE_KEY = "abct_sarp_v3";
   const GOOGLE_SHEETS_WEB_APP_URL = "";
+  const ASSESSMENT_DATABASE = window.ASSESSMENT_DATABASE || {};
   const defaultComponents = [
     { name: "Midterm",            weight: 25, scheme: "Absolute Score", fullMark: 25  },
     { name: "Written Assignment", weight: 20, scheme: "Absolute Score", fullMark: 100 },
@@ -1673,8 +1675,22 @@
   ];
 
   /* ─── State ─── */
+  function initialSubjects() {
+    const subjects = new Map();
+    Object.entries(ASSESSMENT_DATABASE).forEach(([code, rec]) => {
+      const key = String(code || "").trim().toUpperCase();
+      const title = String(rec?.title || "").trim();
+      if (key && title) subjects.set(key, { code: key, title, credit: Number(rec?.credit || 0), ca: 0, exam: 0 });
+    });
+    SUBJECTS.forEach(([code, title]) => {
+      const key = String(code || "").trim().toUpperCase();
+      if (key && !subjects.has(key)) subjects.set(key, { code: key, title, credit: 0, ca: 0, exam: 0 });
+    });
+    return [...subjects.values()].sort((a, b) => String(a.code).localeCompare(String(b.code), undefined, { numeric: true }));
+  }
+
   const state = {
-    subjects: SUBJECTS.map(([code, title]) => ({ code, title, credit: 0, ca: 0, exam: 0 })),
+    subjects: initialSubjects(),
     subject: {},
     components: deepClone(defaultComponents),
     students: [],
@@ -1979,6 +1995,10 @@
 
   /* ─── Subject workspace ─── */
   function defaultComponentsForSubject(subject) {
+    if (Array.isArray(subject?.components) && subject.components.length) return deepClone(subject.components);
+    const code = String(subject?.code || "").trim().toUpperCase();
+    const savedComponents = ASSESSMENT_DATABASE[code]?.components;
+    if (Array.isArray(savedComponents) && savedComponents.length) return deepClone(savedComponents);
     const ca   = Number(subject?.ca   || 0);
     const exam = Number(subject?.exam || 0);
     const next = [];
@@ -2959,7 +2979,8 @@ Reply conversationally, then include a machine-readable JSON at the end:
             title:  String(x.title  || "").trim(),
             credit: Number(x.credit || 0),
             ca:     Number(x.ca     || 0),
-            exam:   Number(x.exam   || 0)
+            exam:   Number(x.exam   || 0),
+            components: Array.isArray(x.components) ? x.components : null
           })).filter(x => x.code && x.title);
           state.subjects.sort((a, b) => String(a.code).localeCompare(String(b.code), undefined, { numeric: true }));
           if (!state.subjects.find(x => x.code === state.subject.code)) {
