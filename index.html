@@ -1678,6 +1678,8 @@
     filter: "",
     subjectLocked: false,
     savedAt: "",
+    submittedAt: "",
+    finalSubmission: null,
     workflowStep: 1,
     studentsConfirmed: false,
     scoresConfirmed: false,
@@ -2001,6 +2003,9 @@
       components: deepClone(state.components),
       students: deepClone(state.students),
       locked: !!state.subjectLocked,
+      savedAt: state.savedAt || "",
+      submittedAt: state.submittedAt || "",
+      finalSubmission: state.finalSubmission ? deepClone(state.finalSubmission) : null,
       workflowStep: Number(state.workflowStep || 1),
       studentsConfirmed: !!state.studentsConfirmed,
       scoresConfirmed: !!state.scoresConfirmed
@@ -2016,6 +2021,8 @@
       state.components = Array.isArray(rec.components) ? deepClone(rec.components) : defaultComponentsForSubject(state.subject);
       state.students   = Array.isArray(rec.students)   ? deepClone(rec.students)   : [];
       state.subjectLocked = !!rec.locked;
+      state.submittedAt = rec.submittedAt || "";
+      state.finalSubmission = rec.finalSubmission ? deepClone(rec.finalSubmission) : null;
       state.workflowStep = Number(rec.workflowStep || 1);
       state.studentsConfirmed = !!rec.studentsConfirmed;
       state.scoresConfirmed = !!rec.scoresConfirmed;
@@ -2023,6 +2030,8 @@
       state.components = defaultComponentsForSubject(state.subject);
       state.students   = [];
       state.subjectLocked = false;
+      state.submittedAt = "";
+      state.finalSubmission = null;
       state.workflowStep = 1;
       state.studentsConfirmed = false;
       state.scoresConfirmed = false;
@@ -2039,6 +2048,10 @@
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch {}
     renderStatus();
     if (showToast) toast("Progress saved.");
+  }
+  function persistNow() {
+    clearTimeout(autoSaveTimer);
+    saveLocal({ showToast: false });
   }
   function scheduleAutoSave() {
     clearTimeout(autoSaveTimer);
@@ -2059,6 +2072,8 @@
       state.filter       = saved.filter || "";
       state.subjectLocked = !!saved.subjectLocked;
       state.savedAt      = saved.savedAt || "";
+      state.submittedAt  = saved.submittedAt || "";
+      state.finalSubmission = saved.finalSubmission || null;
       state.workflowStep = Number(saved.workflowStep || 1);
       state.studentsConfirmed = !!saved.studentsConfirmed;
       state.scoresConfirmed = !!saved.scoresConfirmed;
@@ -2080,7 +2095,7 @@
     }
     renderAll();
     setLockedState(state.subjectLocked);
-    scheduleAutoSave();
+    persistNow();
   }
 
   /* ─── Render: Subject ─── */
@@ -2889,7 +2904,9 @@ Reply conversationally, then include a machine-readable JSON at the end:
       }
 
       state.subjectLocked = true;
-      saveLocal({ showToast: false });
+      state.submittedAt = submission.submittedAt;
+      state.finalSubmission = submission;
+      persistNow();
       closeSubmitModal();
       renderStatus();
       setLockedState(true);
@@ -2905,7 +2922,7 @@ Reply conversationally, then include a machine-readable JSON at the end:
     $("unlockBtn").addEventListener("click", () => {
       if (!state.subjectLocked) return;
       state.subjectLocked = false;
-      saveLocal({ showToast: false });
+      persistNow();
       renderStatus(); setLockedState(false);
       toast(`Unlocked ${state.subject.code}. Editing re-enabled.`);
     });
@@ -2921,6 +2938,8 @@ Reply conversationally, then include a machine-readable JSON at the end:
       $("staffNumber").classList.remove("invalid");
       scheduleAutoSave();
     });
+    window.addEventListener("pagehide", persistNow);
+    window.addEventListener("beforeunload", persistNow);
 
     /* Tutorial */
     $("tutorialBtn").addEventListener("click", () => showTutorialStep(currentTutorialIndex()));
