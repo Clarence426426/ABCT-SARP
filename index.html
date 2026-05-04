@@ -431,7 +431,7 @@
     .component-list { display: grid; gap: 8px; }
     .component-row {
       display: grid;
-      grid-template-columns: 1.6fr 0.55fr 0.65fr 0.9fr auto;
+      grid-template-columns: 1.8fr 0.6fr 0.7fr auto;
       gap: 10px;
       align-items: end;
       padding: 14px;
@@ -1303,7 +1303,7 @@
     </button>
     <button class="nav-item" data-jump="students">
       <span class="nav-badge">2</span>
-      Student Import
+      Import Class List
     </button>
     <button class="nav-item" data-jump="scores">
       <span class="nav-badge">3</span>
@@ -1414,7 +1414,7 @@
       </div>
     </section>
 
-    <!-- ── 2. Student Import ── -->
+    <!-- ── 2. Import Class List ── -->
     <section class="panel" id="students">
       <div class="panel-header">
         <div class="panel-header-left">
@@ -1423,7 +1423,7 @@
           </div>
           <div>
             <p class="panel-eyebrow">Step 2</p>
-            <h2>Student Import</h2>
+            <h2>Import Class List</h2>
           </div>
         </div>
         <button class="btn-danger btn-sm btn-icon" id="clearStudentsBtn" type="button">
@@ -1585,6 +1585,26 @@
   </div>
 </div>
 
+<!-- Suggested grade choice modal -->
+<div class="modal-backdrop" id="gradeChoiceModal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="gradeChoiceTitle">
+    <div class="modal-header">
+      <div class="modal-icon warn">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h3 id="gradeChoiceTitle">Apply Suggested Grades</h3>
+    </div>
+    <div class="modal-body">
+      <p>Choose which side of each suggested grade range to apply to the lecturer grade column.</p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-secondary" id="gradeChoiceCancel" type="button">Cancel</button>
+      <button class="btn-secondary" id="gradeChoiceLower" type="button">Use lower grade</button>
+      <button class="btn-primary" id="gradeChoiceHigher" type="button">Use higher grade</button>
+    </div>
+  </div>
+</div>
+
 <!-- Alert modal -->
 <div class="modal-backdrop" id="alertModal" hidden>
   <div class="modal" role="alertdialog" aria-modal="true" aria-labelledby="alertModalTitle">
@@ -1625,14 +1645,14 @@
   ];
   const gradeOptions = ["A+","A","A-","B+","B","B-","C+","C","C-","D+","D","F"];
 
-  const STORAGE_KEY = "abct_sarp_v4";
+  const STORAGE_KEY = "abct_sarp_v5";
   const GOOGLE_SHEETS_WEB_APP_URL = "";
   const ASSESSMENT_DATABASE = window.ASSESSMENT_DATABASE || {};
   const defaultComponents = [
-    { name: "Midterm",            weight: 25, scheme: "Absolute Score", fullMark: 25  },
-    { name: "Written Assignment", weight: 20, scheme: "Absolute Score", fullMark: 100 },
-    { name: "In Class",           weight: 10, scheme: "Absolute Score", fullMark: 10  },
-    { name: "Final Exam",         weight: 45, scheme: "Absolute Score", fullMark: 100 }
+    { name: "Midterm",            weight: 25, scheme: "Absolute Score", fullMark: "" },
+    { name: "Written Assignment", weight: 20, scheme: "Absolute Score", fullMark: "" },
+    { name: "In Class",           weight: 10, scheme: "Absolute Score", fullMark: "" },
+    { name: "Final Exam",         weight: 45, scheme: "Absolute Score", fullMark: "" }
   ];
 
   /* ─── State ─── */
@@ -1774,7 +1794,7 @@
 
   const tutorialSteps = [
     { selector: "#setup",           title: "Step 1 - Subject Setup", text: "Choose the subject, check the subject details, then enter the assessment components. Confirm this step only when the total weighting is 100%." },
-    { selector: "#studentFile",     title: "Step 2 - Import Students", text: "Upload the class roster CSV exported from eAcademic SUBREG. A valid file will move you directly to score entry." },
+    { selector: "#studentFile",     title: "Step 2 - Import Class List", text: "Upload the class roster CSV exported from eAcademic SUBREG. A valid file will move you directly to score entry." },
     { selector: "#scores",          title: "Step 3 - Enter Scores", text: "Enter scores manually in the table, or use the AI Helper below to extract scores from uploaded documents. Confirm scores when finished.", prefer: "above" },
     { selector: ".topbar-actions",  title: "Final Step - Submit", text: "Enter your lecturer name and staff number, then click Submit Final to lock and save the record." }
   ];
@@ -1899,7 +1919,8 @@
       if (name && names.has(name.toLowerCase())) errors.push(`Duplicate component name: ${name}.`);
       names.add(name.toLowerCase());
       if (Number(c.weight || 0) <= 0) errors.push(`${name || `Component ${i + 1}`} needs a positive weighting.`);
-      if (Number(c.fullMark || 0) <= 0) errors.push(`${name || `Component ${i + 1}`} needs a positive full mark.`);
+      if (String(c.fullMark ?? "").trim() === "") errors.push(`${name || `Component ${i + 1}`} needs a full mark.`);
+      else if (Number(c.fullMark) <= 0) errors.push(`${name || `Component ${i + 1}`} needs a positive full mark.`);
     });
     const total = round(state.components.reduce((s, c) => s + Number(c.weight || 0), 0));
     if (Math.abs(total - 100) > 0.01) errors.push(`Assessment total is ${total}%. It must be 100%.`);
@@ -1940,7 +1961,7 @@
   }
   function validateScoresForConfirm() {
     const errors = [];
-    if (!state.students.length) errors.push("Import students before confirming scores.");
+    if (!state.students.length) errors.push("Import class list before confirming scores.");
     state.students.forEach(stu => {
       const missing = state.components.filter(c => String(stu.scores?.[c.name] ?? "").trim() === "").map(c => c.name);
       if (missing.length) errors.push(`${stu.studentNo || stu.name || "A student"} is missing scores for: ${missing.join(", ")}.`);
@@ -1959,8 +1980,8 @@
     const ca   = Number(subject?.ca   || 0);
     const exam = Number(subject?.exam || 0);
     const next = [];
-    if (ca   > 0) next.push({ name: "Continuous Assessment", weight: round(ca * 100),   scheme: "Absolute Score", fullMark: 100 });
-    if (exam > 0) next.push({ name: "Final Exam",            weight: round(exam * 100), scheme: "Absolute Score", fullMark: 100 });
+    if (ca   > 0) next.push({ name: "Continuous Assessment", weight: round(ca * 100),   scheme: "Absolute Score", fullMark: "" });
+    if (exam > 0) next.push({ name: "Final Exam",            weight: round(exam * 100), scheme: "Absolute Score", fullMark: "" });
     return next.length ? next : deepClone(defaultComponents);
   }
 
@@ -2099,13 +2120,7 @@
           <input data-c="${i}" data-f="weight" type="number" step=".01" min="0" max="100" value="${c.weight}">
         </label>
         <label>Full mark
-          <input data-c="${i}" data-f="fullMark" type="number" step=".01" min="1" value="${c.fullMark}">
-        </label>
-        <label>Scheme
-          <select data-c="${i}" data-f="scheme">
-            <option ${c.scheme === "Absolute Score" ? "selected" : ""}>Absolute Score</option>
-            <option ${c.scheme === "Percentage" ? "selected" : ""}>Percentage</option>
-          </select>
+          <input data-c="${i}" data-f="fullMark" type="number" step=".01" min="1" value="${esc(c.fullMark ?? "")}" placeholder="Enter full mark">
         </label>
         <button class="btn-danger btn-sm" data-rm="${i}" type="button">Remove</button>
       </div>
@@ -2116,8 +2131,11 @@
         const idx   = Number(e.target.dataset.c);
         const field = e.target.dataset.f;
         const oldName = state.components[idx]?.name;
-        state.components[idx][field] = ["weight","fullMark"].includes(field)
-          ? (Number(e.target.value) || 0) : e.target.value;
+        state.components[idx][field] = field === "weight"
+          ? (Number(e.target.value) || 0)
+          : field === "fullMark"
+            ? e.target.value.trim()
+            : e.target.value;
         if (field === "name" && oldName && oldName !== state.components[idx].name) {
           const newName = state.components[idx].name;
           state.students.forEach(stu => {
@@ -2198,6 +2216,10 @@
   function higherGrade(suggestion) {
     if (!suggestion) return "";
     return suggestion.includes(" or ") ? suggestion.split(" or ")[1].trim() : suggestion.trim();
+  }
+  function lowerGrade(suggestion) {
+    if (!suggestion) return "";
+    return suggestion.includes(" or ") ? suggestion.split(" or ")[0].trim() : suggestion.trim();
   }
   function gradeTone(grade) {
     const value = String(grade || "").trim().toUpperCase();
@@ -2407,17 +2429,26 @@
   }
 
   /* ─── Use all suggested grades ─── */
-  function useAllSuggestedGrades() {
+  function openGradeChoiceModal() {
+    if (!state.students.length) { toast("Import class list before applying suggested grades."); return; }
+    $("gradeChoiceModal").hidden = false;
+  }
+  function closeGradeChoiceModal() {
+    $("gradeChoiceModal").hidden = true;
+  }
+  function useAllSuggestedGrades(mode = "higher") {
+    const pickGrade = mode === "lower" ? lowerGrade : higherGrade;
     let updated = 0;
     state.students.forEach(stu => {
-      const s = higherGrade(suggestGrade(calcOverall(stu)));
+      const s = pickGrade(suggestGrade(calcOverall(stu)));
       if (!s) return;
       stu.lecturerGrade = s;
       updated++;
     });
+    closeGradeChoiceModal();
     state.scoresConfirmed = false;
     renderTable(); applyWorkflowState(); scheduleAutoSave();
-    toast(`Applied suggested grades for ${updated} student${updated !== 1 ? "s" : ""}.`);
+    toast(`Applied ${mode} suggested grades for ${updated} student${updated !== 1 ? "s" : ""}.`);
   }
 
   /* ─── Submission ─── */
@@ -2629,7 +2660,7 @@ Reply conversationally, then include a machine-readable JSON at the end:
     const provider = $("aiProvider").value;
     const model    = $("aiModel").value.trim() || defaultAiModel(provider);
     if (!key) { toast("Please enter your API key first."); return; }
-    if (!state.students.length) { toast("Import students before using the AI helper."); return; }
+    if (!state.students.length) { toast("Import class list before using the AI helper."); return; }
 
     const btn = $("askAiBtn");
     btn.disabled = true;
@@ -2744,12 +2775,12 @@ Reply conversationally, then include a machine-readable JSON at the end:
       saveLocal({ showToast: false });
       renderAll();
       jumpToSection("students");
-      toast("Subject setup confirmed. Import students next.");
+      toast("Subject setup confirmed. Import class list next.");
     });
 
     /* Add component */
     $("addCompBtn").addEventListener("click", () => {
-      state.components.push({ name: "New Component", weight: 0, scheme: "Absolute Score", fullMark: 100 });
+      state.components.push({ name: "New Component", weight: 0, scheme: "Absolute Score", fullMark: "" });
       state.students = normalizeStudentsForComponents(state.students, state.components);
       state.studentsConfirmed = false;
       state.scoresConfirmed = false;
@@ -2792,7 +2823,10 @@ Reply conversationally, then include a machine-readable JSON at the end:
 
     /* Export & bulk grade */
     $("exportBtn").addEventListener("click", exportCsv);
-    $("useAllSuggestedBtn").addEventListener("click", useAllSuggestedGrades);
+    $("useAllSuggestedBtn").addEventListener("click", openGradeChoiceModal);
+    $("gradeChoiceCancel").addEventListener("click", closeGradeChoiceModal);
+    $("gradeChoiceLower").addEventListener("click", () => useAllSuggestedGrades("lower"));
+    $("gradeChoiceHigher").addEventListener("click", () => useAllSuggestedGrades("higher"));
 
     $("confirmScoresBtn").addEventListener("click", () => {
       const problems = validateScoresForConfirm();
@@ -2813,7 +2847,7 @@ Reply conversationally, then include a machine-readable JSON at the end:
     $("submitBtn").addEventListener("click", () => {
       if (state.subjectLocked) { toast("This subject is already submitted and locked."); return; }
       if (Number(state.workflowStep || 1) < 4 || !state.scoresConfirmed) {
-        openAlertModal("Workflow Incomplete", "<p>Please confirm subject setup, student import, and scores before submitting.</p>");
+        openAlertModal("Workflow Incomplete", "<p>Please confirm subject setup, import class list, and scores before submitting.</p>");
         return;
       }
       state.lecturerName = $("lecturerName").value.trim();

@@ -1,5 +1,5 @@
 // Generated from assessment_methods_100_percent_revised.xlsx, sheet: 100 Percent Revised Table.
-// This replaces the previous assessment database; rows without subject codes are intentionally skipped.
+// This replaces the previous assessment database; rows without subject codes are intentionally skipped. Full marks are intentionally blank for lecturer entry.
 window.ASSESSMENT_DATABASE = {
   "ABCT318": {
     "title": "Commercialization of Biotechnology Products",
@@ -9,19 +9,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Presentations",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "final written library project",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "problem sets during the lecture series as assignments",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -36,13 +36,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "continuous assessment",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "examination",
         "weight": 70.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -57,19 +57,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "final written library project",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "presentations",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "problem sets during the lecture series as assignments",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -84,31 +84,31 @@ window.ASSESSMENT_DATABASE = {
         "name": "Assignments on Professor/",
         "weight": 24.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Assignments on Professor/ Expert Seminar",
         "weight": 18.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Attendance",
         "weight": 8.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Project presentation",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Project write-up",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -123,13 +123,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Examination",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Tests/assignments",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -144,25 +144,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Attendance",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Interview Report",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Project presentation (Video)",
         "weight": 35.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Project write-up",
         "weight": 35.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -177,37 +177,37 @@ window.ASSESSMENT_DATABASE = {
         "name": "End of subject exam",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Presentation",
         "weight": 5.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Tutorial attendance",
         "weight": 5.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Written assessment I",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Written assessment II",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Written assignment",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -222,25 +222,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Laboratory Notebook",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Laboratory performances",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Laboratory reports",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quizzes",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -255,25 +255,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Classwork or Class participation",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Final Exam",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Mid Term Test 1",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Mid Term Test 2",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -288,19 +288,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Group presentation",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Laboratory work",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quiz",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -315,13 +315,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Continuous assessment Examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "written examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -336,31 +336,31 @@ window.ASSESSMENT_DATABASE = {
         "name": "Assignments",
         "weight": 5.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Assignments In-class pop-up quizzes",
         "weight": 5.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "In-class pop-up quizzes Examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test 1",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test 1 Test 2",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -375,13 +375,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Continuous assessment Examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "written examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -396,25 +396,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Final examination",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test X 2",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Tutorial assignment",
         "weight": 5.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Tutorial participation",
         "weight": 5.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -429,19 +429,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Course paper",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Online journal",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Short quiz",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -456,31 +456,31 @@ window.ASSESSMENT_DATABASE = {
         "name": "Assignments",
         "weight": 5.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Attendance",
         "weight": 5.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Lab reports",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quizzes",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -495,25 +495,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Attendance",
         "weight": 5.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test 1",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test 2",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Written examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -528,31 +528,31 @@ window.ASSESSMENT_DATABASE = {
         "name": "Attendance",
         "weight": 5.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Lab report",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quiz 1",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quiz 2",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -567,25 +567,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Attendance",
         "weight": 5.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Exam",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Lab Reports",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "x Tests",
         "weight": 35.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -600,25 +600,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Attendance",
         "weight": 5.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Laboratory- Continuous assessment",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Lecture- Continuous assessment",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Lecture- Examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -633,13 +633,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Assessment Methods Outcomes appropriate)",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Outcomes appropriate)",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -654,31 +654,31 @@ window.ASSESSMENT_DATABASE = {
         "name": "Assignments/In-class problems/Class participation",
         "weight": 8.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Essays",
         "weight": 8.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Final examination",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Group presentation",
         "weight": 8.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Tests",
         "weight": 16.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -693,7 +693,7 @@ window.ASSESSMENT_DATABASE = {
         "name": "continuous",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 50.0,
@@ -708,13 +708,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Continuous Assessment",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Examination",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -729,19 +729,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Continuous assessment Laboratory session",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Final Exam",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Laboratory session Mid-term assessments",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -756,19 +756,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Assignments",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Tests",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -783,19 +783,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Exam",
         "weight": 65.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Lab",
         "weight": 5.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -810,19 +810,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Exam",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Lab",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -837,49 +837,49 @@ window.ASSESSMENT_DATABASE = {
         "name": "); field-visit reports (",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "); quiz (",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Continuous assessment including: assignment/practical report (",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Explanation of the appropriateness of the assessment methods in assessing the",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Explanation of the appropriateness of the assessment methods in assessing the (20%)",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "project (",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "project (20%); quiz (",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "project (20%); quiz (10%); field-visit reports (",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -894,13 +894,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Exam",
         "weight": 70.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -915,19 +915,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Laboratory performance",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Laboratory reports",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Practical Test",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -942,13 +942,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Continuous assessment",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Examination",
         "weight": 70.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -963,13 +963,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Exam",
         "weight": 70.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -984,19 +984,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Assignment",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Assignment Exam",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Continuous Assessment Quiz",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -1011,13 +1011,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Examination",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quizzes",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -1032,19 +1032,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Laboratory Reports",
         "weight": 45.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Performance",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -1059,13 +1059,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Laboratory performance",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Laboratory reports",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -1080,13 +1080,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Continuous assessment",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Examination",
         "weight": 70.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -1101,25 +1101,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "A group project presentation + A group report",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Examination",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Laboratory reports",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quiz",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -1134,19 +1134,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Lab reports",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quizzes",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -1161,19 +1161,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "A group project presentation + A group report",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "A test",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -1188,31 +1188,31 @@ window.ASSESSMENT_DATABASE = {
         "name": "Attendance",
         "weight": 5.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Final examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Lab participation and Assignments",
         "weight": 7.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Laboratory",
         "weight": 8.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Mid-term test",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -1227,25 +1227,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Essay",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Mini-project: preparation and presentation of a business plan",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Presentation",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quiz",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -1260,25 +1260,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Examination",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Group project",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Practical",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quiz",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -1293,25 +1293,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Attendance",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Attendance Tutorials",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Mid-term report Final project",
         "weight": 45.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Tutorials Mid-term report",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -1326,19 +1326,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Assignments",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Examination",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quizzes / Tests",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -1353,31 +1353,31 @@ window.ASSESSMENT_DATABASE = {
         "name": "Attendance",
         "weight": 5.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Attendance Laboratory Work",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Laboratory Work Test I",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test I Test II",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test II Examination",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -1392,19 +1392,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Attendance",
         "weight": 5.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Continuous Assessment",
         "weight": 45.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Exam",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -1419,19 +1419,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Assignments",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Mid-term Quiz",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -1446,13 +1446,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Lab attendance",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Lab reports",
         "weight": 90.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -1467,43 +1467,43 @@ window.ASSESSMENT_DATABASE = {
         "name": "Attendance",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Attendance Tutorial exercise",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Attendance Tutorial exercise Lab performance",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Lab performance Lab proposal Lab quizzes",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Lab proposal Lab quizzes Lab report",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Lab quizzes Lab report Presentation",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Tutorial exercise Lab performance Lab proposal",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -1518,7 +1518,7 @@ window.ASSESSMENT_DATABASE = {
         "name": "Continuous Assessment",
         "weight": 100.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -1533,13 +1533,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Continuous Assessment",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Examination",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -1554,25 +1554,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Assignments/In-class problems/Class participation",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Essays",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Final examination",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Tests",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -1587,25 +1587,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Examination",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Group project",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Individual essay",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quizzes (2x)",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -1620,19 +1620,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Exam",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Lab",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -1647,19 +1647,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Course work",
         "weight": 35.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Final exam",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Lab work",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -1674,25 +1674,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Final",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Lab reports",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Midterm",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quiz",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -1707,25 +1707,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "A group project presentation + A group report",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Examination",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Laboratory reports",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quiz",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -1740,25 +1740,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Explanation of the appropriateness of the assessment methods in assessing the Students are assessed by both Continuous Assessment and Examination",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Explanation of the appropriateness of the assessment methods in assessing the Students are assessed by both Continuous Assessment and Examination (30%)",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "components. Continuous Assessment is based on quizzes (",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "reports (",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -1773,19 +1773,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "A group project presentation + A group report",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "A test",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Examination",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -1800,25 +1800,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Class Attendance & Tutorial participation",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Final examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Group Presentation",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -1833,19 +1833,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "assignments#",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "final examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "tests",
         "weight": 35.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -1860,19 +1860,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Exam",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Lab",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -1887,19 +1887,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "class performance",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "lab report",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "quiz",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -1914,25 +1914,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Final examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Seminar Presentation",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Tutorial participation and Class/seminar attendance",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -1947,13 +1947,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Course work",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Final exam",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -1968,19 +1968,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Lab performance",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Lab quiz",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Lab reports",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -1995,7 +1995,7 @@ window.ASSESSMENT_DATABASE = {
         "name": "written examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 50.0,
@@ -2010,25 +2010,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Laboratory Quiz",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Laboratory Quiz (practical)",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Laboratory performance",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Laboratory report",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -2043,19 +2043,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Exam",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Laboratory",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -2070,13 +2070,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Exam",
         "weight": 70.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -2091,19 +2091,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Lab reports",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Lab reports Laboratory Performance",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Lab reports Laboratory Performance Lab quiz",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -2118,25 +2118,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Group activities",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "In-class assignments",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Laboratory",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -2151,19 +2151,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Lab quiz",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Laboratory",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Project",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 70.0,
@@ -2178,19 +2178,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Quizzes",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quizzes Lecture-continuous assessment",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quizzes Lecture-continuous assessment Examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -2205,25 +2205,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Final examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Lab reports",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Lab – continuous assessment",
         "weight": 5.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quizzes",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -2238,7 +2238,7 @@ window.ASSESSMENT_DATABASE = {
         "name": "Continuous assessment",
         "weight": 100.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -2253,13 +2253,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Examination",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quizzes",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -2274,13 +2274,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Examination",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quizzes",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -2295,13 +2295,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Exam",
         "weight": 70.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -2316,13 +2316,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "continuous assessment",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "examination",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -2337,13 +2337,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Course work",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Final exam",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -2358,7 +2358,7 @@ window.ASSESSMENT_DATABASE = {
         "name": "Continuous assessment",
         "weight": 100.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -2373,19 +2373,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Lab reports",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Laboratory Performance",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Pre-Lab quizzes",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -2400,19 +2400,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Assignments",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Tests",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -2427,13 +2427,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Examination",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quizzes",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -2448,13 +2448,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "continuous assessment",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "examination",
         "weight": 70.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -2469,13 +2469,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Laboratory performance",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Laboratory reports",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -2490,19 +2490,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "A mini-project",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "A quiz",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Examination",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -2517,37 +2517,37 @@ window.ASSESSMENT_DATABASE = {
         "name": "Attendance",
         "weight": 5.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Final examination",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Laboratory report",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Mid-term quiz",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Tutorials",
         "weight": 5.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Written assignment",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -2562,19 +2562,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Final examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Laboratories/practical work",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Tests/assignments",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -2589,31 +2589,31 @@ window.ASSESSMENT_DATABASE = {
         "name": "Assignments",
         "weight": 5.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Lab reports",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Presentation",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quizzes",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -2628,31 +2628,31 @@ window.ASSESSMENT_DATABASE = {
         "name": "Attendance",
         "weight": 5.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Lab report",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quiz",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Term-paper presentation",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -2667,31 +2667,31 @@ window.ASSESSMENT_DATABASE = {
         "name": "Assignments",
         "weight": 5.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Lab reports",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Presentation",
         "weight": 5.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quizzes",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -2706,25 +2706,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Examination",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Home project",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Laboratory",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quiz",
         "weight": 35.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -2739,25 +2739,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Essay",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "In-class participation (",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "In-class participation in discussion",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quiz",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -2772,19 +2772,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Assignments",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Examination",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Seminar",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -2799,25 +2799,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Laboratory-Continuous assessment",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Project report – Continuous assessment",
         "weight": 5.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quizzes-Continuous assessment",
         "weight": 35.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Written examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -2832,25 +2832,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Oral presentation and response to questions",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Project outcomes: understanding of the topic, logical thinking and analysis, critical review and comments, interpretation and conclusions",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Project preparation and efficient planning, organization and execution of the project",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Written report (organization, style, clarity, fluency, effectiveness, grammar and spelling)",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -2865,25 +2865,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Oral presentation and response to questions",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Project outcomes: knowledge and understanding of work; logical planning and approach; data analysis, interpretation of results and conclusions",
         "weight": 55.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Project preparation and performance in execution of the project",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Written report (organization, style, clarity, fluency, effectiveness, grammar and spelling)",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -2898,25 +2898,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Oral presentation and response to questions",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Project outcomes: understanding of the topic, critical review and comments, execution of methods; results and data analysis; interpretation and conclusions",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Project preparation and efficient planning, organization and execution of the project",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Written report (organization, style, clarity, fluency, effectiveness, grammar and spelling)",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -2931,25 +2931,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Attendance",
         "weight": 5.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Practicals",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quizzes",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Term report",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -2964,31 +2964,31 @@ window.ASSESSMENT_DATABASE = {
         "name": "Assignments",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Class Participation / Class Work",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Project outcomes",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Project proposals",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Team work effort",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -3003,19 +3003,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Assignments",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Examination",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quizzes / Tests",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -3030,19 +3030,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Exam",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Lab",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -3057,31 +3057,31 @@ window.ASSESSMENT_DATABASE = {
         "name": "Assignments/Field visit report",
         "weight": 8.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "In-class problems/ Class participation",
         "weight": 5.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Laboratory performance & reports",
         "weight": 12.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Tests",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -3096,25 +3096,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Final",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Group Project",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Lab Report",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Mid-term",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -3129,25 +3129,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "In-class Assignments /Seminar attendance",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Seminar Presentation",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Written assignment",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -3162,25 +3162,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Essay",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Final examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Group presentation",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Tests",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -3195,25 +3195,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Essay",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Final examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Group presentation",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Tests",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -3228,25 +3228,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Presentation",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "assignments#",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "final examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "tests",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -3261,19 +3261,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "class performance",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "lab report",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "quiz",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -3288,19 +3288,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "A mini-project",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "A quiz",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Examination",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -3315,25 +3315,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Assignment",
         "weight": 5.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Presentati",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quiz",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -3348,25 +3348,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Oral presentation and response to questions",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Project outcomes: understanding of the topic, logical thinking and analysis, critical review and comments, interpretation and conclusions",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Project preparation and efficient planning, organization, and execution of the project",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Written report (organization, style, clarity, fluency, effectiveness, grammar and spelling)",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -3381,25 +3381,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Project outcomes: knowledge and understanding of work; logical planning and approach; data analysis, interpretation of results and conclusions",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Project preparation and efficient planning, approach and execution of the project",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Seminar presentation and response to questions",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Written report (organization, style, clarity, fluency, effectiveness, grammar and spelling)",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -3414,13 +3414,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Course work",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Final exam",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -3435,19 +3435,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Lab performance",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Lab quiz",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Lab reports",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -3462,19 +3462,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Mini-project",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quiz",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Written examination",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -3489,19 +3489,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Assignments",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quiz",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Written examination",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -3516,19 +3516,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Examination",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Project",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quiz",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -3543,19 +3543,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Assignment",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Project",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -3570,19 +3570,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Examination",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Group project presentation",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Reflection reports",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -3597,13 +3597,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Group project",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quiz",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 60.0,
@@ -3618,19 +3618,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Assignments",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Group activities",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -3645,13 +3645,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Project report and presentation",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Reflection reports",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -3666,25 +3666,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Oral presentation and response to questions",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Project outcomes: originality and significance of work; knowledge and understanding of work; execution of methods; results and data analysis; interpretation of results and conclusions",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Project preparation and efficient planning, organization, approach and execution of the project",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Written report (organization, style, clarity, fluency, effectiveness, grammar and spelling)",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -3699,25 +3699,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Assignment",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Presentation",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -3732,25 +3732,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Oral presentation and",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Project outcomes understanding of the topic, logical thinking and",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Project preparation and efficient planning",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Written report (organization, style, clarity",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -3765,19 +3765,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Laboratory Reports",
         "weight": 45.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Performance",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -3792,13 +3792,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Continuous assessment",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Examination",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -3813,13 +3813,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Examination",
         "weight": 70.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -3834,13 +3834,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Exam",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -3855,13 +3855,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Examination",
         "weight": 70.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Tests",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -3876,19 +3876,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Assignments",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Tests/group project",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -3903,25 +3903,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Assignments/In-class problems/Class participation",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Examination",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Group project",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Tests",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -3936,19 +3936,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Lab performance",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Lab report",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -3963,13 +3963,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Lab performance",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Lab reports",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -3984,19 +3984,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Lab Performance",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Laboratory Reports",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Pre-Lab Quizzes",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -4011,25 +4011,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Oral Presentation",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Written Report",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -4044,7 +4044,7 @@ window.ASSESSMENT_DATABASE = {
         "name": "Continuous assessment",
         "weight": 100.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -4059,19 +4059,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "assignments#",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "final examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "tests",
         "weight": 35.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -4086,25 +4086,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Oral presentation and response to questions",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Project outcomes: understanding of the topic, logical thinking and analysis, critical review and comments, interpretation and conclusions",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Project preparation and efficient planning, organization, and execution of the project",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Written report (organization, style, clarity, fluency, effectiveness, grammar and spelling)",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -4119,25 +4119,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Oral presentation and response to questions",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Project outcomes: knowledge and understanding of work; logical planning and approach; data analysis, interpretation of results and conclusions",
         "weight": 55.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Project preparation and performance in execution of the project",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Written report (organization, style, clarity, fluency, effectiveness, grammar and spelling)",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -4152,13 +4152,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Examination",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quizzes",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -4173,19 +4173,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Laboratory Reports",
         "weight": 45.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Performance",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -4200,13 +4200,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Laboratory performance & reports",
         "weight": 70.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -4221,13 +4221,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Tests",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "presentation",
         "weight": 70.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -4242,13 +4242,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Course work",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Final exam",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -4263,19 +4263,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Individual written essay",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "presentations",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "problem sets during the lecture series as assignments",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -4290,25 +4290,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Group Discussion Participation and Contribution",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Group Project",
         "weight": 35.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Individual Assignments",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quiz",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -4323,19 +4323,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Group Project Presentation + Group Report",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Individual Assignment",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quiz",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -4350,25 +4350,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Group Discussion Participation and Contribution",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Group Project Presentation",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Individual Essay",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Online Exercise",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -4383,13 +4383,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Group Project Presentation + Group Report",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quiz Group Project Presentation + Group Report",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -4404,19 +4404,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Individual assignment",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Lecture (In-class online exercise)",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quiz",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -4431,25 +4431,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Group project presentation",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Individual essay",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Online exercise",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quiz",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -4464,25 +4464,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Oral presentation and response to questions",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Project preparation and efficient planning, organization, approach and execution of the project",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Written report (organization, style, clarity, fluency, effectiveness, grammar and spelling)",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "ge and understanding of work; execution of methods; results and data analysis; interpretation of results and conclusions",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -4497,25 +4497,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Final Examination",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Group Presentation",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Individual Assignment",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Individual Assignment (25%)",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -4530,25 +4530,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Assignments",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Final examination",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Lab Reports",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -4563,19 +4563,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Final examination",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Group Report",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Individual Assignments",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -4590,25 +4590,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Final Examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Group Presentation",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Lab Attendance and Reports",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -4623,25 +4623,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Exercise Individual essay Group presentation",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Group presentation",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test Exercise",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -4656,19 +4656,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Continuous Assessment",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Examination",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Presentation",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -4683,19 +4683,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Examination",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quizzes",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Report",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -4710,19 +4710,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Continuous assessment",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Group project",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Written examination",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -4737,19 +4737,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Continuous assessment",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Group project presentation",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Written examination",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -4764,25 +4764,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Examination",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Presentation",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Written essay",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -4797,19 +4797,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Assignments",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Reflection on expert seminars",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Tests and Quiz",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -4824,25 +4824,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Oral presentation and response to questions",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Project preparation and efficient planning, organization, approach and execution of the project",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Written report (organization, style, clarity, fluency, effectiveness, grammar and spelling)",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "ge and understanding of work; execution of methods; results and data analysis; interpretation of results and conclusions",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -4857,31 +4857,31 @@ window.ASSESSMENT_DATABASE = {
         "name": "Attendance",
         "weight": 5.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Attendance Mini-project",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Final examination",
         "weight": 45.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "In-class participation",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Midterm examination",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -4896,25 +4896,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Final Examination",
         "weight": 45.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "In-class participation",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Midterm",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Written Assignments",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -4929,25 +4929,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Final Examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "In-class participation",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quiz",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Written Assignments",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -4962,25 +4962,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Final Examination",
         "weight": 45.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "In-class participation",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quiz",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Written Assignments",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -4995,25 +4995,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Attendance",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Presentation",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quiz",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Written Assignments",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -5028,25 +5028,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Final Examination",
         "weight": 35.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "In-class participation",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Lab report",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Mid-term",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -5061,25 +5061,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Examination",
         "weight": 45.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "In-class participation",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Mid-term examination",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Written Assignments",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -5094,13 +5094,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Final Examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Written Assignments",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -5115,19 +5115,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Assignments",
         "weight": 35.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Group Presentation",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Group Project",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -5142,19 +5142,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Performance assessment",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Presentation",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Reflective journal",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -5169,19 +5169,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Performance assessment",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Presentation",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Reflective journal",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -5196,19 +5196,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Essay",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Group Project",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Presentation",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -5223,25 +5223,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Assignment/ Reading Exercise",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Group presentation",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Laboratory work",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quiz",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -5256,25 +5256,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Essay",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Presentation",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quiz",
         "weight": 45.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Tutorial participation + lecture attendance",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -5289,25 +5289,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Laboratory work",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Presentation",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quiz",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Written assignment",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -5322,31 +5322,31 @@ window.ASSESSMENT_DATABASE = {
         "name": "Classwork or Class participation",
         "weight": 5.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Final Exam",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Mid Term Test 1",
         "weight": 17.5,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Mid Term Test 2",
         "weight": 17.5,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Written assignment",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -5361,25 +5361,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Presentation",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quizzes",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Reports & Reflective Journals",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Tutorial participation",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -5394,25 +5394,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "quizzes, class",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "quizzes, class assignment, class and tutorial participation",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "test, assignments",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "test, assignments, class participation",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -5427,25 +5427,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Group presentation",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Individual report",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Tutorial participation",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -5460,25 +5460,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Group project presentation",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Group project report",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Laboratory work",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -5493,19 +5493,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Group presentation",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Laboratory work",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -5520,19 +5520,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Group presentation",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Laboratory work",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -5547,31 +5547,31 @@ window.ASSESSMENT_DATABASE = {
         "name": "Laboratory Reports",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Presentation",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quiz",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Tutorial Reports",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Tutorial participation",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -5586,19 +5586,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Group presentation",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Term paper",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -5613,19 +5613,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Poster presentation",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quiz",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Written assignment",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -5640,25 +5640,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Essay",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Presentation",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quiz",
         "weight": 45.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Tutorial participation + lecture attendance",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -5673,19 +5673,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Course paper",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Group Presentation",
         "weight": 35.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Short quiz",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -5700,25 +5700,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Active participation and class performance",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quiz",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Topic Presentation",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Written assignment",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -5733,25 +5733,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Assignments and Essays",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Group presentation",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Lab work",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quizzes",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -5766,19 +5766,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Group activities",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "In-clas/out-of-class Tutorials",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test and Assignment",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -5793,25 +5793,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Group Project",
         "weight": 35.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "In-class tutorials",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Laboratory work",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test and Assignment",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -5826,25 +5826,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Presentation",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quiz",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Report",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Tutorial participation",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -5859,25 +5859,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Performance in rendering service",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Plans/proposals for service",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Reflective journal/report",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "e-Learning Module and Project-specific seminars and workshops",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -5892,31 +5892,31 @@ window.ASSESSMENT_DATABASE = {
         "name": "Performance in rendering service",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Plans/proposals for service",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Project-specific seminars and workshops",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Reflective journal/report",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "e-Learning Module",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -5931,13 +5931,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Group",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Group presentation (Video)",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -5952,13 +5952,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Assessment Methods",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Final Examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -5973,19 +5973,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Case Analysis",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Class Participation",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Final Project and Presentation",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -6000,19 +6000,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Continuous Assignments",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Examination",
         "weight": 45.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Project",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -6027,13 +6027,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Assignments/Test",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Examination",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -6048,13 +6048,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Examination",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Tests/assignments",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -6069,13 +6069,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Examination",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Homework, quizzes and mid-term test",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -6090,25 +6090,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Assignment",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Final Examination",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Group Project",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Midterm",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -6123,13 +6123,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Examination",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "assessment",
         "weight": 70.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -6144,25 +6144,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Assignments",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "In-class quizzes",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Presentation",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -6177,13 +6177,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Continuous assessment",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Examination",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -6198,13 +6198,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Continuous assessment",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Examination",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -6219,13 +6219,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Continuous assessment",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Examination",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -6240,25 +6240,25 @@ window.ASSESSMENT_DATABASE = {
         "name": "Class Participation^",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Group Project*",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Individual Assignment^",
         "weight": 45.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Peer Assessment^",
         "weight": 5.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -6273,31 +6273,31 @@ window.ASSESSMENT_DATABASE = {
         "name": "Assessment 1 (Chinese composition)",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Assessment 2 (Chinese proposal-Writing)",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Assessment 3 (Chinese proposal-Oral presentation & discussion)",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Class participation",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Quiz",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -6312,19 +6312,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Assignment",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Examination",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Test",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -6339,13 +6339,13 @@ window.ASSESSMENT_DATABASE = {
         "name": "Final version of two technical texts for two different audiences",
         "weight": 40.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "First version of two technical texts for two different audiences",
         "weight": 60.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -6360,37 +6360,37 @@ window.ASSESSMENT_DATABASE = {
         "name": "Assignments on expert seminar",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Interview Report",
         "weight": 5.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Project presentation",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Project write-up",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Seminar attendance",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Term paper",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -6405,19 +6405,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Continuous Assessment – Group assignment",
         "weight": 30.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Continuous Assessment – Individual assignment",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Examination",
         "weight": 50.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 100.0,
@@ -6432,19 +6432,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Group Project",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Individual Work",
         "weight": 20.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Participation",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 50.0,
@@ -6459,19 +6459,19 @@ window.ASSESSMENT_DATABASE = {
         "name": "Group project(s) and presentation",
         "weight": 25.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Individual contribution to class discussions",
         "weight": 10.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       },
       {
         "name": "Individual essay",
         "weight": 15.0,
         "scheme": "Absolute Score",
-        "fullMark": 100
+        "fullMark": ""
       }
     ],
     "assessmentTotal": 50.0,
