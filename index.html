@@ -1157,6 +1157,16 @@
     .grade-pill.grade-dp, select.grade-dp { background: #ffddcd; border-color: #ef9c72; color: #8a3512; }
     .grade-pill.grade-d, select.grade-d { background: #ffd4dc; border-color: #ea91a1; color: #8b1e2d; }
     .grade-pill.grade-f, select.grade-f { background: #f5d6dc; border-color: #d97f92; color: #6f1422; }
+    select.grade-match {
+      background: #dff6e4 !important;
+      border-color: #75c589 !important;
+      color: #145c2b !important;
+    }
+    select.grade-mismatch {
+      background: #fff3bf !important;
+      border-color: #e5c34b !important;
+      color: #6f5400 !important;
+    }
     .ai-output {
       background: #2f1117;
     }
@@ -2236,6 +2246,18 @@
     if (!suggestion) return "";
     return suggestion.includes(" or ") ? suggestion.split(" or ")[0].trim() : suggestion.trim();
   }
+  function suggestedGradeChoices(suggestion) {
+    return String(suggestion || "")
+      .split(/\s+or\s+/i)
+      .map(g => g.trim().toUpperCase())
+      .filter(Boolean);
+  }
+  function gradeAlignmentTone(finalGrade, suggestion) {
+    const finalValue = String(finalGrade || "").trim().toUpperCase();
+    const choices = suggestedGradeChoices(suggestion);
+    if (!finalValue || !choices.length) return "";
+    return choices.includes(finalValue) ? "grade-match" : "grade-mismatch";
+  }
   function gradeTone(grade) {
     const value = String(grade || "").trim().toUpperCase();
     const key = value.replace("+", "P").replace("-", "M");
@@ -2313,8 +2335,8 @@
         const over = Number.isFinite(raw) && raw > Number(c.fullMark || 0);
         return `<td><input class="${over ? "score-over" : ""}" type="number" step=".01" min="0" max="${c.fullMark}" value="${s.scores[c.name] ?? ""}" data-si="${real}" data-comp="${esc(c.name)}"></td>`;
       }).join("");
-      const lecturerGrade = s.lecturerGrade || higherGrade(grade) || "";
-      const gradeCell = `<select class="${gradeTone(lecturerGrade)}" data-gi="${real}"><option value=""></option>${
+      const lecturerGrade = s.lecturerGrade || "";
+      const gradeCell = `<select class="${gradeTone(lecturerGrade)} ${gradeAlignmentTone(lecturerGrade, grade)}" data-gi="${real}"><option value=""></option>${
         gradeOptions.map(g => `<option value="${g}" ${s.lecturerGrade === g ? "selected" : ""}>${g}</option>`).join("")
       }</select>`;
       return `<tr>
