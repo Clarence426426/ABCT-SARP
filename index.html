@@ -1615,6 +1615,26 @@
   </div>
 </div>
 
+<!-- Empty score modal -->
+<div class="modal-backdrop" id="emptyScoreModal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="emptyScoreTitle">
+    <div class="modal-header">
+      <div class="modal-icon warn">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="7" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      </div>
+      <h3 id="emptyScoreTitle">Empty Scores</h3>
+    </div>
+    <div class="modal-body">
+      <p>There are empty score, do you want to set it as 0?</p>
+      <p class="muted" id="emptyScoreCount"></p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-secondary" id="emptyScoreNo" type="button">No</button>
+      <button class="btn-primary" id="emptyScoreYes" type="button">Yes, set as 0</button>
+    </div>
+  </div>
+</div>
+
 <!-- Alert modal -->
 <div class="modal-backdrop" id="alertModal" hidden>
   <div class="modal" role="alertdialog" aria-modal="true" aria-labelledby="alertModalTitle">
@@ -1981,6 +2001,25 @@
       if (!Number.isFinite(ov)) errors.push(`${stu.studentNo || stu.name || "A student"} does not have a valid overall score.`);
     });
     return errors;
+  }
+  function emptyScoreEntries() {
+    const entries = [];
+    state.students.forEach((stu, studentIndex) => {
+      state.components.forEach(component => {
+        if (String(stu.scores?.[component.name] ?? "").trim() === "") {
+          entries.push({ studentIndex, componentName: component.name });
+        }
+      });
+    });
+    return entries;
+  }
+  function fillEmptyScoresWithZero(entries = emptyScoreEntries()) {
+    entries.forEach(({ studentIndex, componentName }) => {
+      const student = state.students[studentIndex];
+      if (!student) return;
+      if (!student.scores) student.scores = {};
+      student.scores[componentName] = 0;
+    });
   }
 
   /* ─── Subject workspace ─── */
@@ -2473,6 +2512,13 @@
   function closeGradeChoiceModal() {
     $("gradeChoiceModal").hidden = true;
   }
+  function openEmptyScoreModal(entries) {
+    $("emptyScoreCount").textContent = `${entries.length} empty score${entries.length !== 1 ? "s" : ""} will be set to 0 if you choose Yes.`;
+    $("emptyScoreModal").hidden = false;
+  }
+  function closeEmptyScoreModal() {
+    $("emptyScoreModal").hidden = true;
+  }
   function useAllSuggestedGrades(mode = "higher") {
     const pickGrade = mode === "lower" ? lowerGrade : higherGrade;
     let updated = 0;
@@ -2486,6 +2532,23 @@
     state.scoresConfirmed = false;
     renderTable(); applyWorkflowState(); scheduleAutoSave();
     toast(`Applied ${mode} suggested grades for ${updated} student${updated !== 1 ? "s" : ""}.`);
+  }
+
+  function confirmScores({ askSubmit = false } = {}) {
+    const problems = validateScoresForConfirm();
+    if (problems.length) {
+      openAlertModal("Scores Need Checking",
+        `<p>Please complete the score table before final submission:</p><ul>${problems.slice(0, 20).map(p => `<li>${esc(p)}</li>`).join("")}</ul>${problems.length > 20 ? `<p>And ${problems.length - 20} more.</p>` : ""}`);
+      return false;
+    }
+    state.workflowStep = 4;
+    state.scoresConfirmed = true;
+    saveLocal({ showToast: false });
+    renderAll();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    toast("Scores confirmed. Enter lecturer name and staff number, then submit.");
+    if (askSubmit) setTimeout(() => $("submitBtn").click(), 250);
+    return true;
   }
 
   /* ─── Submission ─── */
@@ -2864,20 +2927,22 @@ Reply conversationally, then include a machine-readable JSON at the end:
     $("gradeChoiceCancel").addEventListener("click", closeGradeChoiceModal);
     $("gradeChoiceLower").addEventListener("click", () => useAllSuggestedGrades("lower"));
     $("gradeChoiceHigher").addEventListener("click", () => useAllSuggestedGrades("higher"));
+    $("emptyScoreNo").addEventListener("click", closeEmptyScoreModal);
+    $("emptyScoreYes").addEventListener("click", () => {
+      fillEmptyScoresWithZero();
+      closeEmptyScoreModal();
+      state.scoresConfirmed = false;
+      renderTable(); syncSummary(); applyWorkflowState();
+      confirmScores({ askSubmit: true });
+    });
 
     $("confirmScoresBtn").addEventListener("click", () => {
-      const problems = validateScoresForConfirm();
-      if (problems.length) {
-        openAlertModal("Scores Need Checking",
-          `<p>Please complete the score table before final submission:</p><ul>${problems.slice(0, 20).map(p => `<li>${esc(p)}</li>`).join("")}</ul>${problems.length > 20 ? `<p>And ${problems.length - 20} more.</p>` : ""}`);
+      const emptyScores = emptyScoreEntries();
+      if (emptyScores.length) {
+        openEmptyScoreModal(emptyScores);
         return;
       }
-      state.workflowStep = 4;
-      state.scoresConfirmed = true;
-      saveLocal({ showToast: false });
-      renderAll();
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      toast("Scores confirmed. Enter lecturer name and staff number, then submit.");
+      confirmScores();
     });
 
     /* Submit */
