@@ -1619,7 +1619,7 @@
           <div class="grade-chart" id="gradeChart">
             <div class="grade-chart-head">
               <h3>Grade Distribution</h3>
-              <span class="muted" id="gradeChartNote">Updates automatically as scores change.</span>
+              <span class="muted"><strong id="averageGpa">Average GPA: --</strong> &middot; <span id="gradeChartNote">Updates automatically as scores change.</span></span>
             </div>
             <div class="grade-bars" id="gradeBars"></div>
           </div>
@@ -1792,6 +1792,12 @@
     [55,"C+ or B-"], [50,"C or C+"], [45,"C- or C"], [40,"D+ or C-"], [35,"D or D+"], [30,"F or D"], [0,"F"]
   ];
   const gradeOptions = ["A+","A","A-","B+","B","B-","C+","C","C-","D+","D","F"];
+  const gradePoints = {
+    "A+": 4.5, "A": 4.0, "A-": 3.75,
+    "B+": 3.5, "B": 3.0, "B-": 2.75,
+    "C+": 2.5, "C": 2.0, "C-": 1.75,
+    "D+": 1.5, "D": 1.0, "F": 0.0
+  };
 
   const STORAGE_KEY = "abct_sarp_v5";
   const GOOGLE_SHEETS_WEB_APP_URL = "";
@@ -2435,13 +2441,21 @@
   function gradeForDistribution(student) {
     return student.lecturerGrade || higherGrade(suggestGrade(calcOverall(student))) || "";
   }
+  function gradePointForStudent(student) {
+    const grade = gradeForDistribution(student);
+    return Object.prototype.hasOwnProperty.call(gradePoints, grade) ? gradePoints[grade] : null;
+  }
   function renderGradeChart() {
     const counts = Object.fromEntries(gradeOptions.map(grade => [grade, 0]));
+    const points = [];
     state.students.forEach(student => {
       const grade = gradeForDistribution(student);
       if (Object.prototype.hasOwnProperty.call(counts, grade)) counts[grade]++;
+      const point = gradePointForStudent(student);
+      if (point !== null) points.push(point);
     });
     const counted = Object.values(counts).reduce((sum, count) => sum + count, 0);
+    const average = points.length ? points.reduce((sum, point) => sum + point, 0) / points.length : null;
     const max = Math.max(1, ...Object.values(counts));
     $("gradeBars").innerHTML = gradeOptions.map(grade => {
       const count = counts[grade];
@@ -2455,6 +2469,7 @@
     $("gradeChartNote").textContent = counted
       ? `${counted} student${counted !== 1 ? "s" : ""} counted.`
       : "No students imported yet.";
+    $("averageGpa").textContent = average === null ? "Average GPA: --" : `Average GPA: ${average.toFixed(2)}`;
   }
 
   /* ─── Visible + sorted students ─── */
@@ -3154,6 +3169,8 @@ Reply conversationally, then include a machine-readable JSON at the end:
     $("unlockBtn").addEventListener("click", () => {
       if (!state.subjectLocked) return;
       state.subjectLocked = false;
+      state.submittedAt = "";
+      state.finalSubmission = null;
       persistNow();
       renderSubjectOptions();
       updateSubjectInputs();
