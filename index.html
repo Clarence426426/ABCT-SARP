@@ -582,6 +582,67 @@
     .score-over { border-color: var(--warn) !important; background: var(--warn-bg) !important; }
     .student-name { font-weight: 700; color: var(--ink); }
     .muted { color: var(--muted); font-size: 11px; }
+    .grade-chart {
+      border-bottom: 1px solid var(--line);
+      padding: 18px 20px;
+      background: rgba(255,255,255,.38);
+    }
+    .grade-chart-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .grade-chart-head h3 {
+      margin: 0;
+      font-size: 15px;
+      color: var(--ink);
+    }
+    .grade-bars {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(34px, 1fr));
+      gap: 8px;
+      align-items: end;
+      min-height: 160px;
+    }
+    .grade-bar-item {
+      display: grid;
+      grid-template-rows: 1fr auto auto;
+      gap: 6px;
+      min-width: 0;
+      height: 160px;
+      text-align: center;
+    }
+    .grade-bar-track {
+      display: flex;
+      align-items: end;
+      justify-content: center;
+      min-height: 112px;
+      border-radius: 8px;
+      background: rgba(255,255,255,.7);
+      border: 1px solid rgba(139,30,45,.10);
+      overflow: hidden;
+    }
+    .grade-bar-fill {
+      width: 100%;
+      min-height: 4px;
+      border-radius: 8px 8px 0 0;
+      background: linear-gradient(180deg, #b13a46, #7f1d2a);
+      transition: height .18s ease;
+    }
+    .grade-bar-count {
+      font-weight: 800;
+      color: var(--ink);
+      font-size: 12px;
+      line-height: 1;
+    }
+    .grade-bar-label {
+      font-weight: 800;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1;
+    }
     .grade-pill {
       display: inline-flex;
       align-items: center;
@@ -1505,6 +1566,13 @@
       </div>
       <div class="panel-body" style="padding:0">
         <div class="table-wrap">
+          <div class="grade-chart" id="gradeChart">
+            <div class="grade-chart-head">
+              <h3>Grade Distribution</h3>
+              <span class="muted" id="gradeChartNote">Updates automatically as scores change.</span>
+            </div>
+            <div class="grade-bars" id="gradeBars"></div>
+          </div>
           <table id="scoreTable">
             <thead></thead>
             <tbody></tbody>
@@ -2313,6 +2381,30 @@
     $("fCount").textContent = state.students.filter(s =>
       Object.values(s.scores || {}).some(v => String(v).trim() !== "")).length;
   }
+  function gradeForDistribution(student) {
+    return student.lecturerGrade || higherGrade(suggestGrade(calcOverall(student))) || "";
+  }
+  function renderGradeChart() {
+    const counts = Object.fromEntries(gradeOptions.map(grade => [grade, 0]));
+    state.students.forEach(student => {
+      const grade = gradeForDistribution(student);
+      if (Object.prototype.hasOwnProperty.call(counts, grade)) counts[grade]++;
+    });
+    const counted = Object.values(counts).reduce((sum, count) => sum + count, 0);
+    const max = Math.max(1, ...Object.values(counts));
+    $("gradeBars").innerHTML = gradeOptions.map(grade => {
+      const count = counts[grade];
+      const height = count ? Math.max(8, Math.round((count / max) * 100)) : 4;
+      return `<div class="grade-bar-item">
+        <div class="grade-bar-track"><div class="grade-bar-fill" style="height:${height}%"></div></div>
+        <div class="grade-bar-count">${count}</div>
+        <div class="grade-bar-label">${esc(grade)}</div>
+      </div>`;
+    }).join("");
+    $("gradeChartNote").textContent = counted
+      ? `${counted} student${counted !== 1 ? "s" : ""} counted.`
+      : "No students imported yet.";
+  }
 
   /* ─── Visible + sorted students ─── */
   function visibleStudents() {
@@ -2345,6 +2437,7 @@
   function renderTable() {
     const focused = document.activeElement;
     const focusedDataset = focused?.dataset ? { ...focused.dataset } : null;
+    renderGradeChart();
 
     const columns = [
       ["no","No."], ["studentNo","Student No."], ["name","Name"], ["programme","Programme"],
