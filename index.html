@@ -2272,7 +2272,8 @@
     const isCompletedSubject = code => {
       const key = String(code || "").trim();
       const rec = key ? state.subjectWork[key] : null;
-      return !!rec?.locked || (key && key === state.subject.code && !!state.subjectLocked);
+      return !!rec?.locked || !!rec?.finalSubmission || !!rec?.submittedAt ||
+        (key && key === state.subject.code && (!!state.subjectLocked || !!state.finalSubmission || !!state.submittedAt));
     };
     $("subjectSelect").innerHTML = sorted
       .map(s => {
@@ -3137,6 +3138,8 @@ Reply conversationally, then include a machine-readable JSON at the end:
       state.finalSubmission = submission;
       persistNow();
       closeSubmitModal();
+      renderSubjectOptions();
+      updateSubjectInputs();
       renderStatus();
       setLockedState(true);
       submitButton.disabled = false;
@@ -3152,6 +3155,8 @@ Reply conversationally, then include a machine-readable JSON at the end:
       if (!state.subjectLocked) return;
       state.subjectLocked = false;
       persistNow();
+      renderSubjectOptions();
+      updateSubjectInputs();
       renderStatus(); setLockedState(false);
       toast(`Unlocked ${state.subject.code}. Editing re-enabled.`);
     });
