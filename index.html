@@ -1391,6 +1391,126 @@
         align-items: stretch;
       }
     }
+
+    /* Mobile fit overrides */
+    html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+    main {
+      width: 100%;
+    }
+    .table-wrap,
+    .grade-chart {
+      max-width: 100%;
+      -webkit-overflow-scrolling: touch;
+    }
+    @media (max-width: 760px) {
+      body {
+        font-size: 13px;
+      }
+      main {
+        padding: 12px;
+      }
+      .sidebar {
+        margin: 8px;
+        padding: 10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .sidebar-brand {
+        grid-column: 1 / -1;
+      }
+      .nav-item,
+      .nav-utility {
+        min-width: 0;
+        padding: 9px 10px;
+      }
+      .topbar {
+        margin: -12px -12px 16px;
+        min-height: auto;
+        padding: 28px 16px 22px;
+      }
+      .topbar::before,
+      .topbar::after {
+        display: none;
+      }
+      .topbar-actions,
+      .table-controls,
+      .panel-footer,
+      .grade-chart-head {
+        align-items: stretch;
+        flex-direction: column;
+        width: 100%;
+      }
+      .table-filter,
+      .table-controls button,
+      .panel-footer button,
+      .topbar-actions button,
+      .topbar-actions .btn {
+        max-width: none;
+        width: 100%;
+      }
+      .lecturer-fields,
+      .form-grid-4,
+      .component-row,
+      .ai-layout {
+        grid-template-columns: 1fr;
+      }
+      h1 {
+        font-size: 30px;
+      }
+      h2 {
+        font-size: 18px;
+      }
+      .panel-body {
+        padding: 14px;
+      }
+      .grade-chart {
+        overflow-x: hidden;
+        padding: 14px;
+      }
+      .grade-bars {
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        gap: 4px;
+        min-width: 0;
+        min-height: 128px;
+      }
+      .grade-bar-item {
+        gap: 4px;
+        height: 128px;
+      }
+      .grade-bar-track {
+        min-height: 84px;
+        border-radius: 6px;
+      }
+      .grade-bar-count,
+      .grade-bar-label {
+        font-size: 10px;
+      }
+      .table-wrap {
+        overflow: auto;
+        max-height: 58vh;
+      }
+      #scoreTable {
+        min-width: max-content;
+      }
+    }
+    @media (max-width: 420px) {
+      .sidebar {
+        grid-template-columns: 1fr;
+      }
+      h1 {
+        font-size: 26px;
+      }
+      .grade-bars {
+        gap: 3px;
+      }
+      .grade-bar-count,
+      .grade-bar-label {
+        font-size: 9px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1604,6 +1724,10 @@
         </div>
         <div class="table-controls">
           <input class="table-filter" id="tableFilter" placeholder="Filter students...">
+          <button class="btn-secondary btn-sm btn-icon" id="undoGradeBtn" type="button" disabled>
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 14 4 9l5-5"/><path d="M4 9h10a6 6 0 1 1 0 12h-3"/></svg>
+            Undo
+          </button>
           <button class="btn-secondary btn-sm btn-icon" id="useAllSuggestedBtn" type="button">
             <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
             Use all suggested
@@ -1914,6 +2038,7 @@
     });
     $("tutorialBtn").disabled = submitted;
     $("subjectSelect").disabled = false;
+    updateUndoButton();
   }
 
   function setLockedState(locked) {
@@ -1947,6 +2072,7 @@
   let aiUploads = [];
   let selectedStudentFile = null;
   let resetToSetupAfterTutorial = false;
+  let gradeUndoStack = [];
 
   const tutorialSteps = [
     { selector: "#setup",           title: "Step 1 - Subject Setup", text: "Choose the subject, check the subject details, then enter the assessment components. Confirm this step only when the total weighting is 100%." },
@@ -2138,6 +2264,7 @@
     return entries;
   }
   function fillEmptyScoresWithZero(entries = emptyScoreEntries()) {
+    if (entries.length) pushGradeUndo("empty scores set to zero");
     entries.forEach(({ studentIndex, componentName }) => {
       const student = state.students[studentIndex];
       if (!student) return;
@@ -2230,6 +2357,49 @@
     clearTimeout(autoSaveTimer);
     autoSaveTimer = setTimeout(() => saveLocal({ showToast: false }), 400);
   }
+  function gradeUndoSnapshot(label) {
+    return {
+      label,
+      students: deepClone(state.students),
+      scoresConfirmed: !!state.scoresConfirmed,
+      workflowStep: Number(state.workflowStep || 1)
+    };
+  }
+  function updateUndoButton() {
+    const btn = $("undoGradeBtn");
+    if (!btn) return;
+    btn.disabled = state.subjectLocked || gradeUndoStack.length === 0;
+    btn.title = gradeUndoStack.length ? `Undo ${gradeUndoStack[gradeUndoStack.length - 1].label}` : "No grade changes to undo";
+  }
+  function commitGradeUndo(snapshot) {
+    if (!snapshot || state.subjectLocked) return;
+    gradeUndoStack.push(snapshot);
+    if (gradeUndoStack.length > 10) gradeUndoStack.shift();
+    updateUndoButton();
+  }
+  function pushGradeUndo(label) {
+    commitGradeUndo(gradeUndoSnapshot(label));
+  }
+  function clearGradeUndo() {
+    gradeUndoStack = [];
+    updateUndoButton();
+  }
+  function undoGradeChange() {
+    const snapshot = gradeUndoStack.pop();
+    if (!snapshot) {
+      updateUndoButton();
+      toast("No grade changes to undo.");
+      return;
+    }
+    state.students = deepClone(snapshot.students);
+    state.scoresConfirmed = !!snapshot.scoresConfirmed;
+    state.workflowStep = Number(snapshot.workflowStep || state.workflowStep || 1);
+    syncSummary();
+    renderTable();
+    applyWorkflowState();
+    scheduleAutoSave();
+    toast(`Undid ${snapshot.label}.`);
+  }
   function loadLocal() {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
@@ -2261,6 +2431,7 @@
     const wasInSetup = Number(state.workflowStep || 1) <= 1;
     if (prevCode && prevCode !== subject.code) saveCurrentSubjectWorkspace();
     loadSubjectWorkspace(subject);
+    clearGradeUndo();
     if (wasInSetup && !state.subjectLocked) {
       state.workflowStep = 1;
       state.studentsConfirmed = false;
@@ -2504,6 +2675,7 @@
     const focused = document.activeElement;
     const focusedDataset = focused?.dataset ? { ...focused.dataset } : null;
     renderGradeChart();
+    updateUndoButton();
 
     const columns = [
       ["no","No.","col-no"], ["studentNo","Student No.","col-student-no"], ["name","Name","col-name"],
@@ -2553,6 +2725,8 @@
       n.addEventListener("change", e => {
         const i    = Number(e.target.dataset.si);
         const comp = e.target.dataset.comp;
+        if (String(state.students[i].scores[comp] ?? "") === String(e.target.value ?? "")) return;
+        pushGradeUndo("score entry");
         state.students[i].scores[comp] = e.target.value;
         state.scoresConfirmed = false;
         const cfg  = state.components.find(c => c.name === comp);
@@ -2575,7 +2749,10 @@
     });
     $("scoreTable").tBodies[0].querySelectorAll("[data-gi]").forEach(n => {
       n.addEventListener("change", e => {
-        state.students[Number(e.target.dataset.gi)].lecturerGrade = e.target.value;
+        const i = Number(e.target.dataset.gi);
+        if (String(state.students[i].lecturerGrade || "") === String(e.target.value || "")) return;
+        pushGradeUndo("lecturer grade change");
+        state.students[i].lecturerGrade = e.target.value;
         state.scoresConfirmed = false;
         renderTable();
         applyWorkflowState();
@@ -2587,6 +2764,8 @@
         const i = Number(e.target.dataset.use);
         const suggestion = higherGrade(suggestGrade(calcOverall(state.students[i])));
         if (!suggestion) { toast("Set assessment total to 100% first."); return; }
+        if (state.students[i].lecturerGrade === suggestion) return;
+        pushGradeUndo("suggested grade");
         state.students[i].lecturerGrade = suggestion;
         state.scoresConfirmed = false;
         renderTable(); applyWorkflowState(); scheduleAutoSave();
@@ -2654,6 +2833,7 @@
     state.workflowStep = 3;
     state.studentsConfirmed = true;
     selectedStudentFile = null;
+    clearGradeUndo();
     $("studentFile").value = "";
     $("uploadStudentsBtn").disabled = true;
     saveLocal({ showToast: false });
@@ -2679,14 +2859,21 @@
   }
   function useAllSuggestedGrades(mode = "higher") {
     const pickGrade = mode === "lower" ? lowerGrade : higherGrade;
+    const undo = gradeUndoSnapshot(`${mode} suggested grades`);
     let updated = 0;
     state.students.forEach(stu => {
       const s = pickGrade(suggestGrade(calcOverall(stu)));
       if (!s) return;
+      if (stu.lecturerGrade === s) return;
       stu.lecturerGrade = s;
       updated++;
     });
     closeGradeChoiceModal();
+    if (!updated) {
+      toast("No suggested grades changed.");
+      return;
+    }
+    commitGradeUndo(undo);
     state.scoresConfirmed = false;
     renderTable(); applyWorkflowState(); scheduleAutoSave();
     toast(`Applied ${mode} suggested grades for ${updated} student${updated !== 1 ? "s" : ""}.`);
@@ -2811,6 +2998,7 @@
   function applyAiUpdates(updates, { notify = true } = {}) {
     let hit = 0;
     const warnings = [];
+    const undo = gradeUndoSnapshot("AI score update");
     updates.forEach(u => {
       const { student, warning } = studentMatchForUpdate(u);
       if (!student) { warnings.push(warning); return; }
@@ -2830,6 +3018,7 @@
       hit++;
     });
     if (hit > 0) {
+      commitGradeUndo(undo);
       state.scoresConfirmed = false;
       syncSummary(); renderTable(); applyWorkflowState(); scheduleAutoSave();
     }
@@ -3081,6 +3270,7 @@ Reply conversationally, then include a machine-readable JSON at the end:
 
     /* Export & bulk grade */
     $("exportBtn").addEventListener("click", exportCsv);
+    $("undoGradeBtn").addEventListener("click", undoGradeChange);
     $("useAllSuggestedBtn").addEventListener("click", openGradeChoiceModal);
     $("gradeChoiceCancel").addEventListener("click", closeGradeChoiceModal);
     $("gradeChoiceLower").addEventListener("click", () => useAllSuggestedGrades("lower"));
